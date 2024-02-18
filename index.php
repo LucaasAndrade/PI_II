@@ -27,7 +27,7 @@
                 <input type="checkbox" class="form-check-input" name="check-box">
                 <label class="form-check-label" for="check-box">Manter-me conectado</label>
             </div>
-            <button type="submit" class="btn btn-primary ">Entrar</button>
+            <button type="submit" class="btn btn-primary btn__form ">Entrar</button>
         </form>
     </main>
 
