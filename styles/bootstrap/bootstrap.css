@@ -1,0 +1,8 @@
+.btn-primary {
+    background-color: var(--dark-blue);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--yellow);
+}

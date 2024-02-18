@@ -1,6 +1,6 @@
 <?php
 
-$nome = $_POST["login"];
+/* $nome = $_POST["login"];
 $senha = $_POST["senha"];
 
 if (!$nome || !$senha) {
@@ -9,6 +9,6 @@ if (!$nome || !$senha) {
     echo "<p class=" . "login" . "> Passou </p>";
 } else {
     echo "<p class=" . "login" . "> Login ou Senha inválidos";
-}
+} */
 
 ?>
