@@ -1,0 +1,11 @@
+.hero__section {
+  box-sizing: border-box;
+  width: 80%;
+  margin: auto;
+  height: 500px;
+  background-image: url("../../images/carrossel/everglades.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}/*# sourceMappingURL=heroStyle.css.map */

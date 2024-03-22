@@ -1,0 +1,16 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-inline: auto;
+  margin-block: 50px;
+}
+.header__container .list__container ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.header__container .list__container ul li a {
+  text-decoration: none;
+}/*# sourceMappingURL=headerStyle.css.map */

@@ -1,21 +1,15 @@
-@import url("bootstrap/bootstrap.css");
-@import url("form.css");
-@import url("header.css");
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
+@import url("header/headerStyle.css");
+@import url("heroSection/heroStyle.css");
 :root {
-
-    /* Colors */
-    --white: #FFFFFF;
-    --dark-blue: #051623;
-    --black: #030B11;
-    --black2: #0f3552;
-    --red: #CC040B;
-    --yellow: #FF9517;
+  --gelo: #ebf0f3;
+  --cinza-claro: #d2d7da;
+  --verde-agua: #026874;
+  --verde-escuro: #002d40;
+  --azul-escuro: #011c27;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=globalStyles.css.map */

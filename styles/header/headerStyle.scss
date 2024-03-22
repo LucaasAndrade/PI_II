@@ -1,0 +1,22 @@
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-inline: auto;
+    margin-block: 50px;
+
+    .list__container {
+        ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+
+            li {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
