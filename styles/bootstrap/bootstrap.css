@@ -1,0 +1,10 @@
+.btn {
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--verde-agua);
+}
+.btn-primary:hover {
+  background-color: var(--verde-medio);
+}/*# sourceMappingURL=bootstrap.css.map */

@@ -1,0 +1,12 @@
+.btn {
+    border: none;
+}
+
+.btn-primary {
+
+    background-color: var(--verde-agua);
+
+    &:hover {
+        background-color: var(--verde-medio);
+    }
+}

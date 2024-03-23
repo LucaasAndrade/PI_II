@@ -1,20 +1,30 @@
 .header__container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 80%;
-    margin-inline: auto;
-    margin-block: 50px;
+    justify-content: space-between;
+    padding-inline: 10%;
+    margin-block: 2%;
 
-    .list__container {
-        ul {
-            display: flex;
-            gap: 15px;
-            list-style: none;
 
-            li {
-                a {
-                    text-decoration: none;
+    .login__container {
+        display: flex;
+        align-items: center;
+ 
+        .list__container {
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                list-style: none;
+                margin: 0;
+
+                li {
+                    a {
+                        text-decoration: none;
+                    }
                 }
             }
         }
