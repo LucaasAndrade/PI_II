@@ -1,0 +1,14 @@
+header {
+    width: 100vw;
+}
+
+header .navbar {
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+header .navbar .collapse ul li {
+
+    width: 100px;
+}
