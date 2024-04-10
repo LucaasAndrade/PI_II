@@ -26,8 +26,10 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/globalstyles.css">
 
 
 </head>
@@ -45,18 +47,19 @@ try {
             </thead>
 
             <?php foreach ($users as $user) : ?>
-                <tr>
-                    <td><?php echo $user['ADM_NOME']; ?></td>
-                    <td><?php echo $user['ADM_EMAIL']; ?></td>
-                    <td>
-                        <a href="../utils/editar_usuario.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../utils/excluir_usuario.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
-                    </td>
-                </tr>
+            <tr>
+                <td><?php echo $user['ADM_NOME']; ?></td>
+                <td><?php echo $user['ADM_EMAIL']; ?></td>
+                <td>
+                    <a href="editar_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
+                    <a href="../utils/excluir_user.php?id=<?php echo $user['ADM_ID'] ?>"
+                        class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
             <?php endforeach ?>
         </table>
 
-        <a href="painel_admin.php" class="btn btn-dark"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar ao Painel do Administrador</a>
+        <a href="painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar </a>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
