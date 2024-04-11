@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div>
             <a href="painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar</a>
         </div>
-        <form action="cadastro_users.php" method="post" enctype="multipart/form-data">
+        <form action="cadastro_user.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" name="nome" id="nome" class="form-control" required>
