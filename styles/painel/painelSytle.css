@@ -10,11 +10,11 @@
 .painel__admin__container .options__container {
   display: flex;
   gap: 50px;
-  width: 500px;
+  width: 1200px;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
 }
 .painel__admin__container .options__container .btn {
-  width: 250px;
+  width: 300px;
 }/*# sourceMappingURL=painelSytle.css.map */
