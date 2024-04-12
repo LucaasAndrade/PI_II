@@ -12,7 +12,8 @@ try {
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    echo 'Erro:' . $e->getMessage() . PHP_EOL;
+
+    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() .  "</p>" . PHP_EOL;
 }
 
 ?>
@@ -26,9 +27,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/globalstyles.css">
 
 
@@ -48,16 +47,21 @@ try {
             </thead>
 
             <?php foreach ($users as $user) : ?>
-            <tr>
-                <td><?php echo $user['ADM_NOME']; ?></td>
-                <td><?php echo $user['ADM_EMAIL']; ?></td>
-                <td><?php echo $user['ADM_ATIVO']; ?></td>
-                <td>
-                    <a href="editar_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
-                    <a href="../utils/excluir_user.php?id=<?php echo $user['ADM_ID'] ?>"
-                        class="btn btn-danger">Deletar</a>
-                </td>
-            </tr>
+                <tr>
+                    <td><?php echo $user['ADM_NOME']; ?></td>
+                    <td><?php echo !isset($user['ADM_EMAIL']) == 1 ? "Sem registro" :  $user['ADM_EMAIL'] ?> </td>
+                    <td>
+                        <?php if ($user['ADM_ATIVO'] == '0') : ?>
+                            <p class="text-danger">Não ativo</p>
+                        <?php else : ?>
+                            <p class="text-success">Ativo</p>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <a href="editar_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
+                        <a href="../utils/excluir_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
+                    </td>
+                </tr>
             <?php endforeach ?>
         </table>
 
