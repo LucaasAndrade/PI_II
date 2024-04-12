@@ -8,9 +8,9 @@ if (!isset($_SESSION['admin_logado'])) {
 }
 
 try {
-    $stmt = $pdo->prepare('SELECT * FROM ADMINISTRADOR');
+    $stmt = $pdo->prepare('SELECT * FROM PRODUTO');
     $stmt->execute();
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo 'Erro:' . $e->getMessage() . PHP_EOL;
 }
@@ -29,37 +29,47 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalstyles.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css">
 
 
 </head>
 
 <body>
     <section class="list__container">
-        <h2>Lista de Usuários</h2>
+        <h2>Lista de produtos</h2>
 
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nome</th>
-                    <th>E-mail</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <!--  <th>Imagem</th> -->
+                    <th>Ações</th>
                 </tr>
             </thead>
 
-            <?php foreach ($users as $user) : ?>
+            <?php foreach ($produtos as $produto) : ?>
             <tr>
-                <td><?php echo $user['ADM_NOME']; ?></td>
-                <td><?php echo $user['ADM_EMAIL']; ?></td>
+                <td><?php echo $produto['PRODUTO_ID']; ?></td>
+                <td><?php echo $produto['PRODUTO_NOME']; ?></td>
+                <td><?php echo $produto['PRODUTO_DESC']; ?></td>
+                <td><?php echo $produto['PRODUTO_PRECO']; ?></td>
+                <!--  <td> <img src="<?php echo "../uploads/{$produto['imagem']}"; ?>" width="50" alt="imagem do produto" /> -->
+                </td>
                 <td>
-                    <a href="editar_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
-                    <a href="../utils/excluir_user.php?id=<?php echo $user['ADM_ID'] ?>"
+                    <a href="../utils/editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>"
+                        class="btn btn-primary">Editar</a>
+                    <a href="../utils/excluir_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>"
                         class="btn btn-danger">Deletar</a>
                 </td>
             </tr>
             <?php endforeach ?>
         </table>
 
-        <a href="painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar </a>
+        <a href="painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar ao Painel
+            do Administrador</a>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

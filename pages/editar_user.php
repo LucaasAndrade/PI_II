@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['id'])) {
 
         $id = $_GET['id'];
+
         try {
             $stmt = $pdo->prepare("SELECT * FROM ADMINISTRADOR WHERE ADM_ID = :id");
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -20,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            echo "Erro: " . $e->getMessage();
+            echo "Erro ao consultar informações: " . $e->getMessage();
         }
     } else {
         header('Location: lista_users.php');
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $ativo = isset($_POST['ativo']) ? 1 : 0;
+    $ativo = isset($_POST['ativo']) ? '1' : '';
 
     try {
 
@@ -46,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':ativo', $ativo, PDO::PARAM_BOOL);
         $stmt->execute();
 
-        header('Location: lista_users.php');
+        header('Location: listar_users.php');
         exit();
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
+        echo "Erro ao alterar informações: " . $e->getMessage();
     }
 }
 
@@ -71,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <section class="form__container container mt-5">
         <div>
-            <a href="lista_users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
+            <a href="listar_users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
                 Voltar</a>
         </div>
         <form action="editar_user.php" method="post" enctype="multipart/form-data">
@@ -87,11 +88,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="text" name="senha" class="form-control" value="<?php echo $usuario['ADM_SENHA']; ?>" required>
+                <input type="password" name="senha" class="form-control" value="<?php echo $usuario['ADM_SENHA']; ?>" required>
             </div>
             <div class="mb-3">
                 <label for="ativo" class="form-label">Ativo</label>
-                <input type="checkbox" name="ativo" value="1" <?php isset($usuario['ADM_ATIVO']) ? 'checked' : '' ?>>
+                <input type="checkbox" name="ativo" value="1" <?php echo $usuario['ADM_ATIVO'] == 1 ? 'checked' : '' ?>>
             </div>
             <input type="submit" class="btn btn-primary" value="Enviar">
         </form>

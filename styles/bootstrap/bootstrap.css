@@ -3,8 +3,8 @@
 }
 
 .btn-primary {
-  background-color: var(--verde-agua);
+  background-color: var(--verde-escuro);
 }
 .btn-primary:hover {
-  background-color: var(--verde-medio);
+  background-color: var(--verde-escuro-dois);
 }/*# sourceMappingURL=bootstrap.css.map */

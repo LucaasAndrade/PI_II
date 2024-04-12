@@ -13,9 +13,10 @@
     <main class="painel__admin__container">
         <h1 class="mt-5">Painel do administrador</h1>
         <div class="options__container">
-            <a href="cadastro_user.php" class="btn btn-primary">Cadastrar
-                ADM</a>
-            <a href="lista_users.php" class="btn btn-primary">Listar ADM</a>
+            <a href="cadastro_user.php" class="btn btn-primary">Cadastrar Administrador</a>
+            <a href="cadastro_produto.php" class="btn btn-primary">Cadastrar Produtos</a>
+            <a href="listar_users.php" class="btn btn-primary">Listar Administrador</a>
+            <a href="listar_produtos.php" class="btn btn-primary">Listar Produtos</a>
         </div>
     </main>
 
