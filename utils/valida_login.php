@@ -18,5 +18,9 @@ if ($query->rowCount() > 0) {
     $_SESSION['admin_logado'] = true;
     header('Location: ../pages/painel_adm.php');
 } else {
-    header('Location: ../index.php?erro');
+    if (empty($nome) || empty($senha)) {
+        header('Location: ../index.php?erro2');
+    } else {
+        header('Location: ../index.php?erro');
+    }
 }

@@ -2,6 +2,8 @@
 
 require_once('../utils/conexao.php');
 
+$id = $_GET['id'];
+
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../index.php');
     exit();
