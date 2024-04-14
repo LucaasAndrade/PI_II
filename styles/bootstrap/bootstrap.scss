@@ -1,0 +1,12 @@
+.btn {
+    border: none;
+}
+
+.btn-primary {
+
+    background-color: var(--verde-escuro);
+
+    &:hover {
+        background-color: var(--verde-escuro-dois);
+    }
+}
