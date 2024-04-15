@@ -1,6 +1,6 @@
 <?php
 
-require_once('../utils/conexao.php');
+require_once('../conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../../index.php');
@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_logado'])) {
 }
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+/* if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     if (isset($_GET['id'])) {
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         header('Location: lista_users.php');
         exit();
     }
-}
+} */
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':ativo', $ativo, PDO::PARAM_BOOL);
         $stmt->execute();
 
-        header('Location: listar_users.php');
+        header('Location: ../../pages/adm/listar_adm.php');
         exit();
     } catch (PDOException $e) {
         echo "Erro ao alterar informações: " . $e->getMessage();

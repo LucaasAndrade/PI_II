@@ -59,7 +59,7 @@ try {
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="editar_adm.php?id=" class="btn btn-primary">Editar</a>
+                        <a href="editar_adm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
                         <a href="../../utils/adm/excluir_adm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
