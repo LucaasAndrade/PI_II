@@ -13,10 +13,10 @@
     <main class="painel__admin__container">
         <h1 class="mt-5">Painel do administrador</h1>
         <div class="options__container">
-            <a href="cadastro_user.php" class="btn btn-primary">Cadastrar Administrador</a>
-            <a href="cadastro_produto.php" class="btn btn-primary">Cadastrar Produtos</a>
-            <a href="listar_users.php" class="btn btn-primary">Listar Administrador</a>
-            <a href="listar_produtos.php" class="btn btn-primary">Listar Produtos</a>
+            <a href="adm/cadastro_adm.php" class="btn btn-primary">Cadastrar Administrador</a>
+            <a href="produtos/cadastro_produto.php" class="btn btn-primary">Cadastrar Produtos</a>
+            <a href="adm/listar_adm.php" class="btn btn-primary">Listar Administrador</a>
+            <a href="produtos/listar_produtos.php" class="btn btn-primary">Listar Produtos</a>
         </div>
     </main>
 
