@@ -2,20 +2,6 @@
 
 require_once('../utils/conexao.php');
 
-if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../index.php');
-    exit();
-}
-
-
-try {
-    $stmt_categoria = $pdo->prepare("SELECT * FROM CATEGORIA");
-    $stmt_categoria->execute();
-    $categorias = $stmt_categoria->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "<p style='color=red;'> Erro ao buscar categorias" . $e->getMessage() . "</p>";
-}
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];

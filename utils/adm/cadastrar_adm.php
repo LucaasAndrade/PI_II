@@ -1,6 +1,6 @@
 <?php
 
-require_once('../utils/conexao.php');
+require_once('../conexao.php');
 
 
 if (!isset($_SESSION['admin_logado'])) {
