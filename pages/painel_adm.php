@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+
+if (!isset($_SESSION['admin_logado'])) {
+    header('Location: ../index.php');
+    exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,7 +66,7 @@
 
                     <ul>
                         <li>
-                            <a href="produtos/listar_produtos.php">
+                            <a href="../utils/logoff.php">
                                 <i class='bx bx-log-out'></i>
                                 Logout
                             </a>
