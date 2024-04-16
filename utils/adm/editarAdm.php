@@ -1,34 +1,6 @@
 <?php
 
-require_once('../conexao.php');
-
-if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../../index.php');
-    exit();
-}
-
-
-/* if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-
-    if (isset($_GET['id'])) {
-
-        $id = $_GET['id'];
-
-        try {
-            $stmt = $pdo->prepare("SELECT * FROM ADMINISTRADOR WHERE ADM_ID = :id");
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
-
-            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo "Erro ao consultar informações: " . $e->getMessage();
-        }
-    } else {
-        header('Location: lista_users.php');
-        exit();
-    }
-} */
-
+require_once '../conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];

@@ -1,6 +1,5 @@
 <?php
-
-require_once('../../utils/conexao.php');
+require_once '../../utils/conexao.php';
 
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../index.php');
@@ -13,7 +12,7 @@ try {
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
 
-    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() .  "</p>" . PHP_EOL;
+    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() . "</p>" . PHP_EOL;
 }
 
 ?>
@@ -60,7 +59,7 @@ try {
                     </td>
                     <td>
                         <a href="editar_adm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../../utils/adm/excluir_adm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
+                        <a href="../../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
             <?php endforeach ?>

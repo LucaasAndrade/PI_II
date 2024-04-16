@@ -1,6 +1,7 @@
 <?php
 require_once('../../utils/conexao.php');
 
+
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../../index.php');
     exit();
@@ -30,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -51,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <a href="listar_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
                 Voltar</a>
         </div>
-        <form action="../../utils/adm/editar_adm.php" method="post" enctype="multipart/form-data">
+        <form action="../../utils/adm/editarAdm.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $usuario['ADM_ID']; ?>">
 
             <div class="mb-3">

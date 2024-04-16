@@ -77,8 +77,8 @@ try {
                     <td> <img src="<?php echo "{$produto['IMAGEM_URL']}"; ?>" width="50" alt="imagem do produto" />
                     </td>
                     <td>
-                        <a href="../../utils/produtos/editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../../utils/produtos/excluir_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger">Deletar</a>
+                        <a href="editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-primary">Editar</a>
+                        <a href="../../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
             <?php endforeach ?>
