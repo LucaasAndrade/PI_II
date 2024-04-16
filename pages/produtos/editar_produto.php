@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <body>
     <section class="form__container container mt-5">
         <div>
-            <a href="listar_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
+            <a href="listar_produtos.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
                 Voltar</a>
         </div>
         <form action="../../utils/adm/editarProd.php" method="post" enctype="multipart/form-data">

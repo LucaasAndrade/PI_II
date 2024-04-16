@@ -1,20 +1,141 @@
 .painel__admin__container {
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: auto;
-  margin-top: 200px;
+  margin-top: 200px; */
+  /* .options__container {
+    display: flex;
+    gap: 50px;
+    width: 1200px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .btn {
+      width: 300px;
+    }
+  } */
 }
-.painel__admin__container .options__container {
+.painel__admin__container .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 350px;
+  padding: 18px 14px 0px 10px;
+  background-color: var(--verde-agua);
+}
+.painel__admin__container .sidebar header {
+  position: relative;
+}
+.painel__admin__container .sidebar header .text {
+  text-align: start;
+}
+.painel__admin__container .sidebar header .text .header-text {
+  color: var(--gelo);
+  font-size: 24px;
+  font-weight: 600;
+  text-align: justify;
+}
+.painel__admin__container .sidebar header .toggle {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 40px;
   display: flex;
-  gap: 50px;
-  width: 1200px;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  border-radius: 50%;
+  background: var(--gelo);
+  color: var(--verde-escuro);
+  font-size: 24px;
+  font-weight: 900;
 }
-.painel__admin__container .options__container .btn {
-  width: 300px;
+.painel__admin__container .sidebar .menu__bar {
+  padding-left: 20px;
+  margin-top: 40px;
+}
+.painel__admin__container .sidebar .menu__bar .menu .menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0;
+}
+.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link {
+  width: 100%;
+  list-style: none;
+}
+.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--verde-escuro);
+  font-size: 16px;
+}
+.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
+  font-size: 32px;
+}
+.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
+  transition: 0.6s;
+  transform: scale(1.13);
+  color: var(--gelo);
+}
+.painel__admin__container .sidebar .menu__bar .button__content {
+  margin-top: 50px;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul li {
+  list-style: none;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--verde-escuro);
+  font-size: 18px;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
+  transition: 0.6s;
+  color: var(--gelo);
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun i {
+  position: absolute;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .sun {
+  display: none;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .toggle-switch .switch {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode .mode__text {
+  margin-left: 15px;
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode:hover {
+  transition: 0.6s;
+  color: var(--gelo);
 }/*# sourceMappingURL=painelSytle.css.map */
