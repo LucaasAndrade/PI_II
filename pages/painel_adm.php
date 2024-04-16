@@ -65,7 +65,7 @@
                             </div>
                             <span class="mode__text">Dark Mode</span>
                             <div class="toggle-switch">
-                                <span class="switch">ppp</span>
+                                <span class="switch"></span>
                             </div>
                         </li>
 
