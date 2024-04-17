@@ -34,4 +34,9 @@
 }
 .login__container .form__container form #emailHelp {
   color: var(--verde-escuro-dois);
+}
+.login__container .form__container form .btn__form {
+  margin-top: 5px;
+  width: 50%;
+  padding: 10px;
 }/*# sourceMappingURL=loginStyle.css.map */

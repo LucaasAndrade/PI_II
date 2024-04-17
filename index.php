@@ -17,15 +17,16 @@
             <img src="images/login/banner.png" alt="">
         </section>
         <section class="form__container">
+            <img src="images/logo.png" alt="logo echo" width="200">
             <form method="POST" action="utils/valida_login.php">
                 <div>
                     <label for="user__email" class="form-label">E-mail:</label>
-                    <input type="text" class="form-control" name="user__email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" name="user__email" aria-describedby="emailHelp" required placeholder="Digite seu e-mail...">
                     <div id="emailHelp" class="form-text">Nunca iremos compartilhar seus dados</div>
                 </div>
                 <div>
                     <label for="user__password" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" name="user__password">
+                    <input type="password" class="form-control" name="user__password" placeholder="Digite sua senha..." required>
                 </div>
 
 
@@ -33,7 +34,7 @@
                     <input type="checkbox" class="form-check-input" name="check-box">
                     <label class="form-check-label" for="check-box">Manter-me conectado</label>
                 </div>
-                <button type="submit" class="btn btn-primary btn__form">Entrar</button>
+                <button type="submit" class="btn__form btn btn-primary">Entrar</button>
                 <?php
                 if (isset($_GET['erro'])) {
                     echo '<div class="alert alert-danger mt-2 text-center border-0 p-2  " role="alert">Nome de usuário ou senha incorretos!</div>';
