@@ -27,7 +27,10 @@ if (!isset($_SESSION['admin_logado'])) {
         <nav class="sidebar">
             <header>
                 <div class="text">
-                    <span class="header-text ">Painel do administrador</span>
+                    <div class="logo__container">
+                        <img src="../images/logo.png" alt="logo echo">
+                    </div>
+                    <div class="header-text ">Painel do administrador</div>
                 </div>
                 <i class='bx bx-chevron-right toggle'></i>
             </header>

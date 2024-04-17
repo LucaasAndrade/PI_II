@@ -1,5 +1,5 @@
 .light {
-  background-color: var(--cinza-claro);
+  background-color: var(--gelo);
 }
 .light .painel__admin__container .sidebar {
   position: fixed;
@@ -8,16 +8,24 @@
   height: 100%;
   width: 350px;
   padding: 18px 14px 0px 10px;
-  background-color: var(--verde-agua);
+  background-color: var(--cinza-claro);
 }
 .light .painel__admin__container .sidebar header {
   position: relative;
 }
 .light .painel__admin__container .sidebar header .text {
-  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.light .painel__admin__container .sidebar header .text .logo__container {
+  height: 200px;
+}
+.light .painel__admin__container .sidebar header .text .logo__container img {
+  width: 180px;
 }
 .light .painel__admin__container .sidebar header .text .header-text {
-  color: var(--gelo);
+  color: var(--verde-agua);
   font-size: 24px;
   font-weight: 600;
   text-align: justify;
@@ -33,8 +41,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--gelo);
-  color: var(--verde-escuro);
+  background: var(--verde-agua);
+  color: var(--gelo);
   font-size: 24px;
   font-weight: 900;
 }
@@ -57,7 +65,7 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: var(--verde-escuro);
+  color: var(--verde-agua);
   font-size: 16px;
 }
 .light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
@@ -66,7 +74,7 @@
 .light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
   transition: 0.6s;
   transform: scale(1.13);
-  color: var(--gelo);
+  color: var(--verde-escuro);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content {
   margin-top: 50px;
@@ -85,12 +93,12 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--verde-escuro);
+  color: var(--verde-agua);
   font-size: 18px;
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
   transition: 0.6s;
-  color: var(--gelo);
+  color: var(--verde-escuro);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode {
   display: flex;
@@ -110,7 +118,7 @@
   height: 22px;
   width: 44px;
   border-radius: 25px;
-  background-color: var(--cinza-claro);
+  background-color: var(--gelo);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
   content: "";
@@ -121,13 +129,14 @@
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  background-color: var(--verde-escuro);
+  background-color: var(--verde-agua);
   transition: var(--tran-03);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
   display: flex;
   align-items: center;
   height: 50px;
+  color: var(--verde-agua);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun i {
   position: absolute;
@@ -137,10 +146,7 @@
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .mode__text {
   margin-left: 15px;
-}
-.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode:hover {
-  transition: 0.6s;
-  color: var(--gelo);
+  color: var(--verde-agua);
 }
 
 .dark {
@@ -202,7 +208,7 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: var(--verde-escuro);
+  color: var(--gelo);
   font-size: 16px;
 }
 .dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
@@ -211,7 +217,7 @@
 .dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
   transition: 0.6s;
   transform: scale(1.13);
-  color: var(--gelo);
+  color: var(--verde-escuro);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content {
   margin-top: 50px;
@@ -230,12 +236,12 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--verde-escuro);
+  color: var(--gelo);
   font-size: 18px;
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
   transition: 0.6s;
-  color: var(--gelo);
+  color: var(--verde-escuro);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode {
   display: flex;
@@ -260,6 +266,7 @@
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
   left: 20px;
   transition: var(--tran-03);
+  background-color: var(--verde-agua);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
   display: flex;
@@ -271,14 +278,12 @@
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .sun {
   display: block;
+  color: var(--gelo);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .moon {
   display: none;
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .mode__text {
   margin-left: 15px;
-}
-.dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode:hover {
-  transition: 0.6s;
   color: var(--gelo);
 }/*# sourceMappingURL=painelSytle.css.map */
