@@ -21,7 +21,7 @@ if (!isset($_SESSION['admin_logado'])) {
     <link rel="stylesheet" href="../styles/globalstyles.css">
 </head>
 
-<body>
+<body class="light">
     <section class="painel__admin__container">
 
         <nav class="sidebar">

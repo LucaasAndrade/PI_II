@@ -1,4 +1,7 @@
-.painel__admin__container .sidebar {
+.light {
+  background-color: var(--cinza-claro);
+}
+.light .painel__admin__container .sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,19 +10,19 @@
   padding: 18px 14px 0px 10px;
   background-color: var(--verde-agua);
 }
-.painel__admin__container .sidebar header {
+.light .painel__admin__container .sidebar header {
   position: relative;
 }
-.painel__admin__container .sidebar header .text {
+.light .painel__admin__container .sidebar header .text {
   text-align: start;
 }
-.painel__admin__container .sidebar header .text .header-text {
+.light .painel__admin__container .sidebar header .text .header-text {
   color: var(--gelo);
   font-size: 24px;
   font-weight: 600;
   text-align: justify;
 }
-.painel__admin__container .sidebar header .toggle {
+.light .painel__admin__container .sidebar header .toggle {
   position: absolute;
   top: 50%;
   right: -25px;
@@ -35,21 +38,21 @@
   font-size: 24px;
   font-weight: 900;
 }
-.painel__admin__container .sidebar .menu__bar {
+.light .painel__admin__container .sidebar .menu__bar {
   padding-left: 20px;
   margin-top: 40px;
 }
-.painel__admin__container .sidebar .menu__bar .menu .menu__links {
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links {
   display: flex;
   flex-direction: column;
   gap: 25px;
   padding: 0;
 }
-.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link {
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link {
   width: 100%;
   list-style: none;
 }
-.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a {
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -57,27 +60,27 @@
   color: var(--verde-escuro);
   font-size: 16px;
 }
-.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
   font-size: 32px;
 }
-.painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
   transition: 0.6s;
   transform: scale(1.13);
   color: var(--gelo);
 }
-.painel__admin__container .sidebar .menu__bar .button__content {
+.light .painel__admin__container .sidebar .menu__bar .button__content {
   margin-top: 50px;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 0;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul li {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul li {
   list-style: none;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul li a {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul li a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -85,31 +88,31 @@
   color: var(--verde-escuro);
   font-size: 18px;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
   transition: 0.6s;
   color: var(--gelo);
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 18px;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch {
   height: 100%;
   min-width: 60px;
   display: flex;
   min-width: 60px;
   cursor: pointer;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch {
   position: relative;
   height: 22px;
   width: 44px;
   border-radius: 25px;
   background-color: var(--cinza-claro);
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
   content: "";
   position: absolute;
   height: 15px;
@@ -119,26 +122,30 @@
   left: 5px;
   transform: translateY(-50%);
   background-color: var(--verde-escuro);
+  transition: var(--tran-03);
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
   display: flex;
   align-items: center;
   height: 50px;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun i {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun i {
   position: absolute;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .sun {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .sun {
   display: none;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode .mode__text {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .mode__text {
   margin-left: 15px;
 }
-.painel__admin__container .sidebar .menu__bar .button__content ul .mode:hover {
+.light .painel__admin__container .sidebar .menu__bar .button__content ul .mode:hover {
   transition: 0.6s;
   color: var(--gelo);
 }
 
+.dark {
+  background-color: var(--verde-escuro);
+}
 .dark .painel__admin__container .sidebar {
   position: fixed;
   top: 0;
