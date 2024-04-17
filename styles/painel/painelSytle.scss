@@ -99,15 +99,28 @@
             gap: 10px;
             font-size: 18px;
             .toggle-switch {
-              display: flex;
               height: 100%;
               min-width: 60px;
+              display: flex;
+              min-width: 60px;
+              cursor: pointer;
               .switch {
                 position: relative;
                 height: 18px;
                 width: 44px;
                 border-radius: 25px;
                 background-color: var(--cinza-claro);
+              }
+              .switch::before {
+                content: '';
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                background-color: var(--verde-escuro);
               }
             }
             .moon__sun {

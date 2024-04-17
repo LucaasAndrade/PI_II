@@ -2,14 +2,12 @@
 
 session_start();
 
-
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../index.php');
     exit();
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -86,19 +84,11 @@ if (!isset($_SESSION['admin_logado'])) {
 
                 </div>
             </div>
-
-            <!--             <div class="options__container">
-                <a href="adm/cadastro_adm.php" class="btn btn-primary">Cadastrar Administrador</a>
-                <a href="produtos/cadastro_produto.php" class="btn btn-primary">Cadastrar Produtos</a>
-                <a href="adm/listar_adm.php" class="btn btn-primary">Listar Administrador</a>
-                <a href="produtos/listar_produtos.php" class="btn btn-primary">Listar Produtos</a>
-            </div> -->
         </nav>
     </section>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <script src="../utils/js/script.js"></script>
 </body>
 
 </html>

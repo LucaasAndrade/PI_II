@@ -117,9 +117,11 @@
   font-size: 18px;
 }
 .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch {
-  display: flex;
   height: 100%;
   min-width: 60px;
+  display: flex;
+  min-width: 60px;
+  cursor: pointer;
 }
 .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch {
   position: relative;
@@ -127,6 +129,17 @@
   width: 44px;
   border-radius: 25px;
   background-color: var(--cinza-claro);
+}
+.painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: var(--verde-escuro);
 }
 .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
   display: flex;
