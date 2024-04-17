@@ -1,9 +1,8 @@
 <?php
-
-require_once('../utils/conexao.php');
+require_once '../../utils/conexao.php';
 
 if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
     exit();
 }
 
@@ -13,7 +12,7 @@ try {
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
 
-    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() .  "</p>" . PHP_EOL;
+    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() . "</p>" . PHP_EOL;
 }
 
 ?>
@@ -28,7 +27,8 @@ try {
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalstyles.css">
+    <link rel="stylesheet" href="../../styles/globalstyles.css">
+
 
 
 </head>
@@ -58,14 +58,14 @@ try {
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="editar_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../utils/excluir_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
+                        <a href="editar_adm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
+                        <a href="../../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
             <?php endforeach ?>
         </table>
 
-        <a href="painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar </a>
+        <a href="../painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar </a>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -1,11 +1,12 @@
 <?php
+require_once('../../utils/conexao.php');
 
-require_once('../utils/conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../../index.php');
     exit();
 }
+
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -28,33 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         exit();
     }
 }
-
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST['id'];
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $ativo = isset($_POST['ativo']) ? '1' : '';
-
-    try {
-
-        $stmt = $pdo->prepare("UPDATE ADMINISTRADOR SET ADM_NOME = :nome, ADM_EMAIL = :email, ADM_SENHA = :senha, ADM_ATIVO = :ativo WHERE ADM_ID  = :id");
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
-        $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':ativo', $ativo, PDO::PARAM_BOOL);
-        $stmt->execute();
-
-        header('Location: listar_users.php');
-        exit();
-    } catch (PDOException $e) {
-        echo "Erro ao alterar informações: " . $e->getMessage();
-    }
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -66,16 +40,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Lista produtos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/globalstyles.css">
+
 </head>
 
 <body>
     <section class="form__container container mt-5">
         <div>
-            <a href="listar_users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
+            <a href="listar_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
                 Voltar</a>
         </div>
-        <form action="editar_user.php" method="post" enctype="multipart/form-data">
+        <form action="../../utils/adm/editarAdm.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $usuario['ADM_ID']; ?>">
 
             <div class="mb-3">
