@@ -14,10 +14,10 @@
 
     <main class="login__container">
         <section class="img__login__banner">
-            <img src="images/login/banner.png" alt="">
+            <img src="images/login/banner.png" alt="banner da página de login">
         </section>
         <section class="form__container">
-            <img src="images/logo.png" alt="logo echo" width="200">
+            <img src="images/logo.png" alt="logo echo" width="450">
             <form method="POST" action="utils/valida_login.php">
                 <div>
                     <label for="user__email" class="form-label">E-mail:</label>
