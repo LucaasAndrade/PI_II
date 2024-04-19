@@ -60,6 +60,18 @@ if (!isset($_SESSION['admin_logado'])) {
                                 <span class="text">Listar produtos</span>
                             </a>
                         </li>
+                        <li class="nav__link">
+                            <a href="categorias/listar_categorias.php">
+                                <i class='bx bx-list-ul'></i>
+                                <span class="text">Listar categorias</span>
+                            </a>
+                        </li>
+                        <li class="nav__link">
+                            <a href="categorias/cadastro_categoria.php">
+                                <i class='bx bx-list-ul'></i>
+                                <span class="text">Cadastro de categorias</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="button__content">
