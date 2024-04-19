@@ -20,6 +20,11 @@
 
         header {
           .logo__container {
+            .text {
+
+              display: none;
+            }
+
             img {
               width: 50px;
               margin-left: 5px;
@@ -27,8 +32,11 @@
           }
         }
 
-        .text {
-          opacity: 0;
+        .menu__bar {
+          .text {
+
+            display: none;
+          }
         }
 
         .mode {
