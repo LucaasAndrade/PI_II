@@ -42,6 +42,12 @@
         }
       }
 
+      &.open {
+        .text {
+          transition: 1.8s;
+        }
+      }
+
 
       header {
         position: relative;
@@ -57,6 +63,7 @@
             color: $toggle-bg;
             font-weight: 600;
             text-align: start;
+
           }
 
           img {

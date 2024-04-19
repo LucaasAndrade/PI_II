@@ -29,6 +29,9 @@
   position: absolute;
   align-items: center;
 }
+.light .painel__admin__container .sidebar.open .text {
+  transition: 1.8s;
+}
 .light .painel__admin__container .sidebar header {
   position: relative;
 }
@@ -204,6 +207,9 @@
 .dark .painel__admin__container .sidebar.close .mode .toggle-switch {
   position: absolute;
   align-items: center;
+}
+.dark .painel__admin__container .sidebar.open .text {
+  transition: 1.8s;
 }
 .dark .painel__admin__container .sidebar header {
   position: relative;
