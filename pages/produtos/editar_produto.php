@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             WHERE PRODUTO.PRODUTO_ID = :id");
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-
             $produto = $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Erro ao consultar informações: " . $e->getMessage();
@@ -36,6 +35,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt_categoria = $pdo->prepare("SELECT * FROM CATEGORIA");
         $stmt_categoria->execute();
         $categorias = $stmt_categoria->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "<p style='color=red;'> Erro ao buscar categorias" . $e->getMessage() . "</p>";
+    }
+
+    try {
+        $stmt_imagem = $pdo->prepare("SELECT PRODUTO.*, PRODUTO_IMAGEM.IMAGEM_URL, PRODUTO_IMAGEM.IMAGEM_ORDEM, PRODUTO_IMAGEM.IMAGEM_ID
+        FROM PRODUTO
+        JOIN PRODUTO_IMAGEM ON PRODUTO.PRODUTO_ID = PRODUTO_IMAGEM.PRODUTO_ID 
+        WHERE PRODUTO.PRODUTO_ID = :id");
+        $stmt_imagem->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt_imagem->execute();
+        $imagens_produto = $stmt_imagem->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "<p style='color=red;'> Erro ao buscar categorias" . $e->getMessage() . "</p>";
     }
@@ -61,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <a href="listar_produtos.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
                 Voltar</a>
         </div>
-        <form action="../../utils/adm/editarProd.php" method="post" enctype="multipart/form-data">
+        <form action="../../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $produto['PRODUTO_ID']; ?>">
 
             <div class="mb-3">
@@ -75,6 +86,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <div class="mb-3">
                 <label for="preco" class="form-label">Preço</label>
                 <input type="number" name="preco" class="form-control" value="<?php echo $produto['PRODUTO_PRECO']; ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="desconto" class="form-label">Desconto</label>
+
+                <input type="number" name="desconto" class="form-control" value="<?php echo $produto['PRODUTO_DESCONTO']; ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="qtd_estoque" class="form-label">Quantidade estoque:</label>
+                <input type="number" name="qtd_estoque" class="form-control" value="<?php echo $produto['PRODUTO_QTD']; ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="imagem_url" class="form-label">Imagem URL:</label>
+
+                <?php
+                foreach ($imagens_produto as $imagem) {
+                    echo "<input type='text' name='imagem_url' class='form-control' value='{$imagem['IMAGEM_URL']}' required>";
+                }
+
+                foreach ($imagens_produto as $imagem) {
+                    echo "<input type='hidden' name='imagem_id' class='form-control' value='{$imagem['IMAGEM_ID']}' required>";
+                }
+                ?>
+
+            </div>
+            <div class="mb-3">
+                <label for="imagem_ordem" class="form-label">Imagem Ordem</label>
+                <?php
+                foreach ($imagens_produto as $imagem) {
+                    echo "<input type='text' name='imagem_ordem' class='form-control' value='{$imagem['IMAGEM_ORDEM']}' required>";
+                }
+                ?>
             </div>
             <div class="mb-3">
                 <div class="mb-3">
