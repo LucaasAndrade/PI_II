@@ -1,3 +1,16 @@
+.main__container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  min-height: 100vh;
+  height: auto;
+  align-items: center;
+}
+.main__container #dynamic-content {
+  width: 80%;
+  height: auto;
+}
+
 .light {
   transition: var(--tran-03);
   background-color: var(--gelo);
@@ -15,15 +28,12 @@
 .light .painel__admin__container .sidebar.close {
   width: 96px;
 }
-.light .painel__admin__container .sidebar.close header .logo__container .text {
-  display: none;
-}
 .light .painel__admin__container .sidebar.close header .logo__container img {
   width: 50px;
   margin-left: 5px;
 }
-.light .painel__admin__container .sidebar.close .menu__bar .text {
-  display: none;
+.light .painel__admin__container .sidebar.close .text {
+  opacity: 0;
 }
 .light .painel__admin__container .sidebar.close .mode {
   position: relative;
@@ -197,15 +207,12 @@
 .dark .painel__admin__container .sidebar.close {
   width: 96px;
 }
-.dark .painel__admin__container .sidebar.close header .logo__container .text {
-  display: none;
-}
 .dark .painel__admin__container .sidebar.close header .logo__container img {
   width: 50px;
   margin-left: 5px;
 }
-.dark .painel__admin__container .sidebar.close .menu__bar .text {
-  display: none;
+.dark .painel__admin__container .sidebar.close .text {
+  opacity: 0;
 }
 .dark .painel__admin__container .sidebar.close .mode {
   position: relative;

@@ -1,6 +1,23 @@
+.main__container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  min-height: 100vh;
+  height: auto;
+  align-items: center;
+
+  #dynamic-content {
+
+    width: 80%;
+    height: auto;
+  }
+}
+
 @mixin theme($bg-color, $text-color, $toggle-bg, $toggle-color, $hover-color, $switch-bg, $switch-before-bg) {
   transition: var(--tran-03);
   background-color: $bg-color;
+
+
 
   .painel__admin__container {
 
@@ -20,11 +37,6 @@
 
         header {
           .logo__container {
-            .text {
-
-              display: none;
-            }
-
             img {
               width: 50px;
               margin-left: 5px;
@@ -32,11 +44,8 @@
           }
         }
 
-        .menu__bar {
-          .text {
-
-            display: none;
-          }
+        .text {
+          opacity: 0;
         }
 
         .mode {
