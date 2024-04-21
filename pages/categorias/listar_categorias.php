@@ -42,7 +42,7 @@
             <tr>
                 <td><?php echo $categoria['CATEGORIA_NOME'] ?></td>
                 <td><?php echo $categoria['CATEGORIA_DESC'] ?></td>
-                <td><?php echo $categoria['CATEGORIA_ATIVO'] ?></td>
+                <td><?php echo $categoria['CATEGORIA_ATIVO'] == 1  ? "<p style='color: green'> Ativo </p>" : "<p style='color: red'> Não ativo </p>" ?></td>
                 <td><a href="excluir_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>"> Excluir </a></td>
                 <td><a href="editar_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>"> Editar </a></td>
             </tr>

@@ -71,7 +71,7 @@
     <input type="text" name="desc_categoria" value="<?php echo $categoria['CATEGORIA_DESC'] ?>">
 
     <label for="ativo_categoria"> Ativo </label>
-    <input type="checkbox" name="ativo_categoria" <?php echo isset(($categoria['CATEGORIA_ATIVO'])) ? 'checked': '' ?> >
+    <input type="checkbox" name="ativo_categoria" <?php echo ($categoria['CATEGORIA_ATIVO'] == 1) ? 'checked': '' ?> >
 
     <input type="submit">
 
