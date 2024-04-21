@@ -23,7 +23,7 @@ if (!isset($_SESSION['admin_logado'])) {
 </head>
 
 <body>
-    <main class="main__container light d-flex">
+    <main class="main__container light">
         <section class="painel__admin__container">
             <nav class="sidebar close">
                 <header>

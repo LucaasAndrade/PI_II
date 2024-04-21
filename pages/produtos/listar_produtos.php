@@ -29,34 +29,37 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../styles/globalstyles.css">
 
 
 </head>
 
 <body>
-    <section class="list__container">
-        <h2>Lista de produtos</h2>
+    <section class="dynamic-section">
+        <section class="list__container">
+            <h2>Lista de produtos</h2>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Ordem</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Preço</th>
-                    <th>Categoria</th>
-                    <th>Ativo</th>
-                    <th>Desconto</th>
-                    <th>Estoque</th>
-                    <th>Imagem</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ordem</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th>Categoria</th>
+                        <th>Ativo</th>
+                        <th>Desconto</th>
+                        <th>Estoque</th>
+                        <th>Imagem</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 
-            <?php foreach ($produtos as $produto) : ?>
+                <?php foreach ($produtos as $produto) : ?>
                 <tr>
                     <td><?php echo $produto['PRODUTO_ID']; ?></td>
                     <td><?php echo $produto['IMAGEM_ORDEM']; ?></td>
@@ -66,9 +69,9 @@ try {
                     <td><?php echo $produto['CATEGORIA_NOME']; ?></td>
                     <td>
                         <?php if ($produto['PRODUTO_ATIVO'] == '0') : ?>
-                            <p class="text-danger">Não ativo</p>
+                        <p class="text-danger">Não ativo</p>
                         <?php else : ?>
-                            <p class="text-success">Ativo</p>
+                        <p class="text-success">Ativo</p>
                         <?php endif; ?>
 
                     </td>
@@ -77,15 +80,19 @@ try {
                     <td> <img src="<?php echo "{$produto['IMAGEM_URL']}"; ?>" width="50" alt="imagem do produto" />
                     </td>
                     <td>
-                        <a href="editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger">Deletar</a>
+                        <a href="editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>"
+                            class="btn btn-primary">Editar</a>
+                        <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>"
+                            class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
-            <?php endforeach ?>
-        </table>
+                <?php endforeach ?>
+            </table>
 
-        <a href="../painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar ao Painel
-            do Administrador</a>
+            <a href="../painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar ao
+                Painel
+                do Administrador</a>
+        </section>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

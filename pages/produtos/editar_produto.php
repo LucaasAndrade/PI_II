@@ -70,79 +70,78 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 </head>
 
 <body>
-    <section class="form__container container mt-5">
-        <div>
-            <a href="listar_produtos.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
-                Voltar</a>
-        </div>
-        <form action="../../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?php echo $produto['PRODUTO_ID']; ?>">
+    <section class="dynamic-section">
+        <section class="form__container container mt-5">
 
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" name="nome" id="nome" class="form-control"
-                    value="<?php echo $produto['PRODUTO_NOME']; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição</label>
-                <textarea name="descricao" cols="30" rows="10" class="form-control"
-                    required><?php echo $produto['PRODUTO_DESC']; ?></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="preco" class="form-label">Preço</label>
-                <input type="number" name="preco" class="form-control" value="<?php echo $produto['PRODUTO_PRECO']; ?>"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="desconto" class="form-label">Desconto</label>
+            <form action="../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $produto['PRODUTO_ID']; ?>">
 
-                <input type="number" name="desconto" class="form-control"
-                    value="<?php echo $produto['PRODUTO_DESCONTO']; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="qtd_estoque" class="form-label">Quantidade estoque:</label>
-                <input type="number" name="qtd_estoque" class="form-control"
-                    value="<?php echo $produto['PRODUTO_QTD']; ?>" required>
-            </div>
-            <div class="mb-3">
-
-                <?php
-                foreach ($imagens_produto as $imagem) {
-                    echo "<div class='mb-3'>";
-                    echo "<label for='imagem_url' class='form-label'>Imagem URL:</label>";
-                    echo "<input type='text' name='imagem_url[]' class='form-control' value='{$imagem['IMAGEM_URL']}' required>";
-                    echo "</div>";
-
-                    echo "<div class='mb-3'>";
-                    echo "<label for='imagem_ordem' class='form-label'>Imagem Ordem:</label>";
-                    echo "<input type='number' name='imagem_ordem[]' class='form-control' value='{$imagem['IMAGEM_ORDEM']}' required>";
-                    echo "</div>";
-
-                    // Inclua o campo imagem_id como um input hidden
-                    echo "<input type='hidden' name='imagem_id[]' value='{$imagem['IMAGEM_ID']}'>";
-                }
-                ?>
-            </div>
-
-            <div class="mb-3">
                 <div class="mb-3">
-                    <label for="categoria_id">Categoria: </label>
-                    <select name="categoria_id" id="categoria_id" required class="form-select">
-                        <?php
-                        foreach ($categorias as $categoria) {
-                            echo '<option value="' . $categoria['CATEGORIA_ID'] . '">' . $categoria['CATEGORIA_NOME'] . '</option>';
-                        }
-                        ?>
-                    </select>
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" id="nome" class="form-control"
+                        value="<?php echo $produto['PRODUTO_NOME']; ?>" required>
                 </div>
                 <div class="mb-3">
-                    <label for="ativo" class="form-label">Ativo</label>
-                    <input type="checkbox" name="ativo" value="1"
-                        <?php echo $produto['PRODUTO_ATIVO'] == 1 ? 'checked' : '' ?>>
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea name="descricao" cols="30" rows="10" class="form-control"
+                        required><?php echo $produto['PRODUTO_DESC']; ?></textarea>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Enviar">
-        </form>
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" name="preco" class="form-control"
+                        value="<?php echo $produto['PRODUTO_PRECO']; ?>" required>
+                </div>
+                <div class="mb-3">
+                    <label for="desconto" class="form-label">Desconto</label>
 
+                    <input type="number" name="desconto" class="form-control"
+                        value="<?php echo $produto['PRODUTO_DESCONTO']; ?>" required>
+                </div>
+                <div class="mb-3">
+                    <label for="qtd_estoque" class="form-label">Quantidade estoque:</label>
+                    <input type="number" name="qtd_estoque" class="form-control"
+                        value="<?php echo $produto['PRODUTO_QTD']; ?>" required>
+                </div>
+                <div class="mb-3">
+
+                    <?php
+                    foreach ($imagens_produto as $imagem) {
+                        echo "<div class='mb-3'>";
+                        echo "<label for='imagem_url' class='form-label'>Imagem URL:</label>";
+                        echo "<input type='text' name='imagem_url[]' class='form-control' value='{$imagem['IMAGEM_URL']}' required>";
+                        echo "</div>";
+
+                        echo "<div class='mb-3'>";
+                        echo "<label for='imagem_ordem' class='form-label'>Imagem Ordem:</label>";
+                        echo "<input type='number' name='imagem_ordem[]' class='form-control' value='{$imagem['IMAGEM_ORDEM']}' required>";
+                        echo "</div>";
+
+                        // Inclua o campo imagem_id como um input hidden
+                        echo "<input type='hidden' name='imagem_id[]' value='{$imagem['IMAGEM_ID']}'>";
+                    }
+                    ?>
+                </div>
+
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="categoria_id">Categoria: </label>
+                        <select name="categoria_id" id="categoria_id" required class="form-select">
+                            <?php
+                            foreach ($categorias as $categoria) {
+                                echo '<option value="' . $categoria['CATEGORIA_ID'] . '">' . $categoria['CATEGORIA_NOME'] . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ativo" class="form-label">Ativo</label>
+                        <input type="checkbox" name="ativo" value="1"
+                            <?php echo $produto['PRODUTO_ATIVO'] == 1 ? 'checked' : '' ?>>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Enviar">
+            </form>
+
+        </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">

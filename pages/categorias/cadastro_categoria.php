@@ -45,54 +45,55 @@ try {
     <title>Echo: Cadastro Categoria </title>
 
     <style>
-        textarea {
-            resize: none;
-        }
-        span {
-            margin-inline: 5px;
-        }
+    textarea {
+        resize: none;
+    }
+
+    span {
+        margin-inline: 5px;
+    }
     </style>
 </head>
 
 <body>
-    <h1>
-        Cadastro Categoria
-    </h1>
+    <section class="dynamic-section">
+        <h1>
+            Cadastro Categoria
+        </h1>
 
-    <form action="" method="POST">
+        <form action="" method="POST">
 
-        <div>
             <div>
-                <label for="nome_categoria"> Nome Categoria: </label>
+                <div>
+                    <label for="nome_categoria"> Nome Categoria: </label>
+                </div>
+                <input type="text" name="nome_categoria">
             </div>
-            <input type="text" name="nome_categoria">
-        </div>
 
 
-        <div>
             <div>
-                <label for="desc_categoria"> Descrição da Categoria: </label>
+                <div>
+                    <label for="desc_categoria"> Descrição da Categoria: </label>
+                </div>
+                <textarea name="desc_categoria" id="" cols="30" rows="10"></textarea>
             </div>
-            <textarea name="desc_categoria" id="" cols="30" rows="10"></textarea>
-        </div>
 
-        <div>
+            <div>
 
-            <label for="ativo_categoria">Categoria Ativa: </label>
+                <label for="ativo_categoria">Categoria Ativa: </label>
 
-            <input type="checkbox" name="ativo_categoria">
-        </div>
+                <input type="checkbox" name="ativo_categoria">
+            </div>
 
-        <div>
-            <input type="submit">
-        </div>
+            <div>
+                <input type="submit">
+            </div>
 
 
 
-    </form>
-    <span><a href="../painel_adm.php">Voltar para painel</a></span>
-    <span><a href="listar_categorias.php">Voltar para painel</a></span><span></span>
-    <span></span>
+        </form>
+
+    </section>
 </body>
 
 </html>
