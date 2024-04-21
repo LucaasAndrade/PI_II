@@ -1,6 +1,6 @@
 <?php
 
-require_once('../utils/conexao.php');
+require_once('../../utils/conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../index.php');
@@ -69,14 +69,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Cadastro de produto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalstyles.css">
+    <link rel="stylesheet" href="../../styles/globalstyles.css">
 </head>
 
 <body>
 
     <section class="form__container container mt-5">
         <div class="back__container">
-            <a href="painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
+            <a href="../admin/painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
                 Voltar</a>
         </div>
 

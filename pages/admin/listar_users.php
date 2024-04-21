@@ -1,9 +1,9 @@
 <?php
 
-require_once('../utils/conexao.php');
+require_once('../../utils/conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
     exit();
 }
 
@@ -28,7 +28,7 @@ try {
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalstyles.css">
+    <link rel="stylesheet" href="../../styles/globalstyles.css">
 
 
 </head>
@@ -51,11 +51,7 @@ try {
                     <td><?php echo $user['ADM_NOME']; ?></td>
                     <td><?php echo !isset($user['ADM_EMAIL']) == 1 ? "Sem registro" :  $user['ADM_EMAIL'] ?> </td>
                     <td>
-                        <?php if ($user['ADM_ATIVO'] == '0') : ?>
-                            <p class="text-danger">Não ativo</p>
-                        <?php else : ?>
-                            <p class="text-success">Ativo</p>
-                        <?php endif; ?>
+                        <?php echo $user['ADM_ATIVO'] == '0' ? "<p class='text-danger'>Não ativo</p>" : "<p class='text-success'>Ativo</p>" ?>
                     </td>
                     <td>
                         <a href="editar_user.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>

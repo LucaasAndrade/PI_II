@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/globalstyles.css">
+    <link rel="stylesheet" href="../../styles/globalstyles.css">
 </head>
 
 <body>
@@ -14,9 +14,9 @@
         <h1 class="mt-5">Painel do administrador</h1>
         <div class="options__container">
             <a href="cadastro_user.php" class="btn btn-primary">Cadastrar Administrador</a>
-            <a href="cadastro_produto.php" class="btn btn-primary">Cadastrar Produtos</a>
+            <a href="../produtos/cadastro_produto.php" class="btn btn-primary">Cadastrar Produtos</a>
             <a href="listar_users.php" class="btn btn-primary">Listar Administrador</a>
-            <a href="listar_produtos.php" class="btn btn-primary">Listar Produtos</a>
+            <a href="../produtos/listar_produtos.php" class="btn btn-primary">Listar Produtos</a>
         </div>
     </main>
 

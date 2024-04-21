@@ -3,7 +3,7 @@
 require_once "conexao.php";
 
 if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
     exit();
 }
 

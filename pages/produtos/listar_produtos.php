@@ -1,9 +1,9 @@
 <?php
 
-require_once('../utils/conexao.php');
+require_once('../../utils/conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
     exit();
 }
 
@@ -22,7 +22,7 @@ try {
     $stmt->execute();
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    print_r($produtos);
+    // print_r($produtos);
 } catch (PDOException $e) {
     echo 'Erro ao listar produtos:' . $e->getMessage() . PHP_EOL;
 }
@@ -39,7 +39,7 @@ try {
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
 
 
 </head>
@@ -81,7 +81,7 @@ try {
                     </td>
                     <td>
                         <a href="../utils/editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../utils/excluir_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger">Deletar</a>
+                        <a href="excluir_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
             <?php endforeach ?>

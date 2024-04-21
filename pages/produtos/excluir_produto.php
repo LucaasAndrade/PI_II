@@ -7,6 +7,9 @@
     <title>Lista produtos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+
 </head>
 
 <body>
@@ -14,7 +17,7 @@
 
         <?php
 
-        require_once "conexao.php";
+        require_once("../../utils/conexao.php");
 
         $id = $_GET['id'];
 
@@ -42,7 +45,7 @@
 
         ?>
         <div class="back__container">
-            <a href="../pages/listar_produtos.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
+            <a href="listar_produtos.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></i>
             Voltar a listagem de produtos</a>
         </div>
 
