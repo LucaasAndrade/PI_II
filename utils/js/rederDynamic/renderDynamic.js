@@ -16,7 +16,7 @@ export function renderDynamic() {
               element.innerHTML = formContainer.innerHTML;
             });
           } else {
-            console.log("Não foi possível carregar .form__container");
+            console.log("Não foi possível carregar .dynamic-section");
           }
         })
         .catch((error) => {
