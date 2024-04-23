@@ -29,9 +29,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../styles/globalstyles.css">
 
 
@@ -60,32 +58,30 @@ try {
                 </thead>
 
                 <?php foreach ($produtos as $produto) : ?>
-                <tr>
-                    <td><?php echo $produto['PRODUTO_ID']; ?></td>
-                    <td><?php echo $produto['IMAGEM_ORDEM']; ?></td>
-                    <td><?php echo $produto['PRODUTO_NOME']; ?></td>
-                    <td><?php echo $produto['PRODUTO_DESC']; ?></td>
-                    <td><?php echo $produto['PRODUTO_PRECO']; ?></td>
-                    <td><?php echo $produto['CATEGORIA_NOME']; ?></td>
-                    <td>
-                        <?php if ($produto['PRODUTO_ATIVO'] == '0') : ?>
-                        <p class="text-danger">Não ativo</p>
-                        <?php else : ?>
-                        <p class="text-success">Ativo</p>
-                        <?php endif; ?>
+                    <tr>
+                        <td><?php echo $produto['PRODUTO_ID']; ?></td>
+                        <td><?php echo $produto['IMAGEM_ORDEM']; ?></td>
+                        <td><?php echo $produto['PRODUTO_NOME']; ?></td>
+                        <td><?php echo $produto['PRODUTO_DESC']; ?></td>
+                        <td><?php echo $produto['PRODUTO_PRECO']; ?></td>
+                        <td><?php echo $produto['CATEGORIA_NOME']; ?></td>
+                        <td>
+                            <?php if ($produto['PRODUTO_ATIVO'] == '0') : ?>
+                                <p class="text-danger">Não ativo</p>
+                            <?php else : ?>
+                                <p class="text-success">Ativo</p>
+                            <?php endif; ?>
 
-                    </td>
-                    <td><?php echo $produto['PRODUTO_DESCONTO']; ?></td>
-                    <td><?php echo $produto['PRODUTO_QTD']; ?></td>
-                    <td> <img src="<?php echo "{$produto['IMAGEM_URL']}"; ?>" width="50" alt="imagem do produto" />
-                    </td>
-                    <td>
-                        <a href="editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>"
-                            class="btn btn-primary">Editar</a>
-                        <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>"
-                            class="btn btn-danger">Deletar</a>
-                    </td>
-                </tr>
+                        </td>
+                        <td><?php echo $produto['PRODUTO_DESCONTO']; ?></td>
+                        <td><?php echo $produto['PRODUTO_QTD']; ?></td>
+                        <td> <img src="<?php echo "{$produto['IMAGEM_URL']}"; ?>" width="50" alt="imagem do produto" />
+                        </td>
+                        <td>
+                            <a href="editar_produto.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-primary"><i class='bx bxs-edit-alt'></i></a>
+                            <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger"><i class='bx bxs-message-square-x'></i></a>
+                        </td>
+                    </tr>
                 <?php endforeach ?>
             </table>
 

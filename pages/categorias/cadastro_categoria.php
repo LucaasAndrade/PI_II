@@ -37,63 +37,59 @@ try {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echo: Cadastro Categoria </title>
-
-    <style>
-    textarea {
-        resize: none;
-    }
-
-    span {
-        margin-inline: 5px;
-    }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cadastro de categoria</title>
 </head>
 
 <body>
     <section class="dynamic-section">
-        <h1>
-            Cadastro Categoria
-        </h1>
+        <section class="form__container container mt-5">
+            <h1>
+                Cadastro Categoria
+            </h1>
 
-        <form action="" method="POST">
+            <form action="" method="POST">
 
-            <div>
-                <div>
-                    <label for="nome_categoria"> Nome Categoria: </label>
+                <div class="form-group">
+                    <div>
+                        <label for="nome_categoria"> Nome Categoria: </label>
+                    </div>
+                    <input type="text" name="nome_categoria" class="form-control">
                 </div>
-                <input type="text" name="nome_categoria">
-            </div>
 
 
-            <div>
-                <div>
-                    <label for="desc_categoria"> Descrição da Categoria: </label>
+                <div class="form-group">
+                    <div>
+                        <label for="desc_categoria"> Descrição da Categoria: </label>
+                    </div>
+                    <textarea name="desc_categoria" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
-                <textarea name="desc_categoria" id="" cols="30" rows="10"></textarea>
-            </div>
 
-            <div>
+                <div class="form-group">
 
-                <label for="ativo_categoria">Categoria Ativa: </label>
+                    <label for="ativo_categoria">Categoria Ativa: </label>
 
-                <input type="checkbox" name="ativo_categoria">
-            </div>
+                    <input type="checkbox" name="ativo_categoria" class="form-check-input">
+                </div>
 
-            <div>
-                <input type="submit">
-            </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary">
+                </div>
 
 
+            </form>
+        </section>
 
-        </form>
 
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -2,11 +2,18 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 1%;
-  width: 80%;
+  width: 50%;
   height: auto;
   padding-block: 5%;
 }
 .form__container form textarea {
   resize: none;
+}
+.form__container #containerImagens {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form__container #containerImagens label {
+  margin-top: 20px;
 }/*# sourceMappingURL=form.css.map */
