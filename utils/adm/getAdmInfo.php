@@ -19,10 +19,8 @@ try {
         exit();
     }
 
-    
+
     echo json_encode($admin);
 } catch (PDOException $e) {
     echo json_encode(['error' => 'Erro ao consultar dados do administrador: ' . $e->getMessage()]);
 }
-?>
-
