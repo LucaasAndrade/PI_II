@@ -1,10 +1,29 @@
 <?php
 
-session_start();
+require_once('../utils/conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../index.php');
     exit();
+}
+
+
+
+
+if (!isset($_GET['id'])) {
+    echo json_encode(['erro' => 'ID do administrador não reconhecido.']);
+    exit();
+}
+
+$id = $_GET['id'];
+
+try {
+    $stmt = $pdo->prepare('SELECT * FROM ADMINISTRADOR WHERE ADM_ID = :id');
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() . "</p>" . PHP_EOL;
 }
 
 ?>
@@ -29,7 +48,7 @@ if (!isset($_SESSION['admin_logado'])) {
                 <header>
                     <div class="logo__container">
                         <img src="../images/logo2.png" alt="logo echo">
-                        <span class="text">Painel administrador</span>
+                        <a class="text" href="painel_adm.php">Painel administrador</a>
                     </div>
                     <i class='bx bx-chevron-right toggle'></i>
                 </header>
@@ -72,17 +91,18 @@ if (!isset($_SESSION['admin_logado'])) {
                                     <span class="text">Listar categorias</span>
                                 </a>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="button__content">
-
-                        <ul>
-                            <li>
+                            <li class="logout">
                                 <a href="../utils/logoff.php">
                                     <i class='bx bx-log-out'></i>
                                     <span class="text">Logout</span>
                                 </a>
                             </li>
+                        </ul>
+                    </div>
+                    <div class="button__content">
+
+                        <ul>
+
                             <li class="mode">
                                 <div class="moon__sun">
                                     <i class='bx bx-moon icon moon'></i>
@@ -100,7 +120,9 @@ if (!isset($_SESSION['admin_logado'])) {
                 </div>
             </nav>
         </section>
-        <div id="dynamic-content"></div>
+        <div id="dynamic-content">
+            <h1><?php echo 'Seja bem-vindo(a), ' . $admin['ADM_NOME'] . '!' . PHP_EOL; ?></h1>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>

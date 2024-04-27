@@ -30,10 +30,10 @@
   display: flex;
   flex-direction: column;
   gap: 2%;
-  color: var(--verde-escuro-dois);
+  color: var(--blue-dark);
 }
 .login__container .form__container form #emailHelp {
-  color: var(--verde-escuro-dois);
+  color: var(--blue-dark);
 }
 .login__container .form__container form .btn__form {
   margin-top: 5px;

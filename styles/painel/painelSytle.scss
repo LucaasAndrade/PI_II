@@ -1,7 +1,8 @@
 .main__container {
   box-sizing: border-box;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  padding-left: 200px;
   min-height: 100vh;
   height: auto;
   align-items: center;
@@ -10,6 +11,11 @@
 
     width: 80%;
     height: auto;
+    
+    h1 {
+      color: var(--gelo);
+    }
+    
   }
 }
 
@@ -27,7 +33,7 @@
       left: 0;
       height: 100%;
       width: 350px;
-      padding: 18px 14px 0px 10px;
+
       background-color: $text-color;
       transition: var(--tran-05);
 
@@ -59,27 +65,31 @@
         }
       }
 
-      &.open {
-        .text {
-          transition: 1.8s;
-        }
-      }
+
 
 
       header {
         position: relative;
 
         .logo__container {
+          box-sizing: border-box;
           display: flex;
-
+          width: 100%;
           justify-content: space-around;
           align-items: center;
           height: 180px;
+          padding: 20px;
+        
 
           .text {
             color: $toggle-bg;
             font-weight: 600;
             text-align: start;
+            text-decoration: none;
+
+            &:close {
+              display: none;
+            }
 
           }
 
@@ -99,7 +109,8 @@
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          background: $toggle-bg;
+
+          background: $text-color;
           color: $toggle-color;
           font-size: 24px;
           font-weight: 900;
@@ -133,9 +144,6 @@
               a {
 
 
-                i {
-                  font-size: 32px;
-                }
 
                 display: flex;
                 align-items: center;
@@ -144,10 +152,40 @@
                 color: $toggle-bg;
                 font-size: 16px;
 
+                i {
+                  font-size: 32px;
+                }
+
                 &:hover {
-                  transition: 0.6s;
-                  transform: scale(1.13);
-                  color: $hover-color;
+
+                  background-color: $toggle-bg;
+                  color: white;
+
+                }
+              }
+            }
+
+            .logout {
+              list-style: none;
+
+              a {
+
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: none;
+                color: $toggle-bg;
+                font-size: 16px;
+
+                i {
+                  font-size: 32px;
+                }
+
+                &:hover {
+
+                  background-color: $toggle-bg;
+                  color: white;
+
                 }
               }
             }
@@ -182,10 +220,7 @@
                   font-size: 24px;
                 }
 
-                &:hover {
-                  transition: 0.6s;
-                  color: $hover-color;
-                }
+
               }
             }
 
@@ -257,15 +292,22 @@
 }
 
 .light {
-  @include theme(var(--gelo), var(--cinza-claro), var(--verde-agua), var(--gelo), var(--verde-escuro), var(--gelo), var(--verde-agua));
+  @include theme(var(--blue-secondary), var(--gelo), var(--blue-secondary), var(--blue-secondary), var(--blue-dark), var(--blue-light), var(--blue-secondary));
 
+  .toggle {
+    box-shadow: 1px 3px 3px rgb(98, 98, 98);
+  }
 }
 
 .dark {
-  @include theme(var(--verde-escuro), var(--verde-agua), var(--gelo), var(--verde-escuro), var(--verde-escuro), var(--cinza-claro), var(--verde-agua));
+  @include theme(var(--blue-dark), var(--blue-default), var(--blue-dark), var(--blue-dark), var(--gelo), var(--gelo), var(--blue-dark));
 
   .painel__admin__container {
     .sidebar {
+      .toggle {
+        box-shadow: 1px 3px 3px rgb(0, 0, 0);
+      }
+
       .menu__bar {
         .button__content {
           ul {

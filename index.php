@@ -30,10 +30,10 @@
                 </div>
 
 
-                <div class="form-check">
+            <!--     <div class="form-check">
                     <input type="checkbox" class="form-check-input" name="check-box">
                     <label class="form-check-label" for="check-box">Manter-me conectado</label>
-                </div>
+                </div> -->
                 <button type="submit" class="btn__form btn btn-primary">Entrar</button>
                 <?php
                 if (isset($_GET['erro'])) {
