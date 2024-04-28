@@ -1,6 +1,23 @@
+.main__container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 200px;
+  min-height: 100vh;
+  height: auto;
+  align-items: center;
+}
+.main__container #dynamic-content {
+  width: 80%;
+  height: auto;
+}
+.main__container #dynamic-content h1 {
+  color: var(--gelo);
+}
+
 .light {
   transition: var(--tran-03);
-  background-color: var(--gelo);
+  background-color: var(--blue-secondary);
 }
 .light .painel__admin__container .sidebar {
   position: fixed;
@@ -8,8 +25,7 @@
   left: 0;
   height: 100%;
   width: 350px;
-  padding: 18px 14px 0px 10px;
-  background-color: var(--cinza-claro);
+  background-color: var(--gelo);
   transition: var(--tran-05);
 }
 .light .painel__admin__container .sidebar.close {
@@ -29,22 +45,26 @@
   position: absolute;
   align-items: center;
 }
-.light .painel__admin__container .sidebar.open .text {
-  transition: 1.8s;
-}
 .light .painel__admin__container .sidebar header {
   position: relative;
 }
 .light .painel__admin__container .sidebar header .logo__container {
+  box-sizing: border-box;
   display: flex;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
   height: 180px;
+  padding: 20px;
 }
 .light .painel__admin__container .sidebar header .logo__container .text {
-  color: var(--verde-agua);
+  color: var(--blue-secondary);
   font-weight: 600;
   text-align: start;
+  text-decoration: none;
+}
+.light .painel__admin__container .sidebar header .logo__container .text:close {
+  display: none;
 }
 .light .painel__admin__container .sidebar header .logo__container img {
   width: 80px;
@@ -60,8 +80,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--verde-agua);
-  color: var(--gelo);
+  background: var(--gelo);
+  color: var(--blue-secondary);
   font-size: 24px;
   font-weight: 900;
   margin: 2px;
@@ -90,16 +110,33 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: var(--verde-agua);
+  color: var(--blue-secondary);
   font-size: 16px;
 }
 .light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
   font-size: 32px;
 }
 .light .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
-  transition: 0.6s;
-  transform: scale(1.13);
-  color: var(--verde-escuro);
+  background-color: var(--blue-secondary);
+  color: white;
+}
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout {
+  list-style: none;
+}
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--blue-secondary);
+  font-size: 16px;
+}
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a i {
+  font-size: 32px;
+}
+.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a:hover {
+  background-color: var(--blue-secondary);
+  color: white;
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul {
   display: flex;
@@ -118,15 +155,11 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: var(--verde-agua);
+  color: var(--blue-secondary);
   font-size: 18px;
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul li a i {
   font-size: 24px;
-}
-.light .painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
-  transition: 0.6s;
-  color: var(--verde-escuro);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode {
   display: flex;
@@ -146,7 +179,7 @@
   height: 22px;
   width: 44px;
   border-radius: 25px;
-  background-color: var(--gelo);
+  background-color: var(--blue-light);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
   content: "";
@@ -157,14 +190,14 @@
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  background-color: var(--verde-agua);
+  background-color: var(--blue-secondary);
   transition: var(--tran-03);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
   display: flex;
   align-items: center;
   height: 50px;
-  color: var(--verde-agua);
+  color: var(--blue-secondary);
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .moon {
   font-size: 24px;
@@ -174,12 +207,15 @@
   display: none;
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .text {
-  color: var(--verde-agua);
+  color: var(--blue-secondary);
+}
+.light .toggle {
+  box-shadow: 1px 3px 3px rgb(98, 98, 98);
 }
 
 .dark {
   transition: var(--tran-03);
-  background-color: var(--verde-escuro);
+  background-color: var(--blue-dark);
 }
 .dark .painel__admin__container .sidebar {
   position: fixed;
@@ -187,8 +223,7 @@
   left: 0;
   height: 100%;
   width: 350px;
-  padding: 18px 14px 0px 10px;
-  background-color: var(--verde-agua);
+  background-color: var(--blue-default);
   transition: var(--tran-05);
 }
 .dark .painel__admin__container .sidebar.close {
@@ -208,22 +243,26 @@
   position: absolute;
   align-items: center;
 }
-.dark .painel__admin__container .sidebar.open .text {
-  transition: 1.8s;
-}
 .dark .painel__admin__container .sidebar header {
   position: relative;
 }
 .dark .painel__admin__container .sidebar header .logo__container {
+  box-sizing: border-box;
   display: flex;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
   height: 180px;
+  padding: 20px;
 }
 .dark .painel__admin__container .sidebar header .logo__container .text {
-  color: var(--gelo);
+  color: var(--blue-dark);
   font-weight: 600;
   text-align: start;
+  text-decoration: none;
+}
+.dark .painel__admin__container .sidebar header .logo__container .text:close {
+  display: none;
 }
 .dark .painel__admin__container .sidebar header .logo__container img {
   width: 80px;
@@ -239,8 +278,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--gelo);
-  color: var(--verde-escuro);
+  background: var(--blue-default);
+  color: var(--blue-dark);
   font-size: 24px;
   font-weight: 900;
   margin: 2px;
@@ -269,16 +308,33 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: var(--gelo);
+  color: var(--blue-dark);
   font-size: 16px;
 }
 .dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a i {
   font-size: 32px;
 }
 .dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .nav__link a:hover {
-  transition: 0.6s;
-  transform: scale(1.13);
-  color: var(--verde-escuro);
+  background-color: var(--blue-dark);
+  color: white;
+}
+.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout {
+  list-style: none;
+}
+.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--blue-dark);
+  font-size: 16px;
+}
+.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a i {
+  font-size: 32px;
+}
+.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a:hover {
+  background-color: var(--blue-dark);
+  color: white;
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul {
   display: flex;
@@ -297,15 +353,11 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: var(--gelo);
+  color: var(--blue-dark);
   font-size: 18px;
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul li a i {
   font-size: 24px;
-}
-.dark .painel__admin__container .sidebar .menu__bar .button__content ul li a:hover {
-  transition: 0.6s;
-  color: var(--verde-escuro);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode {
   display: flex;
@@ -325,7 +377,7 @@
   height: 22px;
   width: 44px;
   border-radius: 25px;
-  background-color: var(--cinza-claro);
+  background-color: var(--gelo);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
   content: "";
@@ -336,14 +388,14 @@
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  background-color: var(--verde-agua);
+  background-color: var(--blue-dark);
   transition: var(--tran-03);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun {
   display: flex;
   align-items: center;
   height: 50px;
-  color: var(--gelo);
+  color: var(--blue-dark);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .moon__sun .moon {
   font-size: 24px;
@@ -353,7 +405,10 @@
   display: none;
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .text {
-  color: var(--gelo);
+  color: var(--blue-dark);
+}
+.dark .painel__admin__container .sidebar .toggle {
+  box-shadow: 1px 3px 3px rgb(0, 0, 0);
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch .switch::before {
   left: 20px;

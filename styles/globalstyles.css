@@ -6,11 +6,18 @@
 @import url("painel/painelSytle.css");
 @import url("list/listStyle.css");
 :root {
-  --gelo: #ebf0f3;
+  --gelo: #FDFFFF;
+  --blue-light: #B7E9FB;
+  --blue-default: #6ED2F6;
+  --blue-secondary: #00AFEF;
+  --blue-dark: #003D53;
+  /*
   --cinza-claro: #d2d7da;
+  --gelo: #ebf0f3;
   --verde-agua: #026874;
   --verde-escuro: #002d40;
-  --verde-escuro-dois: #011c27;
+  --verde-escuro-dois: #011c27; 
+  */
   /* ====== Transição ====== */
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;

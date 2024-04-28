@@ -15,7 +15,9 @@ $query->bindParam(':senha', $senha, PDO::PARAM_STR);
 $query->execute();
 
 if ($query->rowCount() > 0) {
+    $user = $query->fetch(PDO::FETCH_ASSOC);
     $_SESSION['admin_logado'] = true;
+    $_SESSION['nome_adm'] = $user['ADM_NOME'];
     header('Location: ../pages/painel_adm.php');
 } else {
     if (empty($nome) || empty($senha)) {

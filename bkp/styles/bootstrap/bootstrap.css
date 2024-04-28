@@ -1,0 +1,10 @@
+.btn {
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--verde-escuro);
+}
+.btn-primary:hover {
+  background-color: var(--verde-escuro-dois);
+}/*# sourceMappingURL=bootstrap.css.map */

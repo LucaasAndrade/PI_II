@@ -1,0 +1,11 @@
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  width: 30%;
+  height: auto;
+  padding-block: 5%;
+}
+.form__container form textarea {
+  resize: none;
+}/*# sourceMappingURL=form.css.map */

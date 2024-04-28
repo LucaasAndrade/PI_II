@@ -10,8 +10,7 @@ if (isset($id)) {
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-        echo "<div class='alert alert-success' role='alert'>
-        Excluído com sucesso!</div>";
+        header('Location: ../../pages/adm/listar_adm.php');
     } catch (PDOException $e) {
         echo "<div class='alert alert-danger'> Error: {$e->getMessage()} </div>";
     }

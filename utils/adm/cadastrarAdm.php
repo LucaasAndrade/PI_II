@@ -25,8 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':ativo', $ativo, PDO::PARAM_BOOL);
         $stmt->execute();
 
-        echo "<div class='alert alert-success' role='alert'>
-        Usuário cadastrado com sucesso!</div>";
+        header("Location: ../../pages/adm/listar_adm.php");
     } catch (PDOException $e) {
         echo "<div class='alert alert-danger'> Error: {$e->getMessage()} </div>";
     }
