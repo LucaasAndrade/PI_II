@@ -35,9 +35,9 @@ try {
 <body>
     <section class="dynamic-section">
         <section class="list__container">
-            <h2>Lista de Usuários</h2>
+            <h2>Lista de Administradores</h2>
 
-            <table class="table table-striped">
+            <table class="tableADM">
                 <thead>
                     <tr>
                         <th>Nome</th>

@@ -3,7 +3,7 @@
 }
 
 .btn-primary {
-  background-color: var(--blue-dark);
+  background-color: rgb(190, 168, 125);
 }
 .btn-primary:hover {
   background-color: var(--blue-default);

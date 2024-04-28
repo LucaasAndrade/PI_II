@@ -48,7 +48,7 @@ try {
                 <header>
                     <div class="logo__container">
                         <img src="../images/logo2.png" alt="logo echo">
-                        <a class="text" href="painel_adm.php">Painel administrador</a>
+                        <a class="text" href="painel_adm.php?id=<?php echo $id; ?>">Painel administrador</a>
                     </div>
                     <i class='bx bx-chevron-right toggle'></i>
                 </header>

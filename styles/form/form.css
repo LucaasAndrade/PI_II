@@ -1,4 +1,4 @@
-.form__container {
+.light #dynamic-content .form__container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -6,14 +6,48 @@
   height: auto;
   padding-block: 5%;
 }
-.form__container form textarea {
-  resize: none;
+.light #dynamic-content .form__container h2 {
+  color: var(--gelo);
 }
-.form__container #containerImagens {
+.light #dynamic-content .form__container form label {
+  color: var(--gelo);
+}
+.light #dynamic-content .form__container form .btn {
+  color: var(--gelo);
+  background-color: var(--blue-default);
+}
+.light #dynamic-content .form__container #containerImages {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.form__container #containerImagens label {
+.light #dynamic-content .form__container #containerImages label {
+  margin-top: 20px;
+}
+
+.dark #dynamic-content .form__container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  padding-block: 5%;
+}
+.dark #dynamic-content .form__container h2 {
+  color: var(--gelo);
+}
+.dark #dynamic-content .form__container form label {
+  color: var(--gelo);
+}
+.dark #dynamic-content .form__container form .btn {
+  color: var(--gelo);
+  background-color: var(--blue-default);
+}
+.dark #dynamic-content .form__container #containerImages {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.dark #dynamic-content .form__container #containerImages label {
   margin-top: 20px;
 }/*# sourceMappingURL=form.css.map */
