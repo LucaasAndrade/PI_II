@@ -47,25 +47,27 @@ try {
                     </tr>
                 </thead>
 
-                <?php foreach ($users as $user) : ?>
-                    <tr>
-                        <td><?php echo $user['ADM_NOME']; ?></td>
-                        <td><?php echo !isset($user['ADM_EMAIL']) == 1 ? "Sem registro" :  $user['ADM_EMAIL'] ?> </td>
-                        <td>
-                            <?php if ($user['ADM_ATIVO'] == '0') : ?>
-                                <p class="text-danger">Não ativo</p>
-                            <?php else : ?>
-                                <p class="text-success">Ativo</p>
-                            <?php endif; ?>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
-                            <i class='bx bxs-edit-alt'></i>
-                            </button>
-                            <a href="../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger"><i class='bx bxs-message-square-x'></i></a>
-                        </td>
-                    </tr>
-                <?php endforeach ?>
+                <tbody>
+                    <?php foreach ($users as $user) : ?>
+                        <tr>
+                            <td><?php echo $user['ADM_NOME']; ?></td>
+                            <td><?php echo !isset($user['ADM_EMAIL']) == 1 ? "Sem registro" :  $user['ADM_EMAIL'] ?> </td>
+                            <td>
+                                <?php if ($user['ADM_ATIVO'] == '0') : ?>
+                                    <p class="text-danger">Não ativo</p>
+                                <?php else : ?>
+                                    <p class="text-success">Ativo</p>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <a href="../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
             </table>
 
 
@@ -109,7 +111,7 @@ try {
                 </div>
             </div>
 
-            
+
 
         </section>
     </section>

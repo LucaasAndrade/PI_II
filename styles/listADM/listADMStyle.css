@@ -1,14 +1,11 @@
 .light #dynamic-content .list__container {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 .light #dynamic-content .list__container h2 {
   color: var(--gelo);
 }
 .light #dynamic-content .list__container .tableADM {
-  width: 50%;
+  width: 70%;
   text-align: justify;
   color: var(--gelo);
   border-radius: 8px;
@@ -48,15 +45,12 @@
 
 .dark #dynamic-content .list__container {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 .dark #dynamic-content .list__container h2 {
   color: var(--gelo);
 }
 .dark #dynamic-content .list__container .tableADM {
-  width: 50%;
+  width: 70%;
   text-align: justify;
   color: var(--gelo);
   border-radius: 8px;
@@ -92,4 +86,4 @@
 }
 .dark #dynamic-content .list__container .modal-title {
   color: var(--blue-dark);
-}/*# sourceMappingURL=listStyle.css.map */
+}/*# sourceMappingURL=listADMStyle.css.map */

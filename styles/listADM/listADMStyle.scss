@@ -4,16 +4,14 @@
 
         .list__container {
             width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+
 
             h2 {
                 color: $textColor;
             }
 
             .tableADM {
-                width: 50%;
+                width: 70%;
                 text-align: justify;
                 color: $textColor;
                 border-radius: 8px;

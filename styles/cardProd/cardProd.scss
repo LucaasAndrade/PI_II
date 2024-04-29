@@ -1,0 +1,45 @@
+@mixin theme($textColor, $bgColor, $bgTr, $tdColor) {
+
+    .card__container {
+        h2 {
+            color: $textColor;
+        }
+        .product-card {
+            border: 1px solid $tdColor;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 280px;
+            height: 380px;
+
+            img {
+                width: 230px;
+                height: 230px;
+                margin: auto;
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                font-size: 16px;
+                margin-bottom: 5px;
+                color: $textColor;
+            }
+
+            p {
+                font-size: 14px;
+                color: $textColor;
+            }
+        }
+    }
+
+}
+
+.light {
+    @include theme(var(--gelo), var(--blue-default), var(--gelo), var(--blue-dark));
+}
+
+.dark {
+    @include theme(var(--gelo), var(--blue-secondary), var(--gelo), var(--blue-dark));
+}

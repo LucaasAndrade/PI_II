@@ -28,64 +28,27 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../../styles/globalstyles.css">
-
 
 </head>
 
 <body>
     <section class="dynamic-section">
-        <section class="list__container">
-            <h2>Lista de produtos</h2>
-
-            <table class="tableADM">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Ordem</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                        <th>Categoria</th>
-                        <th>Ativo</th>
-                        <th>Desconto</th>
-                        <th>Estoque</th>
-                        <th>Imagem</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-
+        <section class="card__container">
+            <h2 class="mt-5">Lista de produtos</h2>
+            <div class="row mt-3">
                 <?php foreach ($produtos as $produto) : ?>
-                    <tr>
-                        <td><?php echo $produto['PRODUTO_ID']; ?></td>
-                        <td><?php echo $produto['IMAGEM_ORDEM']; ?></td>
-                        <td><?php echo $produto['PRODUTO_NOME']; ?></td>
-                        <td><?php echo $produto['PRODUTO_DESC']; ?></td>
-                        <td><?php echo $produto['PRODUTO_PRECO']; ?></td>
-                        <td><?php echo $produto['CATEGORIA_NOME']; ?></td>
-                        <td>
-                            <?php if ($produto['PRODUTO_ATIVO'] == '0') : ?>
-                                <p class="text-danger">Não ativo</p>
-                            <?php else : ?>
-                                <p class="text-success">Ativo</p>
-                            <?php endif; ?>
-
-                        </td>
-                        <td><?php echo $produto['PRODUTO_DESCONTO']; ?></td>
-                        <td><?php echo $produto['PRODUTO_QTD']; ?></td>
-                        <td> <img src="<?php echo "{$produto['IMAGEM_URL']}"; ?>" width="50" alt="imagem do produto" />
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary edit-prod-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $produto['PRODUTO_ID']; ?>">
-                                <i class='bx bxs-edit-alt'></i>
-                            </button>
-                            <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger"><i class='bx bxs-message-square-x'></i></a>
-                        </td>
-                    </tr>
-                <?php endforeach ?>
-            </table>
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="<?php echo $produto['IMAGEM_URL']; ?>" alt="<?php echo $produto['PRODUTO_NOME']; ?>">
+                            <h3><?php echo $produto['PRODUTO_NOME']; ?></h3>
+                            <p><?php echo $produto['PRODUTO_DESC']; ?></p>
+                            <p>Preço: R$ <?php echo number_format($produto['PRODUTO_PRECO'], 2, ',', '.'); ?></p>
+                            <a href="../utils/produtos/editarProd.php?id=<?php echo $produto['PRODUTO_ID']; ?>" class="btn btn-primary">Editar</a>
+                            <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID']; ?>" class="btn btn-danger">Excluir</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
 
         </section>
 
@@ -127,7 +90,7 @@ try {
                                 <input id="edit-qtd" type="number" name="qtd_estoque" class="form-control" required>
                             </div>
                             <div id="imagens-container">
-                                
+
                             </div>
 
                             <div class="mb-3">

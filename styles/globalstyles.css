@@ -4,7 +4,8 @@
 @import url("login/loginStyle.css");
 @import url("form/form.css");
 @import url("painel/painelSytle.css");
-@import url("list/listStyle.css");
+@import url("listADM/listADMStyle.css");
+@import url("cardProd/cardProd.css");
 :root {
   --gelo: #EDFAFE;
   --blue-light: #B7E9FB;
