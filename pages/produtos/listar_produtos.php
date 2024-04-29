@@ -40,7 +40,7 @@ try {
         <section class="list__container">
             <h2>Lista de produtos</h2>
 
-            <table class="table table-striped">
+            <table class="tableADM">
                 <thead>
                     <tr>
                         <th>ID</th>

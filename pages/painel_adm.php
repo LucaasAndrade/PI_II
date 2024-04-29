@@ -44,7 +44,7 @@ try {
 
     <main class="main__container light">
         <section class="painel__admin__container">
-            <nav class="sidebar close">
+            <nav class="sidebar open">
                 <header>
                     <div class="logo__container">
                         <img src="../images/logo2.png" alt="logo echo">
@@ -120,7 +120,7 @@ try {
                 </div>
             </nav>
         </section>
-        <div id="dynamic-content">
+        <div id="dynamic-content" class="sidebar-open">
             <h1><?php echo 'Seja bem-vindo(a), ' . $admin['ADM_NOME'] . '!' . PHP_EOL; ?></h1>
         </div>
     </main>

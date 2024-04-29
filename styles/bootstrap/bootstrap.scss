@@ -6,9 +6,9 @@
 
 .btn-primary {
 
-    background-color: rgb(190, 168, 125);
+    background-color: var(--blue-secondary);
 
     &:hover {
-        background-color: var(--blue-default);
+        background-color: var(--blue-dark);
     }
 }
