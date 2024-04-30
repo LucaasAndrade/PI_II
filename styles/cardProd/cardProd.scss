@@ -1,45 +1,79 @@
 @mixin theme($textColor, $bgColor, $bgTr, $tdColor) {
 
     .card__container {
+        box-sizing: border-box;
+        width: 90%;
+
         h2 {
             color: $textColor;
         }
+
         .product-card {
-            border: 1px solid $tdColor;
-            border-radius: 5px;
+            text-align: center;
+            background-color: $bgColor;
+            border-radius: 10px;
             padding: 10px;
             margin: 10px;
             width: 280px;
-            height: 380px;
-
-            img {
-                width: 230px;
-                height: 230px;
-                margin: auto;
-                max-width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
+            height: 450px;
 
             h3 {
                 font-size: 16px;
-                margin-bottom: 5px;
+                margin-top: 20px;
+                margin-bottom: 10px;
                 color: $textColor;
+                text-align: justify;
             }
 
-            p {
-                font-size: 14px;
-                color: $textColor;
+            .text-product {
+                height: 30%;
+                text-align: justify;
+
+                p {
+                    font-size: 12px;
+                    color: $textColor;
+                }
+            }
+
+            .links-card {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+
+                .btn-edit {
+                    background-color: $tdColor;
+                    color: $textColor;
+                }
+            }
+
+            .glide__arrows {
+                margin-block: 25px;
+
+                .glide__arrow {
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 8px;
+                    font-size: 12px;
+                }
             }
         }
     }
 
+
+    .glide__slides img {
+        width: 220px;
+        height: 180px;
+        margin: auto;
+        max-width: 100%;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        pointer-events: none;
+    }
 }
 
 .light {
-    @include theme(var(--gelo), var(--blue-default), var(--gelo), var(--blue-dark));
+    @include theme(var(--gelo), var(--blue-dark), var(--gelo), var(--blue-default));
 }
 
 .dark {
-    @include theme(var(--gelo), var(--blue-secondary), var(--gelo), var(--blue-dark));
+    @include theme(var(--gelo), var(--blue-default), var(--gelo), var(--blue-dark));
 }

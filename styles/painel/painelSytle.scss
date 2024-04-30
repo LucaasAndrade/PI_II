@@ -8,6 +8,7 @@
   align-items: center;
 
   #dynamic-content {
+    box-sizing: border-box;
     width: 90%;
     height: auto;
     transition: var(--tran-05);

@@ -6,6 +6,8 @@
 @import url("painel/painelSytle.css");
 @import url("listADM/listADMStyle.css");
 @import url("cardProd/cardProd.css");
+@import url("../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss");
+@import url("../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss");
 :root {
   --gelo: #EDFAFE;
   --blue-light: #B7E9FB;
@@ -32,4 +34,9 @@ body {
   height: 100vh;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.swiper {
+  width: 200px;
+  height: 200px;
 }/*# sourceMappingURL=globalStyles.css.map */
