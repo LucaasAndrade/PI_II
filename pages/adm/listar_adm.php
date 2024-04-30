@@ -28,6 +28,8 @@ try {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../styles/globalstyles.css">
+    <!-- O JQuery deve ser carregado antes do JS, se não buga... -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
 
 
@@ -59,16 +61,58 @@ try {
                     </td>
                     <td>
                         <a href="editar_adm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-primary">Editar</a>
-                        <a href="../../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger">Deletar</a>
+                    <td>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">Deletar</button>
+                    </td>
+
                     </td>
                 </tr>
+
+                <!-- Modal de confirmação -->
+                <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar exclusão</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Tem certeza de que deseja excluir este usuário?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Confirmar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             <?php endforeach ?>
         </table>
 
-        <a href="../painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar </a>
+        <a href="../painel_adm.php" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Voltar ao Painel
+            do Administrador </a>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        // Quando o botão "Confirmar" do modal for clicado
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+            // Enviar uma requisição para excluir o usuário
+            let userId = <?php echo $user['ADM_ID']; ?>;
+            fetch("../../utils/adm/excluirAdm.php?id=" + userId, {
+                    method: 'POST'
+                })
+                .then(response => {
+                    // Se a exclusão for bem-sucedida, redirecionar para a página de listar usuários
+                    if (response.ok) {
+                        window.location.href = "./listar_adm.php";
+                    }
+                })
+                .catch(error => console.error('Erro ao excluir usuário:', error));
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
