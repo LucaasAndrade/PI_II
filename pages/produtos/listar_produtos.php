@@ -15,6 +15,18 @@ try {
     LEFT JOIN PRODUTO_ESTOQUE ON PRODUTO.PRODUTO_ID = PRODUTO_ESTOQUE.PRODUTO_ID ');
     $stmt->execute();
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($produtos as $produto) {
+        if ($produto['IMAGEM_URL'] !== null) {
+            $produtosComImagens[$produto['PRODUTO_ID']]['imagens'][] = [
+                'url' => $produto['IMAGEM_URL'],
+                'ordem' => $produto['IMAGEM_ORDEM']
+            ];
+            if (!isset($produtosComImagens[$produto['PRODUTO_ID']]['produto'])) {
+                $produtosComImagens[$produto['PRODUTO_ID']]['produto'] = $produto;
+            }
+        }
+    }
 } catch (PDOException $e) {
     echo 'Erro ao listar produtos:' . $e->getMessage() . PHP_EOL;
 }
@@ -36,18 +48,37 @@ try {
         <section class="card__container">
             <h2 class="mt-5">Lista de produtos</h2>
             <div class="row mt-3">
-                <?php foreach ($produtos as $produto) : ?>
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <img src="<?php echo $produto['IMAGEM_URL']; ?>" alt="<?php echo $produto['PRODUTO_NOME']; ?>">
-                            <h3><?php echo $produto['PRODUTO_NOME']; ?></h3>
-                            <p><?php echo $produto['PRODUTO_DESC']; ?></p>
-                            <p>Preço: R$ <?php echo number_format($produto['PRODUTO_PRECO'], 2, ',', '.'); ?></p>
-                            <a href="../utils/produtos/editarProd.php?id=<?php echo $produto['PRODUTO_ID']; ?>" class="btn btn-primary">Editar</a>
-                            <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID']; ?>" class="btn btn-danger">Excluir</a>
+                <?php foreach ($produtosComImagens as $produtoComImagens) : ?>
+                    <div class="product-card">
+                        <div class="glide" data-product-id="<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                    <?php foreach ($produtoComImagens['imagens'] as $imagem) : ?>
+                                        <li class="glide__slide">
+                                            <img src="<?php echo $imagem['url']; ?>" alt="<?php echo $produtoComImagens['produto']['PRODUTO_NOME']; ?>">
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+
+                            <div class="glide__arrows" data-glide-el="controls">
+                                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <h3><?php echo $produtoComImagens['produto']['PRODUTO_NOME']; ?></h3>
+                        <div class="text-product">
+                            <p><?php echo $produtoComImagens['produto']['PRODUTO_DESC']; ?></p>
+                            <p><strong>Preço:</strong> R$ <?php echo number_format($produtoComImagens['produto']['PRODUTO_PRECO'], 2, ',', '.'); ?></p>
+                            <p><strong>Desconto:</strong> R$ <?php echo number_format($produtoComImagens['produto']['PRODUTO_DESCONTO'], 2, ',', '.'); ?></p>
+                        </div>
+                        <div class="links-card">
+                            <a href="../utils/produtos/editarProd.php?id=<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>" class="btn btn-edit"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="../utils/produtos/excluirProd.php?id=<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 <?php endforeach; ?>
+            </div>
             </div>
 
         </section>
