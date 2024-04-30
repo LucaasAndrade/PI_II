@@ -27,14 +27,14 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <section class="dynamic-section">
         <h1> Listar Categoria </h1>
 
-        <table class="tableADM">
+        <table class="tableCateg">
             <thead>
                 <tr>
                     <th>Nome categoria</th>
                     <th>Descrição da categoria</th>
                     <th>Ativo</th>
-                    <th>Excluir</th>
                     <th>Editar</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,8 +49,9 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <p class="text-success">Ativo</p>
                             <?php endif; ?>
                         </td>
-                        <td><a href="excluir_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-primary"></a></td>
-                        <td><a href="editar_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-danger"></a></td>
+
+                        <td><a href="editar_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td><a href="excluir_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

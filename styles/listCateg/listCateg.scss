@@ -9,7 +9,7 @@
             color: $textColor;
         }
 
-        .tableADM {
+        .tableCateg {
             width: 70%;
             text-align: justify;
             color: $textColor;
@@ -27,8 +27,9 @@
                     th {
                         text-align: center;
                         align-items: center;
-                        padding-block: 20px;
+                        padding-inline: 20px;
                         color: $textColor;
+                        width: 350px;
                     }
                 }
             }
@@ -45,9 +46,11 @@
 
                     td {
 
-                        text-align: center;
                         vertical-align: middle;
-                        padding-block: 20px;
+                        padding: 20px;
+                        height: 100px;
+                        width: 350px;
+                        text-align: center;
                         font-size: 16px;
 
                         p {
