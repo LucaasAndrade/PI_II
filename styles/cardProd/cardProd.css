@@ -34,7 +34,7 @@
   justify-content: center;
   gap: 25px;
 }
-.light .card__container .product-card .links-card .btn-edit {
+.light .card__container .product-card .links-card .edit-prod-button {
   background-color: var(--blue-default);
   color: var(--gelo);
 }
@@ -92,7 +92,7 @@
   justify-content: center;
   gap: 25px;
 }
-.dark .card__container .product-card .links-card .btn-edit {
+.dark .card__container .product-card .links-card .edit-prod-button {
   background-color: var(--blue-dark);
   color: var(--gelo);
 }

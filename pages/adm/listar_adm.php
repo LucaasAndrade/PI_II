@@ -61,7 +61,7 @@ try {
                             <?php endif; ?>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
+                            <button  class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </button>
                         </td>

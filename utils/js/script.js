@@ -10,4 +10,4 @@ alterMode();
 renderDynamic();
 adicionarImagem();
 editAdm();
-editProd();
+await editProd();
