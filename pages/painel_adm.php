@@ -71,6 +71,7 @@ if (!isset($_SESSION['admin_logado'])) {
                                     <span class="text">Listar categorias</span>
                                 </a>
                             </li>
+                            
                             <li class="logout">
                                 <a href="../utils/logoff.php">
                                     <i class='bx bx-log-out'></i>

@@ -48,40 +48,16 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <p class="text-success">Ativo</p>
                             <?php endif; ?>
                         </td>
-                        <td><a href="excluir_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-primary"><i class='bx bxs-message-square-x'></i></a></td>
-                        <td><a href="editar_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-danger"><i class='bx bxs-edit-alt'></i></a></td>
+                        <td><a href="categorias/excluir_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-primary"><i class='bx bxs-message-square-x'></i></a></td>
+                        <td><a href="categorias/editar_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>" class="btn btn-danger"><i class='bx bxs-edit-alt'></i></a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </section>
 
-<<<<<<< HEAD
-    <table border="1">
-        <tr>
-            <th> Nome categoria</th>
-            <th> Descrição da categoria</th>
-            <th> Ativo</th>
-        </tr>
-        <?php foreach($categorias as $categoria): ?>
-        <td>
-            <tr>
-                <td><?php echo $categoria['CATEGORIA_NOME'] ?></td>
-                <td><?php echo $categoria['CATEGORIA_DESC'] ?></td>
-                <td><?php echo $categoria['CATEGORIA_ATIVO'] == 1  ? "<p style='color: green'> Ativo </p>" : "<p style='color: red'> Não ativo </p>" ?></td>
-                <td><a href="excluir_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>"> Excluir </a></td>
-                <td><a href="editar_categoria.php?id=<?php echo $categoria['CATEGORIA_ID'] ?>"> Editar </a></td>
-            </tr>
-        </td>
-        <?php endforeach; ?>
-    </table>
-
     <a href="../painel_adm.php">Voltar para menu</a>
 
-=======
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
->>>>>>> 0bd3cfa518be4c950e9b60a67db78a68688e6c85
 </body>
 
 </html>

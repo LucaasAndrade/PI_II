@@ -47,6 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt_imagem->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt_imagem->execute();
         $imagens_produto = $stmt_imagem->fetchAll(PDO::FETCH_ASSOC);
+
+        // var_dump($imagens_produto);
     } catch (PDOException $e) {
         echo "<p style='color=red;'> Erro ao buscar categorias" . $e->getMessage() . "</p>";
     }
@@ -73,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <section class="dynamic-section">
         <section class="form__container container mt-5">
 
-            <form action="../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
+            <form action="../../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $produto['PRODUTO_ID']; ?>">
 
                 <div class="mb-3">

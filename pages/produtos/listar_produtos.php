@@ -78,9 +78,8 @@ try {
                         <td> <img src="<?php echo "{$produto['IMAGEM_URL']}"; ?>" width="50" alt="imagem do produto" />
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary edit-prod-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $produto['PRODUTO_ID']; ?>">
-                                <i class='bx bxs-edit-alt'></i>
-                            </button>
+                            <a href=<?php echo "editar_produto.php?id=" . $produto['PRODUTO_ID'] ?> class='bx bxs-edit-alt'></a>
+                                <i></i>
                             <a href="../utils/produtos/excluirProd.php?id=<?php echo $produto['PRODUTO_ID'] ?>" class="btn btn-danger"><i class='bx bxs-message-square-x'></i></a>
                         </td>
                     </tr>

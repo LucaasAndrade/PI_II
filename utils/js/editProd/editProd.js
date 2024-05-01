@@ -2,6 +2,7 @@ export function editProd() {
   document.addEventListener("click", function (event) {
     if (event.target && event.target.classList.contains("edit-prod-button")) {
       let userId = event.target.getAttribute("data-id");
+      // console.log(userId);
 
       fetch("../utils/produtos/getProdInfo.php?id=" + userId)
         .then((response) => {
@@ -54,8 +55,8 @@ export function editProd() {
             div.appendChild(ordemInput);
 
             const idInput = document.createElement("input");
-            idInput.type = "hidden";
-            idInput.name = "imagem_id";
+            idInput.type = "number";
+            idInput.name = "imagem_id[]";
             idInput.value = imagem.IMAGEM_ID;
             div.appendChild(idInput);
 

@@ -70,13 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="nome_categoria" value="<?php echo $categoria['CATEGORIA_NOME'] ?>">
 
 
-<<<<<<< HEAD
     <label for="ativo_categoria"> Ativo </label>
     <input type="checkbox" name="ativo_categoria" <?php echo ($categoria['CATEGORIA_ATIVO'] == 1) ? 'checked': '' ?> >
-=======
-            <label for="desc_categoria"> Descrição Categoria: </label>
-            <input type="text" name="desc_categoria" value="<?php echo $categoria['CATEGORIA_DESC'] ?>">
->>>>>>> 0bd3cfa518be4c950e9b60a67db78a68688e6c85
 
             <label for="ativo_categoria"> Ativo </label>
             <input type="checkbox" name="ativo_categoria"
