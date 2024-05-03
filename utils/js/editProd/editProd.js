@@ -1,3 +1,5 @@
+import { renderURL } from "../rederDynamic/renderURL.js";
+
 function clearModal() {
   document.getElementById("edit-id").value = "";
   document.getElementById("edit-nome").value = "";
@@ -94,8 +96,9 @@ export async function editProd() {
           div.appendChild(ordemInput);
 
           const idInput = document.createElement("input");
-          idInput.type = "hidden";
+          idInput.type = "number";
           idInput.name = "imagem_id";
+          idInput.style.display = "none"; // ocultar o campo de entrada
           idInput.value = imagem.IMAGEM_ID;
           div.appendChild(idInput);
 
@@ -106,9 +109,33 @@ export async function editProd() {
         modal.addEventListener("hidden.bs.modal", function (e) {
           clearModal();
         });
+
+
       } catch (error) {
         console.log(error);
       }
+    }
+  });
+
+  document.addEventListener("submit", function (event) {
+    if (event.target && event.target.classList.contains("edit-produto-form")) {
+      event.preventDefault();
+
+      var formData = new FormData(event.target);
+
+      fetch("../utils/produtos/editarProd.php", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          console.log(
+            `Sucesso ao enviar informações para edição: ${response.json()}`
+          );
+          renderURL('produtos/listar_produtos.php')
+        })
+        .catch((error) => {
+          console.log(`Erro ao enviar informações para edição: ${error}`);
+        });
     }
   });
 }
