@@ -34,19 +34,21 @@ try {
 
 <body>
     <section class="dynamic-section">
-        <section class="list__container">
-            <h2>Lista de Usuários</h2>
 
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Ativo</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
+        <h2>Lista de Administradores</h2>
 
+        <table class="tableADM">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ativo</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+
+            <tbody>
                 <?php foreach ($users as $user) : ?>
                     <tr>
                         <td><?php echo $user['ADM_NOME']; ?></td>
@@ -59,59 +61,62 @@ try {
                             <?php endif; ?>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
-                            <i class='bx bxs-edit-alt'></i>
+                            <button  class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
+                                <i class="fa-solid fa-pen-to-square"></i>
                             </button>
-                            <a href="../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger"><i class='bx bxs-message-square-x'></i></a>
+                        </td>
+                        <td>
+                            <a href="../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
-                <?php endforeach; ?>
-            </table>
+                <?php endforeach ?>
+            </tbody>
+        </table>
 
 
-            <!-- Modal Edição -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Administrador</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="edit-adm-form" action="../utils/adm/editarAdm.php" method="post" enctype="multipart/form-data">
-                                <input id="edit-id" type="hidden" name="id">
+        <!-- Modal Edição -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Administrador</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="edit-adm-form" action="../utils/adm/editarAdm.php" method="post" enctype="multipart/form-data">
+                            <input id="edit-id" type="hidden" name="id">
 
-                                <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome</label>
-                                    <input id="edit-nome" type="text" name="nome" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input id="edit-email" type="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="senha" class="form-label">Senha</label>
-                                    <input id="edit-senha" type="password" name="senha" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="ativo" class="form-label">Ativo</label>
-                                    <input id="edit-ativo" type="checkbox" name="ativo" value="1">
-                                </div>
-                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
-                            </form>
-                        </div>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input id="edit-nome" type="text" name="nome" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input id="edit-email" type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="senha" class="form-label">Senha</label>
+                                <input id="edit-senha" type="password" name="senha" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ativo" class="form-label">Ativo</label>
+                                <input id="edit-ativo" type="checkbox" name="ativo" value="1">
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+                        </form>
+                    </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            
 
-        </section>
+
+
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

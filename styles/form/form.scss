@@ -1,26 +1,51 @@
-.form__container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: auto;
-    padding-block: 5%;
+@mixin theme($titleColor, $textColor, $btnBG) {
 
-    form {
-        textarea {
-            resize: none;
+    #dynamic-content {
+        .form__container {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: auto;
+            padding-block: 5%;
+
+            h2 {
+                color: $titleColor;
+            }
+
+            form {
+                label {
+                    color: $textColor;
+                }
+                .btn {
+                
+                    color: $textColor;
+                    background-color: $btnBG;
+                }
+            }
+
+            #containerImages {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                label {
+                    margin-top: 20px;
+                }
+            }
         }
-
-
     }
 
-    #containerImagens {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+}
 
-        label {
-            margin-top: 20px;
-        }
-    }
+.light {
+    @include theme(var(--gelo), var(--gelo), var(--blue-default));
+
+
+}
+
+.dark {
+    @include theme(var(--gelo), var(--gelo), var(--blue-default));
+
+
 }

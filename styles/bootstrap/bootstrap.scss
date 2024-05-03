@@ -1,12 +1,14 @@
 .btn {
     border: none;
+   
+    
 }
 
 .btn-primary {
 
-    background-color: var(--blue-dark);
+    background-color: var(--blue-secondary);
 
     &:hover {
-        background-color: var(--blue-default);
+        background-color: var(--blue-dark);
     }
 }

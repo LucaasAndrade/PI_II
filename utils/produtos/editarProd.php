@@ -14,31 +14,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria = $_POST['categoria_id'];
 
 
-    if (isset($_POST['imagem_url']) && isset($_POST['imagem_ordem']) && isset($_POST['imagem_id'])) {
+    if (isset($_POST['imagem_url']) && isset($_POST['imagem_Ordem']) && isset($_POST['imagem_id'])) {
 
         $imagem_urls = $_POST['imagem_url'];
-        $imagem_ordens = $_POST['imagem_ordem'];
-        $imagem_ids_global = $_POST['imagem_id'];
-        // print_r($_POST);
-        // var_dump($imagem_ids_global);
-        
+        $imagem_ordens = $_POST['imagem_Ordem'];
+        $imagem_ids = $_POST['imagem_id'];
+
         try {
             $pdo->beginTransaction();
 
             $stmt_update = $pdo->prepare("
             UPDATE PRODUTO_IMAGEM 
-            SET IMAGEM_URL = :imagem_url, IMAGEM_ORDEM = :imagem_ordem
+            SET IMAGEM_URL = :imagem_url, IMAGEM_ORDEM = :imagem_Ordem
             WHERE PRODUTO_ID = :id AND IMAGEM_ID = :imagem_id
             ");
             
             foreach ($imagem_urls as $key => $imagem_url) {
-                $stmt_update->bindParam(':id', $id, PDO::PARAM_INT);
-                $stmt_update->bindParam(':imagem_url', $imagem_url, PDO::PARAM_STR);
-                $stmt_update->bindParam(':imagem_ordem', $imagem_ordens[$key], PDO::PARAM_INT);
-                $stmt_update->bindParam(':imagem_id', $imagem_ids_global[$key], PDO::PARAM_INT);
+                $stmt_update->bindValue(':id', $id, PDO::PARAM_INT);
+                $stmt_update->bindValue(':imagem_url', $imagem_url, PDO::PARAM_STR);
+                $stmt_update->bindValue(':imagem_Ordem', $imagem_ordens[$key], PDO::PARAM_INT);
+                $stmt_update->bindValue(':imagem_id', $imagem_ids[$key], PDO::PARAM_INT);
                 $stmt_update->execute();
             }
-
 
             $stmt_update_produto = $pdo->prepare("
                 UPDATE PRODUTO 

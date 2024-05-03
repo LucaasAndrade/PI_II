@@ -6,6 +6,24 @@ if (!isset($_SESSION['admin_logado'])) {
     header('Location: ../index.php');
     exit();
 }
+
+
+if (!isset($_GET['id'])) {
+    echo json_encode(['erro' => 'ID do administrador não reconhecido.']);
+    exit();
+}
+
+$id = $_GET['id'];
+
+try {
+    $stmt = $pdo->prepare('SELECT * FROM ADMINISTRADOR WHERE ADM_ID = :id');
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "<p style='color: red'> Erro ao consultar dados:" . $e->getMessage() . "</p>" . PHP_EOL;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +35,8 @@ if (!isset($_SESSION['admin_logado'])) {
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <link rel="stylesheet" href="../styles/globalstyles.css">
 </head>
 
@@ -24,11 +44,11 @@ if (!isset($_SESSION['admin_logado'])) {
 
     <main class="main__container light">
         <section class="painel__admin__container">
-            <nav class="sidebar close">
+            <nav class="sidebar open">
                 <header>
                     <div class="logo__container">
                         <img src="../images/logo2.png" alt="logo echo">
-                        <a class="text" href="painel_adm.php">Painel administrador</a>
+                        <a class="text" href="painel_adm.php?id=<?php echo $id; ?>">Painel administrador</a>
                     </div>
                     <i class='bx bx-chevron-right toggle'></i>
                 </header>
@@ -71,7 +91,6 @@ if (!isset($_SESSION['admin_logado'])) {
                                     <span class="text">Listar categorias</span>
                                 </a>
                             </li>
-                            
                             <li class="logout">
                                 <a href="../utils/logoff.php">
                                     <i class='bx bx-log-out'></i>
@@ -101,13 +120,22 @@ if (!isset($_SESSION['admin_logado'])) {
                 </div>
             </nav>
         </section>
-        <div id="dynamic-content">
-            <h1><?php echo 'Seja bem-vindo(a), ' . $_SESSION['nome_adm'] . '!' . PHP_EOL; ?></h1>
+        <div id="dynamic-content" class="sidebar-open">
+            <h1><?php echo 'Seja bem-vindo(a), ' . $admin['ADM_NOME'] . '!' . PHP_EOL; ?></h1>
+        </div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/148cebbffc.js" crossorigin="anonymous"></script>
     <script type="module" src="../utils/js/script.js"></script>
+    <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var glide = new Glide('.glide');
+            glide.mount();
+        });
+    </script>
 </body>
 
 </html>

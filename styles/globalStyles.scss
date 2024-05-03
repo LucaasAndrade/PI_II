@@ -3,10 +3,14 @@
 @import url("login/loginStyle.css");
 @import url("form/form.css");
 @import url("painel/painelSytle.css");
-@import url("list/listStyle.css");
+@import url("listADM/listADMStyle.css");
+@import url("cardProd/cardProd.css");
+@import url("listCateg/listCateg.css");
+@import url("../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss");
+@import url("../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss");
 
 :root {
-  --gelo: #FDFFFF;
+  --gelo: #EDFAFE;
   --blue-light: #B7E9FB;
   --blue-default: #6ED2F6;
   --blue-secondary: #00AFEF;
@@ -35,4 +39,9 @@ body {
   height: 100vh;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.swiper {
+  width: 200px;
+  height: 200px;
 }

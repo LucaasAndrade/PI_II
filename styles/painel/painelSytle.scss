@@ -1,22 +1,28 @@
 .main__container {
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-start;
+
   padding-left: 200px;
   min-height: 100vh;
   height: auto;
   align-items: center;
 
   #dynamic-content {
-
-    width: 80%;
+    box-sizing: border-box;
+    width: 90%;
     height: auto;
-    
+    transition: var(--tran-05);
+
+
     h1 {
       color: var(--gelo);
     }
-    
   }
+
+  #dynamic-content.sidebar-open {
+    margin-left: 180px;
+  }
+
 }
 
 @mixin theme($bg-color, $text-color, $toggle-bg, $toggle-color, $hover-color, $switch-bg, $switch-before-bg) {
@@ -45,13 +51,14 @@
           .logo__container {
             img {
               width: 50px;
-              margin-left: 5px;
+              margin-right: 50px;
             }
           }
         }
 
         .text {
           opacity: 0;
+
         }
 
         .mode {
@@ -75,11 +82,11 @@
           box-sizing: border-box;
           display: flex;
           width: 100%;
-          justify-content: space-around;
+          gap: 30px;
           align-items: center;
           height: 180px;
           padding: 20px;
-        
+
 
           .text {
             color: $toggle-bg;
@@ -95,13 +102,14 @@
 
           img {
             width: 80px;
+
           }
         }
 
         .toggle {
           position: absolute;
           top: 50%;
-          right: -35px;
+          right: -25px;
           transform: translateY(-50%);
           height: 40px;
           width: 40px;
@@ -287,6 +295,8 @@
         }
       }
     }
+
+
   }
 
 }

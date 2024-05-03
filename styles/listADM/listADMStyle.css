@@ -1,0 +1,85 @@
+.light #dynamic-content h2 {
+  color: var(--gelo);
+}
+.light #dynamic-content .tableADM {
+  width: 70%;
+  text-align: justify;
+  color: var(--gelo);
+  border-radius: 8px;
+  border: 15px solid var(--blue-default);
+}
+.light #dynamic-content .tableADM thead {
+  background-color: var(--blue-default);
+}
+.light #dynamic-content .tableADM thead tr {
+  padding: 10px;
+}
+.light #dynamic-content .tableADM thead tr th {
+  text-align: center;
+  align-items: center;
+  padding-block: 20px;
+  color: var(--gelo);
+}
+.light #dynamic-content .tableADM tbody tr {
+  background-color: var(--gelo);
+  color: var(--blue-dark);
+  border-bottom: 15px solid var(--blue-default);
+}
+.light #dynamic-content .tableADM tbody tr:last-child {
+  border: none;
+}
+.light #dynamic-content .tableADM tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+  padding-block: 20px;
+  font-size: 16px;
+}
+.light #dynamic-content .tableADM tbody tr td p {
+  margin: 0;
+}
+.light #dynamic-content .modal-title {
+  color: var(--blue-dark);
+}
+
+.dark #dynamic-content h2 {
+  color: var(--gelo);
+}
+.dark #dynamic-content .tableADM {
+  width: 70%;
+  text-align: justify;
+  color: var(--gelo);
+  border-radius: 8px;
+  border: 15px solid var(--blue-secondary);
+}
+.dark #dynamic-content .tableADM thead {
+  background-color: var(--blue-secondary);
+}
+.dark #dynamic-content .tableADM thead tr {
+  padding: 10px;
+}
+.dark #dynamic-content .tableADM thead tr th {
+  text-align: center;
+  align-items: center;
+  padding-block: 20px;
+  color: var(--gelo);
+}
+.dark #dynamic-content .tableADM tbody tr {
+  background-color: var(--gelo);
+  color: var(--blue-dark);
+  border-bottom: 15px solid var(--blue-secondary);
+}
+.dark #dynamic-content .tableADM tbody tr:last-child {
+  border: none;
+}
+.dark #dynamic-content .tableADM tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+  padding-block: 20px;
+  font-size: 16px;
+}
+.dark #dynamic-content .tableADM tbody tr td p {
+  margin: 0;
+}
+.dark #dynamic-content .modal-title {
+  color: var(--blue-dark);
+}/*# sourceMappingURL=listADMStyle.css.map */

@@ -1,0 +1,91 @@
+.light #dynamic-content h2 {
+  color: var(--gelo);
+}
+.light #dynamic-content .tableCateg {
+  width: 70%;
+  text-align: justify;
+  color: var(--gelo);
+  border-radius: 8px;
+  border: 15px solid var(--blue-default);
+}
+.light #dynamic-content .tableCateg thead {
+  background-color: var(--blue-default);
+}
+.light #dynamic-content .tableCateg thead tr {
+  padding: 10px;
+}
+.light #dynamic-content .tableCateg thead tr th {
+  text-align: center;
+  align-items: center;
+  padding-inline: 20px;
+  color: var(--gelo);
+  width: 350px;
+}
+.light #dynamic-content .tableCateg tbody tr {
+  background-color: var(--gelo);
+  color: var(--blue-dark);
+  border-bottom: 15px solid var(--blue-default);
+}
+.light #dynamic-content .tableCateg tbody tr:last-child {
+  border: none;
+}
+.light #dynamic-content .tableCateg tbody tr td {
+  vertical-align: middle;
+  padding: 20px;
+  height: 100px;
+  width: 350px;
+  text-align: center;
+  font-size: 16px;
+}
+.light #dynamic-content .tableCateg tbody tr td p {
+  margin: 0;
+}
+.light #dynamic-content .modal-title {
+  color: var(--blue-dark);
+}
+
+.dark #dynamic-content h2 {
+  color: var(--gelo);
+}
+.dark #dynamic-content .tableCateg {
+  width: 70%;
+  text-align: justify;
+  color: var(--gelo);
+  border-radius: 8px;
+  border: 15px solid var(--blue-secondary);
+}
+.dark #dynamic-content .tableCateg thead {
+  background-color: var(--blue-secondary);
+}
+.dark #dynamic-content .tableCateg thead tr {
+  padding: 10px;
+}
+.dark #dynamic-content .tableCateg thead tr th {
+  text-align: center;
+  align-items: center;
+  padding-inline: 20px;
+  color: var(--gelo);
+  width: 350px;
+}
+.dark #dynamic-content .tableCateg tbody tr {
+  background-color: var(--gelo);
+  color: var(--blue-dark);
+  border-bottom: 15px solid var(--blue-secondary);
+}
+.dark #dynamic-content .tableCateg tbody tr:last-child {
+  border: none;
+}
+.dark #dynamic-content .tableCateg tbody tr td {
+  vertical-align: middle;
+  padding: 20px;
+  height: 100px;
+  width: 350px;
+  text-align: center;
+  font-size: 16px;
+}
+.dark #dynamic-content .tableCateg tbody tr td p {
+  margin: 0;
+}
+.dark #dynamic-content .modal-title {
+  color: var(--blue-dark);
+}/*# sourceMappingURL=listCateg.css.map */

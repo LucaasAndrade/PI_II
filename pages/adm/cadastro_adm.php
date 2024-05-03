@@ -48,7 +48,7 @@ if (!isset($_SESSION['admin_logado'])) {
                     <input type="checkbox" name="ativo" class="form-check-input" required>
                     <label for="ativo" class="form-check-label">Ativo</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="btn">Cadastrar</button>
             </form>
         </section>
     </section>

@@ -14,6 +14,17 @@ export function renderDynamic() {
           if (formContainer) {
             document.querySelectorAll("#dynamic-content").forEach((element) => {
               element.innerHTML = formContainer.innerHTML;
+
+              // Inicializa o Glide.js após o conteúdo ser renderizado
+              const glideElements = element.querySelectorAll(".glide");
+              glideElements.forEach((glideElement, index) => {
+                const productId = index + 1;
+                const glide = new Glide(glideElement);
+                glide.mount();
+                glide.on("mounted", () => {
+                  glideElement.setAttribute("id", "glide_" + productId);
+                });
+              });
             });
           } else {
             console.log("Não foi possível carregar .dynamic-section");

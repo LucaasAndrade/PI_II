@@ -1,0 +1,83 @@
+@mixin theme($textColor, $bgColor, $bgTr, $tdColor) {
+
+    #dynamic-content {
+
+
+
+
+        h2 {
+            color: $textColor;
+        }
+
+        .tableCateg {
+            width: 70%;
+            text-align: justify;
+            color: $textColor;
+            border-radius: 8px;
+
+            border: 15px solid $bgColor;
+
+            thead {
+
+                background-color: $bgColor;
+
+                tr {
+                    padding: 10px;
+
+                    th {
+                        text-align: center;
+                        align-items: center;
+                        padding-inline: 20px;
+                        color: $textColor;
+                        width: 350px;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    background-color: $bgTr;
+                    color: $tdColor;
+                    border-bottom: 15px solid $bgColor;
+
+                    &:last-child {
+                        border: none;
+                    }
+
+                    td {
+
+                        vertical-align: middle;
+                        padding: 20px;
+                        height: 100px;
+                        width: 350px;
+                        text-align: center;
+                        font-size: 16px;
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .modal-title {
+            color: var(--blue-dark);
+        }
+    }
+
+}
+
+
+
+.light {
+    @include theme(var(--gelo), var(--blue-default), var(--gelo), var(--blue-dark));
+
+
+}
+
+.dark {
+    @include theme(var(--gelo), var(--blue-secondary), var(--gelo), var(--blue-dark));
+
+
+}

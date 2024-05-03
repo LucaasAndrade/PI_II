@@ -17,8 +17,7 @@ $query->execute();
 if ($query->rowCount() > 0) {
     $user = $query->fetch(PDO::FETCH_ASSOC);
     $_SESSION['admin_logado'] = true;
-    $_SESSION['nome_adm'] = $user['ADM_NOME'];
-    header('Location: ../pages/painel_adm.php');
+    header('Location: ../pages/painel_adm.php?id=' . $user['ADM_ID']);
 } else {
     if (empty($nome) || empty($senha)) {
         header('Location: ../index.php?erro2');

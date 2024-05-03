@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <section class="dynamic-section">
         <section class="form__container container mt-5">
 
-            <form action="../../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
+            <form action="../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $produto['PRODUTO_ID']; ?>">
 
                 <div class="mb-3">
