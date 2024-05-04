@@ -25,7 +25,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/globalstyles.css">
 
 
@@ -61,12 +61,14 @@ try {
                             <?php endif; ?>
                         </td>
                         <td>
-                            <button  class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
+                            <button class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </button>
                         </td>
                         <td>
-                            <a href="../utils/adm/excluirAdm.php?id=<?php echo $user['ADM_ID'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            <button class="btn btn-danger delete-adm-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo $user['ADM_ID']; ?>">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -114,14 +116,31 @@ try {
             </div>
         </div>
 
-
+        <!-- Modal de confirmação -->
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar exclusão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza de que deseja excluir este usuário?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteAdm" data-bs-dismiss="modal">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

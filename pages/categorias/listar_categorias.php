@@ -14,6 +14,8 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +24,7 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../../styles/globalstyles.css">
     <title>Listar categoria</title>
 </head>
+
 
 <body>
     <section class="dynamic-section">
@@ -61,5 +64,6 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>

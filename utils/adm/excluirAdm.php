@@ -2,7 +2,7 @@
 
 require_once "../conexao.php";
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 if (isset($id)) {
     try {

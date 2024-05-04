@@ -77,12 +77,15 @@ try {
                      <p><strong>Desconto:</strong> R$ <?php echo number_format($produtoComImagens['produto']['PRODUTO_DESCONTO'], 2, ',', '.'); ?></p>
                   </div>
                   <div class="links-card">
-                     <a href="../utils/produtos/editarProd.php?id=<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>" class="btn edit-prod-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo  $produtoComImagens['produto']['PRODUTO_ID']; ?>">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>
-                     </a>
 
-                     <a href="../utils/produtos/excluirProd.php?id=<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                     <button class="btn btn-primary edit-prod-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo  $produtoComImagens['produto']['PRODUTO_ID']; ?>">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                     </button>
+
+
+                     <button class="btn btn-danger delete-prod-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo  $produtoComImagens['produto']['PRODUTO_ID']; ?>">
+                        <i class="fa-solid fa-trash"></i>
+                     </button>
                   </div>
                </div>
             <?php endforeach; ?>
@@ -150,6 +153,25 @@ try {
                <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Modal de confirmação -->
+      <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar exclusão</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  Tem certeza de que deseja excluir este usuário?
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-danger" id="confirmDeleteProd" data-bs-dismiss="modal">Confirmar</button>
                </div>
             </div>
          </div>
