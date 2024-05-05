@@ -2,9 +2,8 @@
 
 require_once('../../utils/conexao.php');
 
-if (!isset($_SESSION['admin_logado'])) {
-    header('Location: ../../index.php');
-    exit();
+if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel_adm.php") === false) {
+ header('Location: ../painel_adm.php');
 }
 
 if (isset($_GET['id'])) {

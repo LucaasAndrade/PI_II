@@ -15,13 +15,14 @@ $query->bindParam(':senha', $senha, PDO::PARAM_STR);
 $query->execute();
 
 if ($query->rowCount() > 0) {
-    $user = $query->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['admin_logado'] = true;
-    header('Location: ../pages/painel_adm.php?id=' . $user['ADM_ID']);
+ $user = $query->fetch(PDO::FETCH_ASSOC);
+ $_SESSION['admin_logado'] = true;
+ $_SESSION['admin_nome'] = $user['ADM_NOME'];
+ header('Location: ../pages/painel_adm.php');
 } else {
-    if (empty($nome) || empty($senha)) {
-        header('Location: ../index.php?erro2');
-    } else {
-        header('Location: ../index.php?erro');
-    }
+ if (empty($nome) || empty($senha)) {
+  header('Location: ../index.php?erro2');
+ } else {
+  header('Location: ../index.php?erro');
+ }
 }
