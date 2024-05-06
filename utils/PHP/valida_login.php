@@ -19,11 +19,11 @@ if ($query->rowCount() > 0) {
  $_SESSION['admin_logado'] = true;
  $_SESSION['admin_nome'] = $user['ADM_NOME'];
  $_SESSION['admin_id'] = $user['ADM_ID'];
- header('Location: ../pages/painel_adm.php');
+ header('Location: ../../pages/painel_adm.php');
 } else {
  if (empty($nome) || empty($senha)) {
-  header('Location: ../index.php?erro2');
+  header('Location: ../../index.php?erro2');
  } else {
-  header('Location: ../index.php?erro');
+  header('Location: ../../index.php?erro');
  }
 }

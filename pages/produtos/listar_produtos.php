@@ -6,6 +6,9 @@ if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel
  header('Location: ../painel_adm.php');
 }
 
+
+$produtosComImagens = [];
+
 try {
  $stmt = $pdo->prepare('SELECT PRODUTO.*, CATEGORIA.CATEGORIA_NOME, PRODUTO_IMAGEM.IMAGEM_URL, PRODUTO_IMAGEM.IMAGEM_ORDEM, PRODUTO_ESTOQUE.PRODUTO_QTD
     FROM PRODUTO 

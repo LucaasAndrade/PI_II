@@ -23,7 +23,7 @@ export async function editProd() {
 
       try {
         const response = await fetch(
-          "../utils/produtos/getProdInfo.php?id=" + userId
+          "../utils/PHP/produtos/getProdInfo.php?id=" + userId
         );
         if (!response.ok) {
           throw new Error("Erro ao buscar informações do produto");
@@ -64,7 +64,7 @@ export async function editProd() {
           selectCategoria.appendChild(option);
         });
 
-        const imagensContainer = document.getElementById("imagens-container");
+        let imagensContainer = document.getElementById("imagens-container");
         imagensContainer.innerHTML = "";
 
         imagens.forEach((imagem) => {
@@ -72,35 +72,28 @@ export async function editProd() {
           div.classList.add("mb-3");
 
           const novaLabelURL = document.createElement("label");
-          novaLabelURL.for = "imagem_url[]";
+          novaLabelURL.for = "edit-imagem_url[]";
           novaLabelURL.innerText = "Imagem URL:";
           div.appendChild(novaLabelURL);
 
           const urlInput = document.createElement("input");
           urlInput.type = "text";
-          urlInput.name = "imagem_url[]";
+          urlInput.name = "edit-imagem_url[]";
           urlInput.classList.add("form-control");
           urlInput.value = imagem.IMAGEM_URL;
           div.appendChild(urlInput);
 
           const novaLabelOrdem = document.createElement("label");
-          novaLabelOrdem.for = "imagem_Ordem[]";
+          novaLabelOrdem.for = "edit-imagem_Ordem[]";
           novaLabelOrdem.innerText = "Imagem Ordem:";
           div.appendChild(novaLabelOrdem);
 
           const ordemInput = document.createElement("input");
           ordemInput.type = "number";
-          ordemInput.name = "imagem_Ordem[]";
+          ordemInput.name = "edit-imagem_Ordem[]";
           ordemInput.classList.add("form-control");
           ordemInput.value = imagem.IMAGEM_ORDEM;
           div.appendChild(ordemInput);
-
-          const idInput = document.createElement("input");
-          idInput.type = "number";
-          idInput.name = "imagem_id";
-          idInput.style.display = "none"; // ocultar o campo de entrada
-          idInput.value = imagem.IMAGEM_ID;
-          div.appendChild(idInput);
 
           imagensContainer.appendChild(div);
         });
@@ -109,8 +102,6 @@ export async function editProd() {
         modal.addEventListener("hidden.bs.modal", function (e) {
           clearModal();
         });
-
-
       } catch (error) {
         console.log(error);
       }
@@ -131,7 +122,7 @@ export async function editProd() {
           console.log(
             `Sucesso ao enviar informações para edição: ${response.json()}`
           );
-          renderURL('produtos/listar_produtos.php')
+          renderURL("produtos/listar_produtos.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

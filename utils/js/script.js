@@ -9,9 +9,11 @@ import { editCateg } from "./categorias/editCateg/editCateg.js";
 import { confirmDeleteUser } from "./adm/confirmDeleteUser/confirmDeleteUser.js";
 import { confirmDeleteProduct } from "./produtos/confirmDeleteProduct/confirmDeleteProduct.js";
 import { confirmDeleteCateg } from "./categorias/confirmDeleteCateg/confirmDeleteCateg.js";
+import { cadastroProduto } from "./produtos/cadastroProduto/cadastroProduto.js";
 
 /* _________________CADASTRO______________ */
 cadastroUser();
+cadastroProduto();
 
 /* __________________EDIÇÃO_______________ */
 editAdm();
