@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../utils/conexao.php');
+require_once('../../utils/PHP/conexao.php');
 
 if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel_adm.php") === false) {
  header('Location: ../painel_adm.php');
@@ -27,7 +27,7 @@ try {
   }
  }
 } catch (PDOException $e) {
- echo 'Erro ao listar produtos:' . $e->getMessage() . PHP_EOL;
+ echo 'Erro ao buscar produtos:' . $e->getMessage() . PHP_EOL;
 }
 
 ?>
@@ -91,6 +91,10 @@ try {
    </div>
    </div>
 
+   <script>
+    document.dispatchEvent(new Event('dynamicContentLoaded'));
+   </script>
+
   </section>
 
 
@@ -105,7 +109,7 @@ try {
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
      </div>
      <div class="modal-body">
-      <form action="../utils/produtos/editarProd.php" method="post" enctype="multipart/form-data" class="edit-produto-form">
+      <form action="../utils/PHP/produtos/editarProd.php" method="post" enctype="multipart/form-data" class="edit-produto-form">
        <input id="edit-id" type="hidden" name="id">
 
 
@@ -166,7 +170,7 @@ try {
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
      </div>
      <div class="modal-body">
-      Tem certeza de que deseja excluir este usuário?
+      Tem certeza de que deseja excluir este produto?
      </div>
      <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -177,7 +181,7 @@ try {
   </div>
  </section>
 
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

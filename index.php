@@ -18,7 +18,7 @@
         </section>
         <section class="form__container">
             <img src="images/logo.png" alt="logo echo" width="450">
-            <form method="POST" action="utils/valida_login.php">
+            <form method="POST" action="utils/PHP/valida_login.php">
                 <div>
                     <label for="user__email" class="form-label">E-mail:</label>
                     <input type="email" class="form-control" name="user__email" aria-describedby="emailHelp" required placeholder="Digite seu e-mail...">

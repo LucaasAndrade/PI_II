@@ -1,4 +1,4 @@
-import { renderURL } from "../rederDynamic/renderURL.js";
+import { renderURL } from "../../rederDynamic/renderURL.js";
 
 export function cadastroUser() {
 
@@ -12,7 +12,7 @@ export function cadastroUser() {
             let senha = document.getElementById('senha').value;
             let ativo = document.querySelector('input[name="ativo"]').checked;
 
-            fetch('../utils/adm/cadastrarAdm.php', {
+            fetch('../utils/PHP/adm/cadastrarAdm.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'

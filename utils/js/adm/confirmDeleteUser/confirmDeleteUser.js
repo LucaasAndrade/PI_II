@@ -1,4 +1,4 @@
-import { renderURL } from "../rederDynamic/renderURL.js";
+import { renderURL } from "../../rederDynamic/renderURL.js";
 
 export function confirmDeleteUser() {
     let userId;
@@ -12,7 +12,7 @@ export function confirmDeleteUser() {
 
     document.addEventListener("click", function (event) {
         if (event.target.id === "confirmDeleteAdm") {
-            fetch("../utils/adm/excluirAdm.php", {
+            fetch("../utils/PHP/adm/excluirAdm.php", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'

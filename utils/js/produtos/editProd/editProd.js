@@ -1,4 +1,4 @@
-import { renderURL } from "../rederDynamic/renderURL.js";
+import { renderURL } from "../../rederDynamic/renderURL.js";
 
 function clearModal() {
   document.getElementById("edit-id").value = "";

@@ -18,6 +18,7 @@ if ($query->rowCount() > 0) {
  $user = $query->fetch(PDO::FETCH_ASSOC);
  $_SESSION['admin_logado'] = true;
  $_SESSION['admin_nome'] = $user['ADM_NOME'];
+ $_SESSION['admin_id'] = $user['ADM_ID'];
  header('Location: ../pages/painel_adm.php');
 } else {
  if (empty($nome) || empty($senha)) {

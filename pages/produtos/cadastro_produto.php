@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../utils/conexao.php');
+require_once('../../utils/PHP/conexao.php');
 
 if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel_adm.php") === false) {
  header('Location: ../painel_adm.php');
@@ -40,7 +40,7 @@ try {
    <h2>Cadastrar Produto</h2>
 
 
-   <form action="../utils/produtos/cadastrarProd.php" method="post" enctype="multipart/form-data">
+   <form action="../utils/PHP/produtos/cadastrarProd.php" method="post" enctype="multipart/form-data">
     <div class="mb-3">
      <label for="nome" class="form-label">Nome</label>
      <input type="text" name="nome" id="nome" class="form-control" required>

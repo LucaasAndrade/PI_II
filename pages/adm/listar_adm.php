@@ -1,5 +1,5 @@
 <?php
-require_once '../../utils/conexao.php';
+require_once('../../utils/PHP/conexao.php');
 
 if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel_adm.php") === false) {
  header('Location: ../painel_adm.php');
@@ -84,7 +84,7 @@ try {
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
      </div>
      <div class="modal-body">
-      <form class="edit-adm-form" action="../utils/adm/editarAdm.php" method="post" enctype="multipart/form-data">
+      <form class="edit-adm-form" action="../utils/PHP/adm/editarAdm.php" method="post" enctype="multipart/form-data">
        <input id="edit-id" type="hidden" name="id">
 
        <div class="mb-3">

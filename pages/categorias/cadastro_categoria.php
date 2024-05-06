@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../utils/conexao.php');
+require_once('../../utils/PHP/conexao.php');
 
 
 if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel_adm.php") === false) {

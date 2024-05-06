@@ -1,11 +1,19 @@
-import { renderURL } from "../rederDynamic/renderURL.js";
+import { renderURL } from "../../rederDynamic/renderURL.js";
+
+function clearModal() {
+  document.getElementById("edit-id").value = "";
+  document.getElementById("edit-nome").value = "";
+  document.getElementById("edit-email").value = "";
+  document.getElementById("edit-senha").innerText = "";
+  document.getElementById("edit-ativo").checked = false;
+}
 
 export function editAdm() {
   document.addEventListener("click", function (event) {
     if (event.target && event.target.classList.contains("edit-adm-button")) {
       let userId = event.target.getAttribute("data-id");
 
-      fetch("../utils/adm/getAdmInfo.php?id=" + userId)
+      fetch("../utils/PHP/adm/getAdmInfo.php?id=" + userId)
         .then((response) => response.json())
         .then((details) => {
           document.getElementById("edit-id").value = details.ADM_ID;
@@ -27,7 +35,7 @@ export function editAdm() {
 
       var formData = new FormData(event.target);
 
-      fetch("../utils/adm/editarAdm.php", {
+      fetch("../utils/PHP/adm/editarAdm.php", {
         method: "POST",
         body: formData,
       })
@@ -35,7 +43,11 @@ export function editAdm() {
           console.log(
             `Sucesso ao enviar informações para edição: ${response.json()}`
           );
-          renderURL('adm/listar_adm.php')
+          const modal = document.getElementById("exampleModal");
+          modal.addEventListener("hidden.bs.modal", function (e) {
+            clearModal();
+          });
+          renderURL("adm/listar_adm.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

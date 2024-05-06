@@ -1,6 +1,6 @@
 <?php
 
-require_once('../utils/conexao.php');
+require_once('../utils/PHP/conexao.php');
 
 if (!isset($_SESSION['admin_logado'])) {
  header('Location: ../index.php');
@@ -30,7 +30,7 @@ if (!isset($_SESSION['admin_logado'])) {
     <header>
      <div class="logo__container">
       <img src="../images/logo2.png" alt="logo echo">
-      <a class="text" href="painel_adm.php?id=<?php echo $id; ?>">Painel administrador</a>
+      <a class="text" href="painel_adm.php">Painel administrador</a>
      </div>
      <i class='bx bx-chevron-right toggle'></i>
     </header>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['admin_logado'])) {
         </a>
        </li>
        <li class="logout">
-        <a href="../utils/logoff.php">
+        <a href="../utils/PHP/logoff.php">
          <i class='bx bx-log-out'></i>
          <span class="text">Logout</span>
         </a>
@@ -113,7 +113,7 @@ if (!isset($_SESSION['admin_logado'])) {
  <script type="module" src="../utils/js/script.js"></script>
  <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
  <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('dynamicContentLoaded', function() {
    var glide = new Glide('.glide');
    glide.mount();
   });
