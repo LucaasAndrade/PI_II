@@ -2,18 +2,23 @@
 
 require_once('../../utils/PHP/conexao.php');
 
+
 if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel_adm.php") === false) {
  header('Location: ../painel_adm.php');
 }
-
 
 try {
  $stmt_categoria = $pdo->prepare("SELECT * FROM CATEGORIA");
  $stmt_categoria->execute();
  $categorias = $stmt_categoria->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
- echo "<p style='color=red;'> Erro ao buscar categorias" . $e->getMessage() . "</p>";
+ echo "<p style='color:red;'>Erro ao buscar categorias" . $e->getMessage() . "</p>";
 }
+
+echo "
+<pre>";
+print_r($_POST);
+echo "</pre>";
 
 ?>
 
@@ -40,7 +45,7 @@ try {
    <h2>Cadastrar Produto</h2>
 
 
-   <form action="../utils/PHP/produtos/cadastrarProd.php" method="post" enctype="multipart/form-data">
+   <form class="form__cadastro__prod" action="../utils/PHP/produtos/cadastrarProd.php" method="post">
     <div class="mb-3">
      <label for="nome" class="form-label">Nome</label>
      <input type="text" name="nome" id="nome" class="form-control" required>
@@ -55,11 +60,11 @@ try {
     </div>
     <div class="mb-3">
      <label for="desconto">Desconto: </label>
-     <input type="number" name="desconto" class="form-control" step="0.01">
+     <input type="number" name="desconto" id="desconto" class="form-control" step="0.01">
     </div>
     <div class="mb-3">
      <label for="qtd">Quantidade: </label>
-     <input type="number" name="qtd" class="form-control" step="0.01">
+     <input type="number" name="qtd" id="qtd" class="form-control" step="0.01">
     </div>
     <div class="mb-3">
      <div class="mb-3">
@@ -73,7 +78,8 @@ try {
       </select>
      </div>
      <label for="ativo">Ativo: </label>
-     <input type="checkbox" name="ativo" class="form-check " value="1" checked>
+     <input class="form-check-input " type="checkbox" name="ativo" value="1">
+    </div>
     </div>
     <div class="mb-3" id="containerImagens">
 
@@ -84,8 +90,7 @@ try {
      <input type="number" name="imagem_Ordem[]" class="form-control" placeholder="Ordem" required>
 
     </div>
-    <button type="button" class="add-img-btn btn btn-primary"> Adicionar mais Imagens
-    </button>
+    <button type="button" class="add-img-btn btn btn-primary">Adicionar mais Imagens</button>
     <button type="submit" class="btn btn-primary">Enviar</button>
    </form>
   </section>

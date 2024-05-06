@@ -73,6 +73,7 @@ try {
         <i class="fa-solid fa-pen-to-square"></i>
        </button></td>
       <td> <button class="btn btn-danger delete-categ-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
+        <?php echo  $categoria['CATEGORIA_ID']; ?>
         <i class="fa-solid fa-trash"></i>
        </button></td>
      </tr>

@@ -28,7 +28,5 @@ export function cadastroUser() {
 
         }
     });
-
-
 }
 
