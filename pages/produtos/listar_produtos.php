@@ -94,9 +94,7 @@ try {
    </div>
    </div>
 
-   <script>
-    document.dispatchEvent(new Event('dynamicContentLoaded'));
-   </script>
+
 
   </section>
 
@@ -182,6 +180,10 @@ try {
     </div>
    </div>
   </div>
+
+  <script>
+   document.dispatchEvent(new Event('dynamicContentLoaded'));
+  </script>
  </section>
 
 
