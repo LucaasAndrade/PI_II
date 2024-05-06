@@ -1,40 +1,6 @@
-.main__container {
-  box-sizing: border-box;
-  display: flex;
-
-
-  padding-left: 200px;
-  min-height: 100vh;
-  height: auto;
-  align-items: center;
-
-  #dynamic-content {
-    box-sizing: border-box;
-    width: 90%;
-    height: auto;
-    transition: var(--tran-05);
-
-
-
-
-    h1 {
-      color: var(--gelo);
-    }
-  }
-
-
-  #dynamic-content.sidebar-open {
-    margin-left: 180px;
-  }
-  }
-
-}
-
 @mixin theme($bg-color, $text-color, $toggle-bg, $toggle-color, $hover-color, $switch-bg, $switch-before-bg) {
   transition: var(--tran-03);
   background-color: $bg-color;
-
-
 
   .painel__admin__container {
 
@@ -44,6 +10,7 @@
       left: 0;
       height: 100%;
       width: 350px;
+      padding: 18px 14px 0px 10px;
       background-color: $text-color;
       transition: var(--tran-05);
 
@@ -55,16 +22,13 @@
           .logo__container {
             img {
               width: 50px;
-              margin-right: 15px;
-
+              margin-left: 5px;
             }
           }
         }
 
         .text {
           opacity: 0;
-
-
         }
 
         .mode {
@@ -78,45 +42,39 @@
         }
       }
 
-
+      &.open {
+        .text {
+          transition: 1.8s;
+        }
+      }
 
 
       header {
         position: relative;
 
         .logo__container {
-          box-sizing: border-box;
           display: flex;
-          gap: 30px;
-          width: 100%;
+
+          justify-content: space-around;
           align-items: center;
           height: 180px;
-          padding: 20px;
-
-
 
           .text {
             color: $toggle-bg;
             font-weight: 600;
             text-align: start;
-            text-decoration: none;
-
-            &:close {
-              display: none;
-            }
 
           }
 
           img {
             width: 80px;
-
           }
         }
 
         .toggle {
           position: absolute;
           top: 50%;
-          right: -25px;
+          right: -35px;
           transform: translateY(-50%);
           height: 40px;
           width: 40px;
@@ -124,8 +82,7 @@
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-
-          background: $text-color;
+          background: $toggle-bg;
           color: $toggle-color;
           font-size: 24px;
           font-weight: 900;
@@ -159,6 +116,9 @@
               a {
 
 
+                i {
+                  font-size: 32px;
+                }
 
                 display: flex;
                 align-items: center;
@@ -167,40 +127,10 @@
                 color: $toggle-bg;
                 font-size: 16px;
 
-                i {
-                  font-size: 32px;
-                }
-
                 &:hover {
-
-                  background-color: $toggle-bg;
-                  color: white;
-
-                }
-              }
-            }
-
-            .logout {
-              list-style: none;
-
-              a {
-
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                text-decoration: none;
-                color: $toggle-bg;
-                font-size: 16px;
-
-                i {
-                  font-size: 32px;
-                }
-
-                &:hover {
-
-                  background-color: $toggle-bg;
-                  color: white;
-
+                  transition: 0.6s;
+                  transform: scale(1.13);
+                  color: $hover-color;
                 }
               }
             }
@@ -235,7 +165,10 @@
                   font-size: 24px;
                 }
 
-
+                &:hover {
+                  transition: 0.6s;
+                  color: $hover-color;
+                }
               }
             }
 
@@ -302,29 +235,20 @@
         }
       }
     }
-
-
   }
 
 }
 
 .light {
-  @include theme(var(--blue-secondary), var(--gelo), var(--blue-secondary), var(--blue-secondary), var(--blue-dark), var(--blue-light), var(--blue-secondary));
+  @include theme(var(--gelo), var(--cinza-claro), var(--verde-agua), var(--gelo), var(--verde-escuro), var(--gelo), var(--verde-agua));
 
-  .toggle {
-    box-shadow: 1px 3px 3px rgb(98, 98, 98);
-  }
 }
 
 .dark {
-  @include theme(var(--blue-dark), var(--blue-default), var(--blue-dark), var(--blue-dark), var(--gelo), var(--gelo), var(--blue-dark));
+  @include theme(var(--verde-escuro), var(--verde-agua), var(--gelo), var(--verde-escuro), var(--verde-escuro), var(--cinza-claro), var(--verde-agua));
 
   .painel__admin__container {
     .sidebar {
-      .toggle {
-        box-shadow: 1px 3px 3px rgb(0, 0, 0);
-      }
-
       .menu__bar {
         .button__content {
           ul {
