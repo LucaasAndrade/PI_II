@@ -7,16 +7,28 @@
   align-items: center;
 }
 .main__container #dynamic-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
-  width: 90%;
+  width: 100%;
   height: auto;
   transition: var(--tran-05);
 }
-.main__container #dynamic-content h1 {
+.main__container #dynamic-content h1,
+.main__container #dynamic-content h2 {
+  width: 70%;
   color: var(--gelo);
 }
 .main__container #dynamic-content.sidebar-open {
   margin-left: 180px;
+}
+.main__container .add-img-btn {
+  border: none;
+  color: white;
+  padding: 7px;
+  border-radius: 8px;
+  background-color: rgb(72, 150, 72);
 }
 
 .light {

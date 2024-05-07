@@ -12,9 +12,13 @@
 .light #dynamic-content .form__container form label {
   color: var(--gelo);
 }
-.light #dynamic-content .form__container form .btn {
-  color: var(--gelo);
-  background-color: var(--blue-default);
+.light #dynamic-content .form__container .form__cadastro__categ {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.light #dynamic-content .form__container .form__cadastro__categ .btn {
+  width: 180px;
 }
 .light #dynamic-content .form__container #containerImages {
   display: flex;
@@ -39,9 +43,13 @@
 .dark #dynamic-content .form__container form label {
   color: var(--gelo);
 }
-.dark #dynamic-content .form__container form .btn {
-  color: var(--gelo);
-  background-color: var(--blue-default);
+.dark #dynamic-content .form__container .form__cadastro__categ {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dark #dynamic-content .form__container .form__cadastro__categ .btn {
+  width: 180px;
 }
 .dark #dynamic-content .form__container #containerImages {
   display: flex;

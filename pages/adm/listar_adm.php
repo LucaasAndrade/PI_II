@@ -34,7 +34,7 @@ try {
 <body>
  <section class="dynamic-section">
 
-  <h2>Lista de Administradores</h2>
+  <h2>Administradores</h2>
 
   <table class="tableADM">
    <thead>
@@ -42,8 +42,7 @@ try {
      <th>Nome</th>
      <th>E-mail</th>
      <th>Ativo</th>
-     <th>Editar</th>
-     <th>Excluir</th>
+     <th>Ações</th>
     </tr>
    </thead>
 
@@ -63,8 +62,6 @@ try {
        <button class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $user['ADM_ID']; ?>">
         <i class="fa-solid fa-pen-to-square"></i>
        </button>
-      </td>
-      <td>
        <button class="btn btn-danger delete-adm-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo $user['ADM_ID']; ?>">
         <i class="fa-solid fa-trash"></i>
        </button>
@@ -99,11 +96,11 @@ try {
         <label for="senha" class="form-label">Senha</label>
         <input id="edit-senha" type="password" name="senha" class="form-control" required>
        </div>
-       <div class="mb-3">
-        <label for="ativo" class="form-label">Ativo</label>
-        <input id="edit-ativo" type="checkbox" name="ativo" value="1">
+       <div class="mb-3 form-check">
+        <label for="ativo" class="form-check-label ">Ativo</label>
+        <input class="form-check-input " id="edit-ativo" type="checkbox" name="ativo" value="1">
        </div>
-       <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+       <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Enviar</button>
       </form>
      </div>
 

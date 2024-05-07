@@ -52,7 +52,7 @@ try {
 <body>
  <section class="dynamic-section">
   <section class="card__container">
-   <h2 class="mt-5">Lista de produtos</h2>
+   <h2 class="mt-5">Produtos</h2>
    <div class="row mt-3">
     <?php foreach ($produtosComImagens as $produtoComImagens) : ?>
      <div class="product-card">
@@ -72,8 +72,8 @@ try {
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-arrow-right"></i></button>
        </div>
       </div>
-      <h3><?php echo $produtoComImagens['produto']['PRODUTO_NOME']; ?></h3>
       <div class="text-product">
+       <h3><?php echo $produtoComImagens['produto']['PRODUTO_NOME']; ?></h3>
        <p><?php echo $produtoComImagens['produto']['PRODUTO_DESC']; ?></p>
        <p><strong>Preço:</strong> R$ <?php echo number_format($produtoComImagens['produto']['PRODUTO_PRECO'], 2, ',', '.'); ?></p>
        <p><strong>Desconto:</strong> R$ <?php echo number_format($produtoComImagens['produto']['PRODUTO_DESCONTO'], 2, ',', '.'); ?></p>
@@ -145,11 +145,11 @@ try {
 
         </select>
        </div>
-       <div class="mb-3">
-        <label for="ativo" class="form-label">Ativo</label>
-        <input id="edit-ativo" type="checkbox" name="ativo">
+       <div class="mb-3 form-check  ">
+        <label for="ativo" class="form-check-label ">Ativo</label>
+        <input id="edit-ativo" type="checkbox" class="form-check-input  " name="ativo">
        </div>
-       <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+       <button type="submit" class="btn btn-success " data-bs-dismiss="modal">Enviar</button>
 
       </form>
 

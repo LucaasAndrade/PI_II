@@ -41,10 +41,10 @@ if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel
      <input type="password" name="senha" id="senha" class="form-control" required>
     </div>
     <div class="mb-3 form-check">
-     <input type="checkbox" id="ativo" name="ativo" class="form-check-input" required>
-     <label for="ativo" class="form-check-label">Ativo</label>
+     <label for="ativo" class="form-check-label">Administrador Ativo</label>
+     <input type="checkbox" id="ativo" name="ativo" class="form-check-input " required>
     </div>
-    <button type="submit" class="btn">Cadastrar</button>
+    <button type="submit" class="btn btn btn-success">Cadastrar</button>
    </form>
   </section>
  </section>
