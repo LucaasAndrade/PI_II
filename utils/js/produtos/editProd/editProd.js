@@ -1,4 +1,4 @@
-import { renderURL } from "../../rederDynamic/renderURL.js";
+import { renderURL } from "../../renderDynamic/renderURL.js";
 
 function clearModal() {
   document.getElementById("edit-id").value = "";
@@ -18,12 +18,12 @@ function clearModal() {
 
 export async function editProd() {
   document.addEventListener("click", async function (event) {
-    if (event.target.matches(".edit-prod-button")) {
-      let userId = event.target.getAttribute("data-id");
+    if (event.target.classList.contains("edit-prod-button")) {
+      let productId = event.target.getAttribute("data-id");
 
       try {
         const response = await fetch(
-          "../utils/PHP/produtos/getProdInfo.php?id=" + userId
+          "../utils/PHP/produtos/getProdInfo.php?id=" + productId
         );
         if (!response.ok) {
           throw new Error("Erro ao buscar informações do produto");
@@ -64,7 +64,7 @@ export async function editProd() {
           selectCategoria.appendChild(option);
         });
 
-        let imagensContainer = document.getElementById("imagens-container");
+        const imagensContainer = document.getElementById("imagens-container");
         imagensContainer.innerHTML = "";
 
         imagens.forEach((imagem) => {
@@ -72,28 +72,35 @@ export async function editProd() {
           div.classList.add("mb-3");
 
           const novaLabelURL = document.createElement("label");
-          novaLabelURL.for = "edit-imagem_url[]";
+          novaLabelURL.htmlFor = "imagem_url[]";
           novaLabelURL.innerText = "Imagem URL:";
           div.appendChild(novaLabelURL);
 
           const urlInput = document.createElement("input");
           urlInput.type = "text";
-          urlInput.name = "edit-imagem_url[]";
+          urlInput.name = "imagem_url[]";
           urlInput.classList.add("form-control");
           urlInput.value = imagem.IMAGEM_URL;
           div.appendChild(urlInput);
 
           const novaLabelOrdem = document.createElement("label");
-          novaLabelOrdem.for = "edit-imagem_Ordem[]";
+          novaLabelOrdem.htmlFor = "imagem_Ordem[]";
           novaLabelOrdem.innerText = "Imagem Ordem:";
           div.appendChild(novaLabelOrdem);
 
           const ordemInput = document.createElement("input");
           ordemInput.type = "number";
-          ordemInput.name = "edit-imagem_Ordem[]";
+          ordemInput.name = "imagem_Ordem[]";
           ordemInput.classList.add("form-control");
           ordemInput.value = imagem.IMAGEM_ORDEM;
           div.appendChild(ordemInput);
+
+          const idInput = document.createElement("input");
+          idInput.type = "number";
+          idInput.name = "imagem_id";
+          idInput.style.display = "none"; // ocultar o campo de entrada
+          idInput.value = imagem.IMAGEM_ID;
+          div.appendChild(idInput);
 
           imagensContainer.appendChild(div);
         });
@@ -114,19 +121,16 @@ export async function editProd() {
 
       var formData = new FormData(event.target);
 
-      fetch("../utils/produtos/editarProd.php", {
+      fetch("../utils/PHP/produtos/editarProd.php", {
         method: "POST",
         body: formData,
       })
         .then((response) => {
-          console.log(
-            `Sucesso ao enviar informações para edição: ${response.json()}`
-          );
-          renderURL("produtos/listar_produtos.php");
+          if (response.ok) {
+            renderURL("produtos/listar_produtos.php");
+          }
         })
-        .catch((error) => {
-          console.log(`Erro ao enviar informações para edição: ${error}`);
-        });
+        .catch((error) => console.error("Erro ao editar o usuário:", error));
     }
   });
 }

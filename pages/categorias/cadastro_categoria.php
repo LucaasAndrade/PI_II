@@ -7,31 +7,6 @@ if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel
  header('Location: ../painel_adm.php');
 }
 
-try {
-
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $CATEGORIA_NOME = $_POST['nome_categoria'];
-  $CATEGORIA_DESC = $_POST['desc_categoria'];
-  $CATEGORIA_ATIVO = isset($_POST['ativo_categoria']) ? 1 : 0;
-
-  // print_r($_POST);
-
-  $stmt = $pdo->prepare('INSERT INTO categoria(CATEGORIA_NOME, CATEGORIA_DESC, CATEGORIA_ATIVO) VALUES (:CATEGORIA_NOME, :CATEGORIA_DESC, :CATEGORIA_ATIVO)');
-
-  $stmt->bindParam(':CATEGORIA_NOME', $CATEGORIA_NOME, PDO::PARAM_STR);
-  $stmt->bindParam(':CATEGORIA_DESC', $CATEGORIA_DESC, PDO::PARAM_STR);
-  $stmt->bindParam(':CATEGORIA_ATIVO', $CATEGORIA_ATIVO, PDO::PARAM_BOOL);
-
-  $stmt->execute();
-
-
-  echo "<p style='color: green'> Categoria cadastrada com sucesso </p>";
- }
-} catch (PDOException $e) {
- echo 'Erro:' . $e;
-}
-
-
 ?>
 
 
@@ -49,17 +24,15 @@ try {
 <body>
  <section class="dynamic-section">
   <section class="form__container container mt-5">
-   <h1>
-    Cadastro Categoria
-   </h1>
+   <h2> Cadastrar Categoria</h2>
 
-   <form action="" method="POST">
+   <form class="form__cadastro__categ" method="POST">
 
     <div class="form-group">
      <div>
       <label for="nome_categoria"> Nome Categoria: </label>
      </div>
-     <input type="text" name="nome_categoria" class="form-control">
+     <input type="text" name="nome_categoria" id="nome_categoria" class="form-control">
     </div>
 
 
@@ -67,19 +40,17 @@ try {
      <div>
       <label for="desc_categoria"> Descrição da Categoria: </label>
      </div>
-     <textarea name="desc_categoria" id="" cols="30" rows="10" class="form-control"></textarea>
+     <textarea style="resize: none;" maxlength="150" name="desc_categoria" id="desc_categoria" cols="30" rows="5" class="form-control"></textarea>
     </div>
 
-    <div class="form-group">
+    <div class="form-check">
 
-     <label for="ativo_categoria">Categoria Ativa: </label>
+     <label for="ativo_categoria" class="form-check-label">Categoria Ativa </label>
 
-     <input type="checkbox" name="ativo_categoria" class="form-check-input">
+     <input type="checkbox" name="ativo_categoria" id="ativo_categoria" class="form-check-input">
     </div>
 
-    <div class="form-group">
-     <input type="submit" class="btn btn-primary">
-    </div>
+    <button type="submit" class=" btn btn-success">Cadastrar</button>
 
 
    </form>

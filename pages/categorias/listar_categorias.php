@@ -44,7 +44,7 @@ try {
 
 <body>
  <section class="dynamic-section">
-  <h1> Listar Categoria </h1>
+  <h2> Listar Categoria </h2>
 
   <table class="tableCateg">
    <thead>
@@ -52,8 +52,8 @@ try {
      <th>Nome categoria</th>
      <th>Descrição da categoria</th>
      <th>Ativo</th>
-     <th>Editar</th>
-     <th>Excluir</th>
+     <th>Ações</th>
+
     </tr>
    </thead>
    <tbody>
@@ -71,11 +71,11 @@ try {
 
       <td> <button class="btn btn-primary edit-categ-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
         <i class="fa-solid fa-pen-to-square"></i>
-       </button></td>
-      <td> <button class="btn btn-danger delete-categ-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
-        <?php echo  $categoria['CATEGORIA_ID']; ?>
+       </button>
+       <button class="btn btn-danger delete-categ-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
         <i class="fa-solid fa-trash"></i>
-       </button></td>
+       </button>
+      </td>
      </tr>
     <?php endforeach; ?>
    </tbody>
@@ -97,16 +97,16 @@ try {
         <label for="nome_categoria"> Nome Categoria: </label>
         <input class="form-control" type="text" name="nome_categoria" id="edit-nome" required>
        </div>
-       <div class="d-flex gap-2 mb-3">
+       <div class="form-check  mb-3">
         <label for="ativo" class="form-check-label">Ativo</label>
-        <input id="edit-ativo" class="form-check" type="checkbox" name="ativo_categoria">
+        <input id="edit-ativo" class="form-check-input" type="checkbox" name="ativo_categoria">
        </div>
        <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
         <textarea style="resize: none;" id="edit-desc" name="desc_categoria" cols="30" rows="10" class="form-control" required></textarea>
        </div>
 
-       <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
+       <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Enviar</button>
 
       </form>
 

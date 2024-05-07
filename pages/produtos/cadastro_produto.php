@@ -77,8 +77,10 @@ echo "</pre>";
        ?>
       </select>
      </div>
-     <label for="ativo">Ativo: </label>
-     <input class="form-check-input " type="checkbox" name="ativo" value="1">
+     <div class="form-check">
+      <label for="ativo" class="form-check-label">Produto Ativo </label>
+      <input class="form-check-input " type="checkbox" name="ativo" value="1">
+     </div>
     </div>
     </div>
     <div class="mb-3" id="containerImagens">
@@ -90,8 +92,8 @@ echo "</pre>";
      <input type="number" name="imagem_Ordem[]" class="form-control" placeholder="Ordem" required>
 
     </div>
-    <button type="button" class="add-img-btn btn btn-primary">Adicionar mais Imagens</button>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="button" class="btn  btn-success ">Adicionar mais Imagens</button>
+    <button type="submit" class="btn  btn-success">Enviar</button>
    </form>
   </section>
  </section>
