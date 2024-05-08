@@ -23,13 +23,6 @@
 .main__container #dynamic-content.sidebar-open {
   margin-left: 180px;
 }
-.main__container .add-img-btn {
-  border: none;
-  color: white;
-  padding: 7px;
-  border-radius: 8px;
-  background-color: rgb(72, 150, 72);
-}
 
 .light {
   transition: var(--tran-03);

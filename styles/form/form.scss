@@ -1,58 +1,50 @@
-@mixin theme($titleColor, $textColor ) {
+@mixin theme($titleColor, $textColor) {
+  #dynamic-content {
+    .form__container {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: auto;
+      padding-block: 5%;
 
- #dynamic-content {
-  .form__container {
-   box-sizing: border-box;
-   display: flex;
-   flex-direction: column;
-   width: 50%;
-   height: auto;
-   padding-block: 5%;
+      h2 {
+        color: $titleColor;
+      }
 
-   h2 {
-    color: $titleColor;
-   }
+      form {
+        label {
+          color: $textColor;
+        }
+      }
 
-   form {
-    label {
-     color: $textColor;
+      .form__cadastro__categ {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .btn {
+          width: 180px;
+        }
+      }
+
+      #containerImages {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        label {
+          margin-top: 20px;
+        }
+      }
     }
-
-
-   }
-
-   .form__cadastro__categ {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .btn {
-     width: 180px;
-    }
-   }
-
-   #containerImages {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    label {
-     margin-top: 20px;
-    }
-   }
   }
- }
-
 }
 
 .light {
- @include theme(var(--gelo), var(--gelo));
-
-
+  @include theme(var(--gelo), var(--gelo));
 }
 
 .dark {
- @include theme(var(--gelo), var(--gelo));
-
-
+  @include theme(var(--gelo), var(--gelo));
 }
