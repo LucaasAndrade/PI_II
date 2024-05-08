@@ -51,7 +51,7 @@ try {
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCategModal" data-bs-whatever="@mdo">Adicionar Categ +</button>
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCategModal" data-bs-whatever="@mdo">Add categoria <i class="fa-solid fa-plus"></i></button>
     </div>
 
     <table class="table table-striped tableCateg">
