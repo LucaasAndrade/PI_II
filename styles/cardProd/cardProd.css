@@ -1,6 +1,6 @@
 .light .card__container {
   box-sizing: border-box;
-  width: 90%;
+  width: 650px;
 }
 .light .card__container h2 {
   color: var(--gelo);
@@ -63,7 +63,7 @@
 
 .dark .card__container {
   box-sizing: border-box;
-  width: 90%;
+  width: 650px;
 }
 .dark .card__container h2 {
   color: var(--gelo);

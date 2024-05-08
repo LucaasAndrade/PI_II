@@ -25,23 +25,8 @@ export async function editProd() {
         const response = await fetch(
           "../utils/PHP/produtos/getProdInfo.php?id=" + productId
         );
-        if (!response.ok) {
-          throw new Error("Erro ao buscar informações do produto");
-        }
 
         const data = await response.json();
-
-        if (!data.produto) {
-          throw new Error("Nenhum produto encontrado com o ID fornecido");
-        }
-
-        if (!data.imagens || data.imagens.length === 0) {
-          throw new Error("Nenhuma imagem encontrada para o produto");
-        }
-
-        if (!data.categorias || data.categorias.length === 0) {
-          throw new Error("Nenhuma categoria encontrada");
-        }
 
         const { produto, imagens, categorias } = data;
 
@@ -127,7 +112,7 @@ export async function editProd() {
       })
         .then((response) => {
           if (response.ok) {
-            renderURL("produtos/listar_produtos.php");
+            renderURL("produtos/produtos.php");
           }
         })
         .catch((error) => console.error("Erro ao editar o usuário:", error));

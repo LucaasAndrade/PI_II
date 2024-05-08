@@ -54,7 +54,7 @@ export async function editCateg() {
           console.log(
             `Sucesso ao enviar informações para edição: ${response.json()}`
           );
-          renderURL("categorias/listar_categorias.php");
+          renderURL("categorias/categorias.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

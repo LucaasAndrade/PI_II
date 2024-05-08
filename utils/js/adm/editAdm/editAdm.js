@@ -47,7 +47,7 @@ export function editAdm() {
           modal.addEventListener("hidden.bs.modal", function (e) {
             clearModal();
           });
-          renderURL("adm/listar_adm.php");
+          renderURL("adm/adm.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

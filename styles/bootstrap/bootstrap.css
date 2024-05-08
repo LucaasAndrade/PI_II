@@ -7,4 +7,8 @@
 }
 .btn-primary:hover {
   background-color: var(--blue-dark);
+}
+
+.table-primary {
+  background-color: red;
 }/*# sourceMappingURL=bootstrap.css.map */

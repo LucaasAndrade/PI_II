@@ -7,14 +7,15 @@
 @import url("listADM/listADMStyle.css");
 @import url("cardProd/cardProd.css");
 @import url("listCateg/listCateg.css");
+@import url("product/product.css");
 @import url("../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss");
 @import url("../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss");
 :root {
-  --gelo: #EDFAFE;
-  --blue-light: #B7E9FB;
-  --blue-default: #6ED2F6;
-  --blue-secondary: #00AFEF;
-  --blue-dark: #003D53;
+  --gelo: #edfafe;
+  --blue-light: #b7e9fb;
+  --blue-default: #6ed2f6;
+  --blue-secondary: #00afef;
+  --blue-dark: #003d53;
   --green-default: rgb(72, 150, 72);
   /*
   --cinza-claro: #d2d7da;
