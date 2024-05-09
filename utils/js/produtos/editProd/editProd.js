@@ -65,6 +65,7 @@ export async function editProd() {
           urlInput.type = "text";
           urlInput.name = "imagem_url[]";
           urlInput.classList.add("form-control");
+          urlInput.classList.add("mb-3");
           urlInput.value = imagem.IMAGEM_URL;
           div.appendChild(urlInput);
 
