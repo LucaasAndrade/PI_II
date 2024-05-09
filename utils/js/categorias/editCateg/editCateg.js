@@ -30,7 +30,11 @@ export async function editCateg() {
         document.getElementById("edit-ativo").checked =
           categoria.CATEGORIA_ATIVO === 1;
 
-        const modal = document.getElementById("exampleModal");
+        const modal = new bootstrap.Modal(
+          document.getElementById("editCategModal")
+        );
+        modal.show();
+
         modal.addEventListener("hidden.bs.modal", function (e) {
           clearModal();
         });

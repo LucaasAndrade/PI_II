@@ -68,7 +68,7 @@ try {
        <?php endif; ?>
       </td>
       <td>
-       <button class="btn btn-primary edit-adm-button" data-bs-toggle="modal" data-bs-target="#editAdmModal" data-id="<?php echo $user['ADM_ID']; ?>">
+       <button class="btn btn-primary edit-adm-button" data-bs-target="#editAdmModal" data-id="<?php echo $user['ADM_ID']; ?>">
         <i class="fa-solid fa-pen-to-square"></i>
        </button>
        <button class="btn btn-danger delete-adm-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo $user['ADM_ID']; ?>">
@@ -127,11 +127,12 @@ try {
    <div class="modal-dialog">
     <div class="modal-content">
      <div class="modal-header">
-      <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar exclusão</h5>
+      <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar exclusão <i class="fa-solid fa-triangle-exclamation"></i></h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
      </div>
      <div class="modal-body">
-      Tem certeza de que deseja excluir este usuário?
+
+      Tem certeza que deseja excluir administrador?
      </div>
      <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

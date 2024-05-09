@@ -28,7 +28,11 @@ export function editAdm() {
         document.getElementById("edit-senha").value = admin.ADM_SENHA;
         document.getElementById("edit-ativo").checked = admin.ADM_ATIVO == 1;
 
-        const modal = document.getElementById("editAdmModal");
+        const modal = new bootstrap.Modal(
+          document.getElementById("editAdmModal")
+        );
+        modal.show();
+
         modal.addEventListener("hidden.bs.modal", function (e) {
           clearModal();
         });

@@ -75,7 +75,7 @@ try {
       </td>
 
       <td>
-       <button class="btn btn-primary edit-categ-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
+       <button class="btn btn-primary edit-categ-button" data-bs-target="#editCategModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
         <i class="fa-solid fa-pen-to-square"></i>
        </button>
        <button class="btn btn-danger delete-categ-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo  $categoria['CATEGORIA_ID']; ?>">
@@ -89,11 +89,11 @@ try {
 
 
   <!-- Modal edição -->
-  <div class="modal moda  fade edit-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal moda  fade edit-modal" id="editCategModal" tabindex="-1" aria-labelledby="editCategModalLabel" aria-hidden="true">
    <div class="modal-dialog">
     <div class="modal-content">
      <div class="modal-header">
-      <h1 class="modal-title fs-5 text-dark " id="exampleModalLabel">Edição de categoria</h1>
+      <h1 class="modal-title fs-5 text-dark " id="editCategModalLabel">Edição de categoria</h1>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
      </div>
      <div class="modal-body">
