@@ -1,21 +1,5 @@
 import { renderURL } from "../../renderDynamic/renderURL.js";
 
-function clearModal() {
-  document.getElementById("edit-id").value = "";
-  document.getElementById("edit-nome").value = "";
-  document.getElementById("edit-desc").innerText = "";
-  document.getElementById("edit-preco").value = "";
-  document.getElementById("edit-desconto").value = "";
-  document.getElementById("edit-qtd").value = "";
-  document.getElementById("edit-ativo").checked = false;
-
-  const imagensContainer = document.getElementById("imagens-container");
-  imagensContainer.innerHTML = "";
-
-  const selectCategoria = document.getElementById("edit-categoria");
-  selectCategoria.innerHTML = "";
-}
-
 export async function editProd() {
   document.addEventListener("click", async function (event) {
     if (event.target.classList.contains("edit-prod-button")) {
@@ -29,6 +13,12 @@ export async function editProd() {
         const data = await response.json();
 
         const { produto, imagens, categorias } = data;
+
+        // Abre o modal aqui, após o fetch
+        var myModal = new bootstrap.Modal(document.getElementById('editProdModal'), {
+          keyboard: false
+        });
+        myModal.show();
 
         document.getElementById("edit-id").value = produto.PRODUTO_ID;
         document.getElementById("edit-nome").value = produto.PRODUTO_NOME;
@@ -91,10 +81,7 @@ export async function editProd() {
           imagensContainer.appendChild(div);
         });
 
-        const modal = document.getElementById("exampleModal");
-        modal.addEventListener("hidden.bs.modal", function (e) {
-          clearModal();
-        });
+
       } catch (error) {
         console.log(error);
       }
@@ -107,12 +94,19 @@ export async function editProd() {
 
       var formData = new FormData(event.target);
 
+      formData.forEach((value, key) => {
+        console.log(`${key}: ${value}`);
+      });
+
       fetch("../utils/PHP/produtos/editarProd.php", {
         method: "POST",
         body: formData,
       })
         .then((response) => {
           if (response.ok) {
+            // Fecha o modal após o post
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.hide();
             renderURL("produtos/produtos.php");
           }
         })
