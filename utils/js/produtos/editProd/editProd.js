@@ -104,10 +104,10 @@ export async function editProd() {
       })
         .then((response) => {
           if (response.ok) {
-            // Fecha o modal após o post
+
+            renderURL("produtos/produtos.php");
             var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
             myModal.hide();
-            renderURL("produtos/produtos.php");
           }
         })
         .catch((error) => console.error("Erro ao editar o usuário:", error));

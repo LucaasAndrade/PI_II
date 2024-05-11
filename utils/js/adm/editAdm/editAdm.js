@@ -22,20 +22,17 @@ export function editAdm() {
 
         const { admin } = data;
 
+        const modal = new bootstrap.Modal(
+          document.getElementById("editAdmModal")
+        );
+        modal.show();
+
         document.getElementById("edit-id").value = admin.ADM_ID;
         document.getElementById("edit-nome").value = admin.ADM_NOME;
         document.getElementById("edit-email").value = admin.ADM_EMAIL;
         document.getElementById("edit-senha").value = admin.ADM_SENHA;
         document.getElementById("edit-ativo").checked = admin.ADM_ATIVO == 1;
 
-        const modal = new bootstrap.Modal(
-          document.getElementById("editAdmModal")
-        );
-        modal.show();
-
-        modal.addEventListener("hidden.bs.modal", function (e) {
-          clearModal();
-        });
       } catch (error) {
         console.log(error);
       }
@@ -53,10 +50,13 @@ export function editAdm() {
         body: formData,
       })
         .then((response) => {
-          console.log(
-            `Sucesso ao enviar informações para edição: ${response.json()}`
-          );
-          renderURL("adm/adm.php");
+
+          if (response.ok) {
+            // Fecha o modal após o post
+            var myModal = new bootstrap.Modal(document.getElementById('editAdmModal'));
+            myModal.hide();
+            renderURL("adm/adm.php");
+          }
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);
