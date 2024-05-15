@@ -161,7 +161,8 @@ try {
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-                  <form action="../utils/PHP/produtos/editarProd.php" method="post" class="edit-produto-form">
+               <form action="../utils/PHP/produtos/editarProd.php" method="post" class="edit-produto-form" enctype="multipart/form-data">
+
                      <input id="edit-id" type="hidden" name="id">
 
 
@@ -192,7 +193,7 @@ try {
 
                      <div class="mb-3">
                         <label for="categoria_id">Categoria: </label>
-                        <select id="edit-categoria" name="edit-categoria" class="form-select" required>
+                        <select id="edit-categoria" name="edit-categoria" class="form-select">
 
                         </select>
                      </div>

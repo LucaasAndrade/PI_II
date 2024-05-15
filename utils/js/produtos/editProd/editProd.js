@@ -30,15 +30,18 @@ export async function editProd() {
         document.getElementById("edit-ativo").checked =
           produto.PRODUTO_ATIVO == 1;
 
+        const categoriaProdutoId = produto.CATEGORIA_ID;
         const selectCategoria = document.getElementById("edit-categoria");
         selectCategoria.innerHTML = "";
         categorias.forEach((categoria) => {
           const option = document.createElement("option");
           option.value = categoria.CATEGORIA_ID;
           option.textContent = categoria.CATEGORIA_NOME;
+          if (categoria.CATEGORIA_ID === categoriaProdutoId) {
+            option.selected = true;
+          }
           selectCategoria.appendChild(option);
         });
-
         const imagensContainer = document.getElementById("imagens-container");
         imagensContainer.innerHTML = "";
 
