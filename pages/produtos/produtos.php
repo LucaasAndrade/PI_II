@@ -6,7 +6,6 @@ if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], "painel
    header('Location: ../painel_adm.php');
 }
 
-
 $produtosComImagens = [];
 
 try {
@@ -193,7 +192,7 @@ try {
 
                      <div class="mb-3">
                         <label for="categoria_id">Categoria: </label>
-                        <select id="edit-categoria" name="categoria_id" class="form-select" required>
+                        <select id="edit-categoria" name="edit-categoria" class="form-select" required>
 
                         </select>
                      </div>

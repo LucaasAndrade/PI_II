@@ -42,44 +42,44 @@ export async function editProd() {
         const imagensContainer = document.getElementById("imagens-container");
         imagensContainer.innerHTML = "";
 
-        imagens.forEach((imagem) => {
+        imagens.forEach((imagem, index) => {
           const div = document.createElement("div");
           div.classList.add("mb-3");
 
           const novaLabelURL = document.createElement("label");
-          novaLabelURL.htmlFor = "imagem_url[]";
+          novaLabelURL.htmlFor = `imagem_url[${index}]`;
           novaLabelURL.innerText = "Imagem URL:";
           div.appendChild(novaLabelURL);
 
           const urlInput = document.createElement("input");
           urlInput.type = "text";
-          urlInput.name = "imagem_url[]";
+          urlInput.name = `imagem_url[${index}]`; // Adicione o índice ao nome
           urlInput.classList.add("form-control");
           urlInput.classList.add("mb-3");
           urlInput.value = imagem.IMAGEM_URL;
           div.appendChild(urlInput);
 
           const novaLabelOrdem = document.createElement("label");
-          novaLabelOrdem.htmlFor = "imagem_Ordem[]";
+          novaLabelOrdem.htmlFor = `imagem_Ordem[${index}]`;
           novaLabelOrdem.innerText = "Imagem Ordem:";
           div.appendChild(novaLabelOrdem);
 
           const ordemInput = document.createElement("input");
           ordemInput.type = "number";
-          ordemInput.name = "imagem_Ordem[]";
+          ordemInput.name = `imagem_Ordem[${index}]`;
           ordemInput.classList.add("form-control");
-          ordemInput.value = imagem.IMAGEM_ORDEM;
+          ordemInput.value = imagem.IMAGEM_ORDEM; // Define a ordem inicial baseada na ordem da imagem
           div.appendChild(ordemInput);
 
           const idInput = document.createElement("input");
-          idInput.type = "number";
-          idInput.name = "imagem_id";
-          idInput.style.display = "none"; // ocultar o campo de entrada
+          idInput.type = "hidden"; // Use 'hidden' em vez de 'none' para esconder campos de entrada
+          idInput.name = `imagem_id[${index}]`;
           idInput.value = imagem.IMAGEM_ID;
           div.appendChild(idInput);
 
           imagensContainer.appendChild(div);
         });
+
 
 
       } catch (error) {
