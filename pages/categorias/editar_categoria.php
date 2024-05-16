@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
 
         header('Location: listar_categorias.php');
+       
         exit();
     } catch (PDOException $e) {
         echo "Erro ao alterar informações: " . $e->getMessage();
@@ -78,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php echo isset(($categoria['CATEGORIA_ATIVO'])) ? 'checked' : '' ?>>
 
             <input type="submit">
+           
 
 
 

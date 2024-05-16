@@ -2,9 +2,8 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 480px;
   height: auto;
-  padding-block: 5%;
 }
 .light #dynamic-content .form__container h2 {
   color: var(--gelo);
@@ -33,9 +32,8 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 480px;
   height: auto;
-  padding-block: 5%;
 }
 .dark #dynamic-content .form__container h2 {
   color: var(--gelo);

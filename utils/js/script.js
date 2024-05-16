@@ -11,21 +11,27 @@ import { confirmDeleteProduct } from "./produtos/confirmDeleteProduct/confirmDel
 import { confirmDeleteCateg } from "./categorias/confirmDeleteCateg/confirmDeleteCateg.js";
 import { cadastroProduto } from "./produtos/cadastroProduto/cadastroProduto.js";
 import { cadastroCateg } from "./categorias/cadastroCateg/cadastroCateg.js";
+import { searchAdm } from "./adm/searchAdm/searchAdm.js";
+import { searchCateg } from "./categorias/searchCateg/searchCateg.js";
+
+renderDynamic();
 
 /* _________________CADASTRO______________ */
+
 cadastroUser();
 cadastroProduto();
 cadastroCateg();
 
 /* __________________EDIÇÃO_______________ */
+
 editAdm();
-await editProd();
+editProd();
 editCateg();
 
 /*_____________COMPORTAMENTO______________ */
+
 sideBarOpen();
 alterMode();
-renderDynamic();
 adicionarImagem();
 
 /*________________EXCLUSÃO________________ */
@@ -33,3 +39,8 @@ adicionarImagem();
 confirmDeleteUser();
 confirmDeleteProduct();
 confirmDeleteCateg();
+
+/*________________PESQUISA_______________ */
+
+searchAdm();
+searchCateg();

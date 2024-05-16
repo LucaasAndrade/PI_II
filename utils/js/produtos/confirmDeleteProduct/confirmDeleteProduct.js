@@ -24,7 +24,7 @@ export function confirmDeleteProduct() {
       })
         .then((response) => {
           if (response.ok) {
-            renderURL("produtos/listar_produtos.php");
+            renderURL("produtos/produtos.php");
           }
         })
         .catch((error) => console.error("Erro ao excluir usuário:", error));

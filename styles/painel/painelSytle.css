@@ -23,13 +23,6 @@
 .main__container #dynamic-content.sidebar-open {
   margin-left: 180px;
 }
-.main__container .add-img-btn {
-  border: none;
-  color: white;
-  padding: 7px;
-  border-radius: 8px;
-  background-color: rgb(72, 150, 72);
-}
 
 .light {
   transition: var(--tran-03);
@@ -47,7 +40,7 @@
 .light .painel__admin__container .sidebar.close {
   width: 96px;
 }
-.light .painel__admin__container .sidebar.close header .logo__container img {
+.light .painel__admin__container .sidebar.close header .logo__container .logo {
   width: 50px;
   margin-right: 15px;
 }
@@ -67,8 +60,9 @@
 .light .painel__admin__container .sidebar header .logo__container {
   box-sizing: border-box;
   display: flex;
-  gap: 30px;
+  gap: 15px;
   width: 100%;
+  justify-content: flex-start;
   align-items: center;
   height: 180px;
   padding: 20px;
@@ -82,8 +76,9 @@
 .light .painel__admin__container .sidebar header .logo__container .text:close {
   display: none;
 }
-.light .painel__admin__container .sidebar header .logo__container img {
+.light .painel__admin__container .sidebar header .logo__container .logo {
   width: 80px;
+  fill: red;
 }
 .light .painel__admin__container .sidebar header .toggle {
   position: absolute;
@@ -245,7 +240,7 @@
 .dark .painel__admin__container .sidebar.close {
   width: 96px;
 }
-.dark .painel__admin__container .sidebar.close header .logo__container img {
+.dark .painel__admin__container .sidebar.close header .logo__container .logo {
   width: 50px;
   margin-right: 15px;
 }
@@ -265,8 +260,9 @@
 .dark .painel__admin__container .sidebar header .logo__container {
   box-sizing: border-box;
   display: flex;
-  gap: 30px;
+  gap: 15px;
   width: 100%;
+  justify-content: flex-start;
   align-items: center;
   height: 180px;
   padding: 20px;
@@ -280,8 +276,9 @@
 .dark .painel__admin__container .sidebar header .logo__container .text:close {
   display: none;
 }
-.dark .painel__admin__container .sidebar header .logo__container img {
+.dark .painel__admin__container .sidebar header .logo__container .logo {
   width: 80px;
+  fill: red;
 }
 .dark .painel__admin__container .sidebar header .toggle {
   position: absolute;

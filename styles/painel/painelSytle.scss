@@ -16,9 +16,12 @@
   height: auto;
   transition: var(--tran-05);
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> pedro
   h1,
   h2 {
    width: 70%;
@@ -29,25 +32,19 @@
  #dynamic-content.sidebar-open {
   margin-left: 180px;
  }
-
- .add-img-btn {
-  border: none;
-  color: white;
-  padding: 7px;
-  border-radius: 8px;
-  background-color: rgb(72, 150, 72);
- }
-
 }
 
-@mixin theme($bg-color, $text-color, $toggle-bg, $toggle-color, $hover-color, $switch-bg, $switch-before-bg) {
+@mixin theme($bg-color,
+ $text-color,
+ $toggle-bg,
+ $toggle-color,
+ $hover-color,
+ $switch-bg,
+ $switch-before-bg) {
  transition: var(--tran-03);
  background-color: $bg-color;
 
-
-
  .painel__admin__container {
-
   .sidebar {
    position: fixed;
    top: 0;
@@ -57,23 +54,20 @@
    background-color: $text-color;
    transition: var(--tran-05);
 
-
    &.close {
     width: 96px;
 
     header {
      .logo__container {
-      img {
+      .logo {
        width: 50px;
        margin-right: 15px;
-
       }
      }
     }
 
     .text {
      opacity: 0;
-
     }
 
     .mode {
@@ -83,12 +77,8 @@
       position: absolute;
       align-items: center;
      }
-
     }
    }
-
-
-
 
    header {
     position: relative;
@@ -96,14 +86,18 @@
     .logo__container {
      box-sizing: border-box;
      display: flex;
-     gap: 30px;
+     gap: 15px;
      width: 100%;
+     justify-content: flex-start;
      align-items: center;
      height: 180px;
      padding: 20px;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> pedro
      .text {
       color: $toggle-bg;
       font-weight: 600;
@@ -113,11 +107,11 @@
       &:close {
        display: none;
       }
-
      }
 
-     img {
+     .logo {
       width: 80px;
+      fill: red;
      }
     }
 
@@ -141,7 +135,6 @@
     }
    }
 
-
    .menu__bar {
     padding-left: 20px;
     margin-top: 40px;
@@ -150,7 +143,6 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-
     }
 
     .menu {
@@ -165,9 +157,6 @@
        list-style: none;
 
        a {
-
-
-
         display: flex;
         align-items: center;
         gap: 15px;
@@ -180,10 +169,8 @@
         }
 
         &:hover {
-
          background-color: $toggle-bg;
          color: white;
-
         }
        }
       }
@@ -192,7 +179,6 @@
        list-style: none;
 
        a {
-
         display: flex;
         align-items: center;
         gap: 15px;
@@ -205,10 +191,8 @@
         }
 
         &:hover {
-
          background-color: $toggle-bg;
          color: white;
-
         }
        }
       }
@@ -216,8 +200,6 @@
     }
 
     .button__content {
-
-
      ul {
       display: flex;
       flex-direction: column;
@@ -226,7 +208,6 @@
       padding: 0;
 
       li {
-
        margin: auto;
        list-style: none;
        margin: 0;
@@ -242,8 +223,6 @@
         i {
          font-size: 24px;
         }
-
-
        }
       }
 
@@ -288,7 +267,6 @@
         height: 50px;
         color: $toggle-bg;
 
-
         .moon {
          font-size: 24px;
         }
@@ -300,26 +278,24 @@
        }
 
        .text {
-
         color: $toggle-bg;
        }
-
-
       }
      }
     }
    }
-
-
   }
-
-
  }
-
 }
 
 .light {
- @include theme(var(--blue-secondary), var(--gelo), var(--blue-secondary), var(--blue-secondary), var(--blue-dark), var(--blue-light), var(--blue-secondary));
+ @include theme(var(--blue-secondary),
+  var(--gelo),
+  var(--blue-secondary),
+  var(--blue-secondary),
+  var(--blue-dark),
+  var(--blue-light),
+  var(--blue-secondary));
 
  .toggle {
   box-shadow: 1px 3px 3px rgb(98, 98, 98);
@@ -327,7 +303,13 @@
 }
 
 .dark {
- @include theme(var(--blue-dark), var(--blue-default), var(--blue-dark), var(--blue-dark), var(--gelo), var(--gelo), var(--blue-dark));
+ @include theme(var(--blue-dark),
+  var(--blue-default),
+  var(--blue-dark),
+  var(--blue-dark),
+  var(--gelo),
+  var(--gelo),
+  var(--blue-dark));
 
  .painel__admin__container {
   .sidebar {

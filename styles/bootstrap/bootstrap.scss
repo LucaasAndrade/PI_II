@@ -1,13 +1,15 @@
 .btn {
- border: none;
+  border: none;
 }
 
 .btn-primary {
+  background-color: var(--blue-secondary);
 
- background-color: var(--blue-secondary);
-
- &:hover {
-  background-color: var(--blue-dark);
- }
+  &:hover {
+    background-color: var(--blue-dark);
+  }
 }
 
+.table-primary {
+  background-color: red;
+}
