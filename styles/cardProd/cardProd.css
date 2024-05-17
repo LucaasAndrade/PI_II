@@ -1,6 +1,8 @@
 .light .card__container {
+  display: flex;
   box-sizing: border-box;
-  width: 650px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 .light .card__container h2 {
   color: var(--gelo);
@@ -62,8 +64,10 @@
 }
 
 .dark .card__container {
+  display: flex;
   box-sizing: border-box;
-  width: 650px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 .dark .card__container h2 {
   color: var(--gelo);

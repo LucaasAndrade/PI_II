@@ -15,17 +15,18 @@ export function cadastroUser() {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `nome=${nome}&email=${email}&senha=${senha}&ativo=${
-          ativo ? "1" : "0"
-        }`,
+        body: `nome=${nome}&email=${email}&senha=${senha}&ativo=${ativo ? "1" : "0"
+          }`,
       })
         .then((response) => {
           if (response.ok) {
-            renderURL("adm/adm.php");
+            var myModalEl = document.getElementById("addAdmModal");
+            var modal = bootstrap.Modal.getInstance(myModalEl);
+            modal.hide();
+
           }
-          var myModalEl = document.getElementById("addAdmModal");
-          var modal = bootstrap.Modal.getInstance(myModalEl);
-          modal.hide();
+          renderURL("adm/adm.php");
+
         })
         .catch((error) => console.error("Erro ao cadastrar usuário:", error));
     }

@@ -1,7 +1,9 @@
 @mixin theme($textColor, $bgColor, $bgTr, $tdColor) {
   .card__container {
+    display: flex;
     box-sizing: border-box;
-    width: 650px;
+    width: 100%;
+    flex-wrap: wrap;
 
     h2 {
       color: $textColor;

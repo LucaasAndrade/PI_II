@@ -53,8 +53,12 @@ export function cadastroProduto() {
       })
         .then((response) => {
           if (response.ok) {
-            renderURL("produtos/produtos.php");
+
+            var myModalEl = document.getElementById("addProdModal");
+            var modal = bootstrap.Modal.getInstance(myModalEl);
+            modal.hide();
           }
+          renderURL("produtos/produtos.php");
         })
         .catch((error) => console.error("Erro ao cadastrar produto:", error));
     }

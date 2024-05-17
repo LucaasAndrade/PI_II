@@ -53,61 +53,21 @@ try {
 
       <section class="prod__container">
 
-         <section class="form__container container ">
-            <form class="form__cadastro__prod" action="../utils/PHP/produtos/cadastrarProd.php" method="post">
-               <div class="mt-3">
-                  <label for="nome" class="form-label">Nome</label>
-                  <input type="text" name="nome" id="nome" class="form-control mt-1 " required>
-               </div>
-               <div class="mt-3">
-                  <label for="descricao" class="form-label">Descrição</label>
-                  <textarea style="resize: none;" name="descricao" id="descricao" cols="30" rows="5" class="form-control mt-1" required></textarea>
-               </div>
-               <div class="mt-3">
-                  <label for="preco" class="form-label">Preço</label>
-                  <input type="number" name="preco" id="preco" step="0.01" class="form-control mt-1" required>
-               </div>
-               <div class="mt-3">
-                  <label for="desconto">Desconto: </label>
-                  <input type="number" name="desconto" id="desconto" class="form-control mt-1" step="0.01">
-               </div>
-               <div class="mt-3">
-                  <label for="qtd">Quantidade: </label>
-                  <input type="number" name="qtd" id="qtd" class="form-control mt-1" step="0.01">
-               </div>
-               <div class="mt-3">
-                  <div class="mt-3">
-                     <label for="categoria_id">Categoria: </label>
-                     <select name="categoria_id" id="categoria_id" required class="form-select mt-1">
-                        <?php
-                        foreach ($categorias as $categoria) {
-                           echo '<option value="' . $categoria['CATEGORIA_ID'] . '">' . $categoria['CATEGORIA_NOME'] . '</option>';
-                        }
-                        ?>
-                     </select>
-                  </div>
-                  <div class="form-check mt-3">
-                     <label for="ativo" class="form-check-label ">Produto Ativo </label>
-                     <input class="form-check-input mt-1" type="checkbox" name="ativo" value="1">
+         <div class="header__prod">
+            <div class="search__container w-50">
+               <div class="input-group ">
+                  <div class="input-group ">
+                     <input type="search" id="search-input" class="form-control rounded" placeholder="Pesquisar" aria-label="Search" aria-describedby="search-addon" />
+                     <button type="button" id="search-button" class="btn btn-dark" data-mdb-ripple-init>Pesquisar</button>
                   </div>
                </div>
-               </div>
-               <div id="containerImagens">
-
-                  <label for="imagem_url[]" class="form-label mt-3">Imagem URL:</label>
-                  <input type=" text" name="imagem_url[]" class="form-control mt-1" placeholder="URL da imagem" required>
-
-                  <label for="imagem_Ordem[]" class="form-label mt-3">Imagem Ordem:</label>
-                  <input type="number" name="imagem_Ordem[]" class="form-control mt-1" placeholder="Ordem" required>
-
-               </div>
-               <button type="button" class="btn  btn-dark add-img-btn mt-3 ">Adicionar mais Imagens</button>
-               <button type="submit" class="btn  btn-dark mt-3 ">Cadastrar produto</button>
-            </form>
-         </section>
+            </div>
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addProdModal" data-bs-whatever="@mdo">Adicionar produto <i class="fa-solid fa-plus"> </i></button>
+         </div>
          <section class="card__container mt-3 ">
-            <div class="row ">
-               <?php foreach ($produtosComImagens as $produtoComImagens) : ?>
+
+            <?php foreach ($produtosComImagens as $produtoComImagens) : ?>
+               <div class="col-md-3">
                   <div class="product-card">
                      <div class="glide" data-product-id="<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>">
                         <div class="glide__track" data-glide-el="track">
@@ -121,8 +81,8 @@ try {
                         </div>
 
                         <div class="glide__arrows" data-glide-el="controls">
-                           <button class="glide__arrow glide__arrow--left " data-glide-dir="<"><i class="fa-solid fa-arrow-left"></i></button>
-                           <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-arrow-right"></i></button>
+                           <button class="glide__arrow glide__arrow--left " data-glide-dir=">"><i class="fa-solid fa-arrow-left" style="pointer-events: none;"></i></button>
+                           <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-arrow-right" style="pointer-events: none;"></i></button>
                         </div>
                      </div>
                      <div class="text-product">
@@ -133,7 +93,7 @@ try {
                      </div>
                      <div class="links-card">
 
-                        <button class="btn btn-primary edit-prod-button"  data-bs-target="#editProdModal" data-id="<?php echo  $produtoComImagens['produto']['PRODUTO_ID']; ?>">
+                        <button class="btn btn-primary edit-prod-button" data-bs-target="#editProdModal" data-id="<?php echo  $produtoComImagens['produto']['PRODUTO_ID']; ?>">
                            <i class="fa-solid fa-pen-to-square"></i>
                         </button>
 
@@ -143,13 +103,11 @@ try {
                         </button>
                      </div>
                   </div>
-               <?php endforeach; ?>
-            </div>
-            </div>
-
-
+               </div>
+            <?php endforeach; ?>
 
          </section>
+
       </section>
 
       <!-- Modal edição -->
@@ -161,7 +119,7 @@ try {
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-               <form action="../utils/PHP/produtos/editarProd.php" method="post" class="edit-produto-form" enctype="multipart/form-data">
+                  <form action="../utils/PHP/produtos/editarProd.php" method="post" class="edit-produto-form" enctype="multipart/form-data">
 
                      <input id="edit-id" type="hidden" name="id">
 
@@ -230,6 +188,73 @@ try {
                </div>
             </div>
          </div>
+      </div>
+
+      <!-- Adição modal -->
+      <div class="modal  fade" id="addProdModal" tabindex="-1" aria-labelledby="addProdModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h1 class="modal-title text-dark   fs-5" id="addProdModalLabel">Cadastrar categoria</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+
+                  <form class="form__cadastro__prod" action="../utils/PHP/produtos/cadastrarProd.php" method="post">
+                     <div class="mt-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" name="nome" id="nome" class="form-control mt-1 " required>
+                     </div>
+                     <div class="mt-3">
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <textarea style="resize: none;" name="descricao" id="descricao" cols="30" rows="5" class="form-control mt-1" required></textarea>
+                     </div>
+                     <div class="mt-3">
+                        <label for="preco" class="form-label">Preço</label>
+                        <input type="number" name="preco" id="preco" step="0.01" class="form-control mt-1" required>
+                     </div>
+                     <div class="mt-3">
+                        <label for="desconto">Desconto: </label>
+                        <input type="number" name="desconto" id="desconto" class="form-control mt-1" step="0.01">
+                     </div>
+                     <div class="mt-3">
+                        <label for="qtd">Quantidade: </label>
+                        <input type="number" name="qtd" id="qtd" class="form-control mt-1" step="0.01">
+                     </div>
+                     <div class="mt-3">
+                        <div class="mt-3">
+                           <label for="categoria_id">Categoria: </label>
+                           <select name="categoria_id" id="categoria_id" required class="form-select mt-1">
+                              <?php
+                              foreach ($categorias as $categoria) {
+                                 echo '<option value="' . $categoria['CATEGORIA_ID'] . '">' . $categoria['CATEGORIA_NOME'] . '</option>';
+                              }
+                              ?>
+                           </select>
+                        </div>
+                        <div class="form-check mt-3">
+                           <label for="ativo" class="form-check-label ">Produto Ativo </label>
+                           <input class="form-check-input mt-1" type="checkbox" name="ativo" value="1">
+                        </div>
+                     </div>
+                     <div id="containerImagens">
+
+                        <label for="imagem_url[]" class="form-label mt-3">Imagem URL:</label>
+                        <input type=" text" name="imagem_url[]" class="form-control mt-1" placeholder="URL da imagem" required>
+
+                        <label for="imagem_Ordem[]" class="form-label mt-3">Imagem Ordem:</label>
+                        <input type="number" name="imagem_Ordem[]" class="form-control mt-1" placeholder="Ordem" required>
+
+                     </div>
+                     <button type="button" class="btn  btn-dark add-img-btn mt-3 ">Adicionar mais Imagens</button>
+                     <button type="submit" class="btn  btn-dark mt-3 ">Cadastrar produto</button>
+                  </form>
+               </div>
+
+
+            </div>
+         </div>
+      </div>
       </div>
 
       <script>
