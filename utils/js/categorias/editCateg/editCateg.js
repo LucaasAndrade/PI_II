@@ -51,8 +51,9 @@ export async function editCateg() {
             // Fecha o modal após o post
             var myModal = new bootstrap.Modal(document.getElementById('editCategModal'));
             myModal.hide();
-            renderURL("categorias/categorias.php");
+
           }
+          renderURL("categorias/categorias.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

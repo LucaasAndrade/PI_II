@@ -68,7 +68,7 @@ try {
 
             <?php foreach ($produtosComImagens as $produtoComImagens) : ?>
                <div class="col-md-3">
-                  <div class="product-card">
+                  <div class="searchable product-card">
                      <div class="glide" data-product-id="<?php echo $produtoComImagens['produto']['PRODUTO_ID']; ?>">
                         <div class="glide__track" data-glide-el="track">
                            <ul class="glide__slides">

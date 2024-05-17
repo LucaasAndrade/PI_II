@@ -13,6 +13,7 @@ import { cadastroProduto } from "./produtos/cadastroProduto/cadastroProduto.js";
 import { cadastroCateg } from "./categorias/cadastroCateg/cadastroCateg.js";
 import { searchAdm } from "./adm/searchAdm/searchAdm.js";
 import { searchCateg } from "./categorias/searchCateg/searchCateg.js";
+import { searchProd } from "./produtos/searchProd/searchProd.js";
 
 renderDynamic();
 
@@ -44,3 +45,4 @@ confirmDeleteCateg();
 
 searchAdm();
 searchCateg();
+searchProd();

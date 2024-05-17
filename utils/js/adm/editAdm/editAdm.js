@@ -1,5 +1,6 @@
 import { renderURL } from "../../renderDynamic/renderURL.js";
 
+
 function clearModal() {
   document.getElementById("edit-id").value = "";
   document.getElementById("edit-nome").value = "";
@@ -52,11 +53,13 @@ export function editAdm() {
         .then((response) => {
 
           if (response.ok) {
+            
             // Fecha o modal após o post
             var myModal = new bootstrap.Modal(document.getElementById('editAdmModal'));
             myModal.hide();
-            renderURL("adm/adm.php");
           }
+          renderURL("adm/adm.php")
+
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);
