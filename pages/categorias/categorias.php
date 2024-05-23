@@ -49,7 +49,7 @@ try {
      </div>
     </div>
    </div>
-   <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCategModal" data-bs-whatever="@mdo">Adicionar categoria <i class="fa-solid fa-plus"> </i></button>
+   <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCategModal" data-bs-whatever="@mdo"><i class="bi bi-window-plus"></i></button>
   </div>
 
   <table class="table  table-info  table-striped tableCateg">
@@ -65,7 +65,23 @@ try {
     <?php foreach ($categorias as $categoria) : ?>
      <tr>
       <td class="searchable"><?php echo $categoria['CATEGORIA_NOME'] ?></td>
-      <td class="searchable"><?php echo $categoria['CATEGORIA_DESC'] ?></td>
+      <td class="searchable">
+       <?php
+       $descricao =  $categoria['CATEGORIA_DESC'];
+       if (strlen($descricao) > 55) {
+        $descricaoCortada = substr($descricao, 0, 115);
+        $ultimaEspaco = strrpos($descricaoCortada, ' ');
+        if ($ultimaEspaco !== false) {
+         $descricaoFinal = substr($descricaoCortada, 0, $ultimaEspaco);
+        } else {
+         $descricaoFinal = $descricaoCortada;
+        }
+        echo $descricaoFinal . '...';
+       } else {
+        echo $descricao;
+       }
+       ?>
+      </td>
       <td class="searchable">
        <?php if ($categoria['CATEGORIA_ATIVO'] == '0') : ?>
         <p class="text-danger">Não ativo</p>

@@ -164,28 +164,10 @@
        }
       }
 
-      .logout {
-       list-style: none;
 
-       a {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        text-decoration: none;
-        color: $toggle-bg;
-        font-size: 16px;
-
-        i {
-         font-size: 32px;
-        }
-
-        &:hover {
-         background-color: $toggle-bg;
-         color: white;
-        }
-       }
-      }
      }
+
+
     }
 
     .button__content {
@@ -219,7 +201,7 @@
        display: flex;
        align-items: center;
        gap: 10px;
-       font-size: 18px;
+       font-size: 16px;
 
        .toggle-switch {
         height: 100%;
@@ -271,6 +253,37 @@
        }
       }
      }
+    }
+
+    .logout__container {
+     width: 100%;
+     margin-top: 250px;
+
+     ul {
+      padding: 0px;
+      .logout {
+       list-style: none;
+
+       a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        color: $toggle-bg;
+        font-size: 16px;
+
+        i {
+         font-size: 32px;
+        }
+
+        &:hover {
+         background-color: $toggle-bg;
+         color: white;
+        }
+       }
+      }
+     }
+
     }
    }
   }

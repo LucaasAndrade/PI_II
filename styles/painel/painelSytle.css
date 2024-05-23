@@ -131,24 +131,6 @@
   background-color: var(--blue-secondary);
   color: white;
 }
-.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout {
-  list-style: none;
-}
-.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-decoration: none;
-  color: var(--blue-secondary);
-  font-size: 16px;
-}
-.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a i {
-  font-size: 32px;
-}
-.light .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a:hover {
-  background-color: var(--blue-secondary);
-  color: white;
-}
 .light .painel__admin__container .sidebar .menu__bar .button__content ul {
   display: flex;
   flex-direction: column;
@@ -176,7 +158,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch {
   height: 100%;
@@ -219,6 +201,31 @@
 }
 .light .painel__admin__container .sidebar .menu__bar .button__content ul .mode .text {
   color: var(--blue-secondary);
+}
+.light .painel__admin__container .sidebar .menu__bar .logout__container {
+  width: 100%;
+  margin-top: 250px;
+}
+.light .painel__admin__container .sidebar .menu__bar .logout__container ul {
+  padding: 0px;
+}
+.light .painel__admin__container .sidebar .menu__bar .logout__container ul .logout {
+  list-style: none;
+}
+.light .painel__admin__container .sidebar .menu__bar .logout__container ul .logout a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--blue-secondary);
+  font-size: 16px;
+}
+.light .painel__admin__container .sidebar .menu__bar .logout__container ul .logout a i {
+  font-size: 32px;
+}
+.light .painel__admin__container .sidebar .menu__bar .logout__container ul .logout a:hover {
+  background-color: var(--blue-secondary);
+  color: white;
 }
 .light .toggle {
   box-shadow: 1px 3px 3px rgb(98, 98, 98);
@@ -331,24 +338,6 @@
   background-color: var(--blue-dark);
   color: white;
 }
-.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout {
-  list-style: none;
-}
-.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-decoration: none;
-  color: var(--blue-dark);
-  font-size: 16px;
-}
-.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a i {
-  font-size: 32px;
-}
-.dark .painel__admin__container .sidebar .menu__bar .menu .menu__links .logout a:hover {
-  background-color: var(--blue-dark);
-  color: white;
-}
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul {
   display: flex;
   flex-direction: column;
@@ -376,7 +365,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .toggle-switch {
   height: 100%;
@@ -419,6 +408,31 @@
 }
 .dark .painel__admin__container .sidebar .menu__bar .button__content ul .mode .text {
   color: var(--blue-dark);
+}
+.dark .painel__admin__container .sidebar .menu__bar .logout__container {
+  width: 100%;
+  margin-top: 250px;
+}
+.dark .painel__admin__container .sidebar .menu__bar .logout__container ul {
+  padding: 0px;
+}
+.dark .painel__admin__container .sidebar .menu__bar .logout__container ul .logout {
+  list-style: none;
+}
+.dark .painel__admin__container .sidebar .menu__bar .logout__container ul .logout a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--blue-dark);
+  font-size: 16px;
+}
+.dark .painel__admin__container .sidebar .menu__bar .logout__container ul .logout a i {
+  font-size: 32px;
+}
+.dark .painel__admin__container .sidebar .menu__bar .logout__container ul .logout a:hover {
+  background-color: var(--blue-dark);
+  color: white;
 }
 .dark .painel__admin__container .sidebar .toggle {
   box-shadow: 1px 3px 3px rgb(0, 0, 0);
