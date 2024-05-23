@@ -9,23 +9,38 @@ function clearModal() {
 }
 
 export function editAdm() {
-  document.addEventListener("click", function (event) {
-    if (event.target && event.target.classList.contains("edit-adm-button")) {
-      let userId = event.target.getAttribute("data-id");
+  document.addEventListener("click", async function (event) {
+    if (
+      event.target &&
+      (event.target.classList.contains("edit-adm-button") ||
+        event.target.closest(".edit-adm-button"))
+    ) {
+      let userId = event.target
+        .closest(".edit-adm-button")
+        .getAttribute("data-id");
 
-      fetch("../utils/PHP/adm/getAdmInfo.php?id=" + userId)
-        .then((response) => response.json())
-        .then((details) => {
-          document.getElementById("edit-id").value = details.ADM_ID;
-          document.getElementById("edit-nome").value = details.ADM_NOME;
-          document.getElementById("edit-email").value = details.ADM_EMAIL;
-          document.getElementById("edit-senha").value = details.ADM_SENHA;
-          document.getElementById("edit-ativo").checked =
-            details.ADM_ATIVO == 1;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      try {
+        const response = await await fetch(
+          "../utils/PHP/adm/getAdmInfo.php?id=" + userId
+        );
+
+        const data = await response.json();
+
+        const { admin } = data;
+
+        const modal = new bootstrap.Modal(
+          document.getElementById("editAdmModal")
+        );
+        modal.show();
+
+        document.getElementById("edit-id").value = admin.ADM_ID;
+        document.getElementById("edit-nome").value = admin.ADM_NOME;
+        document.getElementById("edit-email").value = admin.ADM_EMAIL;
+        document.getElementById("edit-senha").value = admin.ADM_SENHA;
+        document.getElementById("edit-ativo").checked = admin.ADM_ATIVO == 1;
+      } catch (error) {
+        console.log(error);
+      }
     }
   });
 
@@ -40,14 +55,14 @@ export function editAdm() {
         body: formData,
       })
         .then((response) => {
-          console.log(
-            `Sucesso ao enviar informações para edição: ${response.json()}`
-          );
-          const modal = document.getElementById("exampleModal");
-          modal.addEventListener("hidden.bs.modal", function (e) {
-            clearModal();
-          });
-          renderURL("adm/listar_adm.php");
+          if (response.ok) {
+            // Fecha o modal após o post
+            var myModal = new bootstrap.Modal(
+              document.getElementById("editAdmModal")
+            );
+            myModal.hide();
+          }
+          renderURL("adm/adm.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

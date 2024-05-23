@@ -1,80 +1,41 @@
-@mixin theme($textColor, $bgColor, $bgTr, $tdColor) {
+#dynamic-content {
+  .header__adm {
+    width: 70%;
+  }
+  .tableADM {
+    width: 70%;
+    text-align: justify;
+    border-radius: 8px;
 
-    #dynamic-content {
+    thead {
+      tr {
+        padding: 10px;
 
-
-
-
-        h2 {
-            color: $textColor;
+        th {
+          text-align: center;
+          align-items: center;
+          padding-block: 20px;
         }
-
-        .tableADM {
-            width: 70%;
-            text-align: justify;
-            color: $textColor;
-            border-radius: 8px;
-
-            border: 15px solid $bgColor;
-
-            thead {
-
-                background-color: $bgColor;
-
-                tr {
-                    padding: 10px;
-
-                    th {
-                        text-align: center;
-                        align-items: center;
-                        padding-block: 20px;
-                        color: $textColor;
-                    }
-                }
-            }
-
-            tbody {
-                tr {
-                    background-color: $bgTr;
-                    color: $tdColor;
-                    border-bottom: 15px solid $bgColor;
-
-                    &:last-child {
-                        border: none;
-                    }
-
-                    td {
-
-                        text-align: center;
-                        vertical-align: middle;
-                        padding-block: 20px;
-                        font-size: 16px;
-
-                        p {
-                            margin: 0;
-                        }
-                    }
-                }
-            }
-        }
-
-        .modal-title {
-            color: var(--blue-dark);
-        }
+      }
     }
 
-}
+    tbody {
+      tr {
+        &:last-child {
+          border: none;
+        }
 
+        td {
+          text-align: center;
+          vertical-align: middle;
+          padding-block: 20px;
+          font-size: 16px;
 
-
-.light {
-    @include theme(var(--gelo), var(--blue-default), var(--gelo), var(--blue-dark));
-
-
-}
-
-.dark {
-    @include theme(var(--gelo), var(--blue-secondary), var(--gelo), var(--blue-dark));
-
-
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
 }

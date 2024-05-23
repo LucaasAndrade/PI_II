@@ -18,8 +18,11 @@ export function cadastroCateg() {
       })
         .then((response) => {
           if (response.ok) {
-            renderURL("categorias/listar_categorias.php");
+            renderURL("categorias/categorias.php");
           }
+          var myModalEl = document.getElementById("addCategModal");
+          var modal = bootstrap.Modal.getInstance(myModalEl);
+          modal.hide();
         })
         .catch((error) => console.error("Erro ao cadastrar usuário:", error));
     }

@@ -1,7 +1,7 @@
 <?php
 
 require_once "../conexao.php";
-var_dump($_POST);
+
 
 $id = $_POST['id'];
 

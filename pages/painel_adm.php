@@ -16,6 +16,7 @@ if (!isset($_SESSION['admin_logado'])) {
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Home</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
  <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
  <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
@@ -29,7 +30,7 @@ if (!isset($_SESSION['admin_logado'])) {
    <nav class="sidebar open">
     <header>
      <div class="logo__container">
-      <img src="../images/logo2.png" alt="logo echo">
+      <img class="logo" src="../images/logo.svg" alt="logo echo">
       <a class="text" href="painel_adm.php">Painel administrador</a>
      </div>
      <i class='bx bx-chevron-right toggle'></i>
@@ -38,47 +39,25 @@ if (!isset($_SESSION['admin_logado'])) {
      <div class="menu">
       <ul class="menu__links">
        <li class="nav__link">
-        <a href="adm/cadastro_adm.php">
+        <a href="adm/adm.php">
          <i class='bx bxs-user-circle'></i>
-         <span class="text">Cadastrar administrador</span>
+         <span class="text">Administradores</span>
         </a>
        </li>
        <li class="nav__link">
-        <a href="adm/listar_adm.php">
-         <i class='bx bx-list-ul'></i>
-         <span class="text">Listar administradores</span>
-        </a>
-       </li>
-       <li class="nav__link">
-        <a href="produtos/cadastro_produto.php">
-         <i class='bx bxs-box'></i>
-         <span class="text">Cadastrar produto</span>
-        </a>
-       </li>
-       <li class="nav__link">
-        <a href="produtos/listar_produtos.php">
-         <i class='bx bx-list-ul'></i>
-         <span class="text">Listar produtos</span>
-        </a>
-       </li>
-       <li class="nav__link">
-        <a href="categorias/cadastro_categoria.php">
+        <a href="categorias/categorias.php">
          <i class='bx bxs-category'></i>
-         <span class="text">Cadastro de categorias</span>
+         <span class="text">Categorias</span>
         </a>
        </li>
+
        <li class="nav__link">
-        <a href="categorias/listar_categorias.php">
-         <i class='bx bx-list-ul'></i>
-         <span class="text">Listar categorias</span>
+        <a href="produtos/produtos.php">
+         <i class='bx bxs-box'></i>
+         <span class="text">Produtos</span>
         </a>
        </li>
-       <li class="logout">
-        <a href="../utils/PHP/logoff.php">
-         <i class='bx bx-log-out'></i>
-         <span class="text">Logout</span>
-        </a>
-       </li>
+
       </ul>
      </div>
      <div class="button__content">
@@ -99,18 +78,29 @@ if (!isset($_SESSION['admin_logado'])) {
       </ul>
 
      </div>
+     <div class="logout__container">
+      <ul>
+       <li class="logout">
+        <a href="../utils/PHP/logoff.php">
+         <i class='bx bx-log-out'></i>
+         <span class="text">Logout</span>
+        </a>
+       </li>
+      </ul>
+     </div>
     </div>
    </nav>
   </section>
   <div id="dynamic-content" class="sidebar-open">
    <h1><?php echo 'Seja bem-vindo(a), ' . $_SESSION['admin_nome'] . '!' . PHP_EOL; ?></h1>
   </div>
+
   </div>
  </main>
+ <script type="module" src="../utils/js/script.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
  </script>
  <script src="https://kit.fontawesome.com/148cebbffc.js" crossorigin="anonymous"></script>
- <script type="module" src="../utils/js/script.js"></script>
  <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
  <script>
   document.addEventListener('dynamicContentLoaded', function() {
