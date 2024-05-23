@@ -1,6 +1,5 @@
 import { renderURL } from "../../renderDynamic/renderURL.js";
 
-
 function clearModal() {
   document.getElementById("edit-id").value = "";
   document.getElementById("edit-nome").value = "";
@@ -11,8 +10,14 @@ function clearModal() {
 
 export function editAdm() {
   document.addEventListener("click", async function (event) {
-    if (event.target && event.target.classList.contains("edit-adm-button")) {
-      let userId = event.target.getAttribute("data-id");
+    if (
+      event.target &&
+      (event.target.classList.contains("edit-adm-button") ||
+        event.target.closest(".edit-adm-button"))
+    ) {
+      let userId = event.target
+        .closest(".edit-adm-button")
+        .getAttribute("data-id");
 
       try {
         const response = await await fetch(
@@ -33,7 +38,6 @@ export function editAdm() {
         document.getElementById("edit-email").value = admin.ADM_EMAIL;
         document.getElementById("edit-senha").value = admin.ADM_SENHA;
         document.getElementById("edit-ativo").checked = admin.ADM_ATIVO == 1;
-
       } catch (error) {
         console.log(error);
       }
@@ -51,15 +55,14 @@ export function editAdm() {
         body: formData,
       })
         .then((response) => {
-
           if (response.ok) {
-            
             // Fecha o modal após o post
-            var myModal = new bootstrap.Modal(document.getElementById('editAdmModal'));
+            var myModal = new bootstrap.Modal(
+              document.getElementById("editAdmModal")
+            );
             myModal.hide();
           }
-          renderURL("adm/adm.php")
-
+          renderURL("adm/adm.php");
         })
         .catch((error) => {
           console.log(`Erro ao enviar informações para edição: ${error}`);

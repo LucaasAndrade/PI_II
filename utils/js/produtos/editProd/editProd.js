@@ -2,8 +2,14 @@ import { renderURL } from "../../renderDynamic/renderURL.js";
 
 export async function editProd() {
   document.addEventListener("click", async function (event) {
-    if (event.target.classList.contains("edit-prod-button")) {
-      let productId = event.target.getAttribute("data-id");
+    if (
+      event.target &&
+      (event.target.classList.contains("edit-prod-button") ||
+        event.target.closest(".edit-prod-button"))
+    ) {
+      let productId = event.target
+        .closest(".edit-prod-button")
+        .getAttribute("data-id");
 
       try {
         const response = await fetch(
@@ -15,9 +21,12 @@ export async function editProd() {
         const { produto, imagens, categorias } = data;
 
         // Abre o modal aqui, após o fetch
-        var myModal = new bootstrap.Modal(document.getElementById('editProdModal'), {
-          keyboard: false
-        });
+        var myModal = new bootstrap.Modal(
+          document.getElementById("editProdModal"),
+          {
+            keyboard: false,
+          }
+        );
         myModal.show();
 
         document.getElementById("edit-id").value = produto.PRODUTO_ID;
@@ -82,9 +91,6 @@ export async function editProd() {
 
           imagensContainer.appendChild(div);
         });
-
-
-
       } catch (error) {
         console.log(error);
       }
@@ -107,9 +113,10 @@ export async function editProd() {
       })
         .then((response) => {
           if (response.ok) {
-
             renderURL("produtos/produtos.php");
-            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            var myModal = new bootstrap.Modal(
+              document.getElementById("exampleModal")
+            );
             myModal.hide();
           }
         })
