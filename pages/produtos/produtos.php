@@ -57,7 +57,7 @@ try {
     <div class="search__container w-50">
      <div class="input-group ">
       <div class="input-group ">
-       <input type="search" id="search-input" class="form-control rounded" placeholder="Pesquisar" aria-label="Search" aria-describedby="search-addon" />
+       <input type="search" id="search-input" class="form-control rounded" placeholder="Pesquisar por nome..." aria-label="Search" aria-describedby="search-addon" />
        <button type="button" id="search-button" class="btn btn-dark" data-mdb-ripple-init>Pesquisar</button>
       </div>
      </div>
