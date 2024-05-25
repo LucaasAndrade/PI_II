@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("bootstrap/bootstrap.css");
+@import url("login/loginStyle.css");
+@import url("form/form.css");
+@import url("painel/painelSytle.css");
+@import url("list/listStyle.css");
+
+:root {
+  --gelo: #ebf0f3;
+  --cinza-claro: #d2d7da;
+  --verde-agua: #026874;
+  --verde-escuro: #002d40;
+  --verde-escuro-dois: #011c27;
+
+  /* ====== Transição ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
