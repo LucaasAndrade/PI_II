@@ -26,7 +26,10 @@ export function confirmDeleteUser() {
             renderURL("adm/adm.php");
           }
         })
-        .catch((error) => console.error("Erro ao excluir usuário:", error));
+        .catch((error) =>
+
+          console.error("Erro ao excluir usuário:", error)
+        );
     }
   });
 }

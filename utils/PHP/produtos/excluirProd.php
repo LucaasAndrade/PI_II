@@ -11,19 +11,19 @@
           $pdo->beginTransaction();
 
 
-          $sqlDeleteImagem = "DELETE FROM produto_imagem WHERE PRODUTO_ID = :id";
+          $sqlDeleteImagem = "DELETE FROM PRODUTO_IMAGEM WHERE PRODUTO_ID = :id";
           $stmtDeleteImagem = $pdo->prepare($sqlDeleteImagem);
           $stmtDeleteImagem->bindParam(':id', $id, PDO::PARAM_INT);
           $stmtDeleteImagem->execute();
 
-          $sqlDeleteEstoque = "DELETE FROM produto_estoque WHERE PRODUTO_ID = :id";
+          $sqlDeleteEstoque = "DELETE FROM PRODUTO_ESTOQUE WHERE PRODUTO_ID = :id";
           $stmtDeleteEstoque = $pdo->prepare($sqlDeleteEstoque);
           $stmtDeleteEstoque->bindParam(':id', $id, PDO::PARAM_INT);
           $stmtDeleteEstoque->execute();
 
 
 
-          $sqlDeleteProduto = "DELETE FROM produto WHERE PRODUTO_ID = :id";
+          $sqlDeleteProduto = "DELETE FROM PRODUTO WHERE PRODUTO_ID = :id";
           $stmtDeleteProduto = $pdo->prepare($sqlDeleteProduto);
           $stmtDeleteProduto->bindParam(':id', $id, PDO::PARAM_INT);
           $stmtDeleteProduto->execute();

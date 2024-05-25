@@ -1,100 +1,101 @@
 @mixin theme($textColor, $bgColor, $bgTr, $tdColor) {
- .card__container {
-  display: flex;
-  box-sizing: border-box;
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 56.5px;
-  h2 {
-   color: $textColor;
-  }
-
-  .product-card {
-   box-sizing: border-box;
-   text-align: center;
-   background-color: $bgColor;
-   border-radius: 10px;
-   padding: 15px;
-   width: 300px;
-   height: 520px;
-
-   .text-product {
-    height: 250px;
-    width: 90%;
-    line-height: 12px;
-    text-align: justify;
-
-    h3 {
-     font-size: 16px;
-     margin-top: 20px;
-     margin-bottom: 10px;
-     color: $textColor;
-     text-align: justify;
-    }
-
-    p {
-     font-size: 12px;
-     color: $textColor;
-    }
-   }
-
-   .links-card {
+  .card__container {
     display: flex;
-    justify-content: center;
-    gap: 25px;
+    box-sizing: border-box;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 56.5px;
 
-    .edit-prod-button {
-     background-color: $tdColor;
-     color: $textColor;
-     width: 100px;
+    h2 {
+      color: $textColor;
     }
 
-    .delete-prod-button {
-     width: 100px;
-    }
-   }
+    .product-card {
+      box-sizing: border-box;
+      text-align: center;
+      background-color: $bgColor;
+      border-radius: 10px;
+      padding: 15px;
+      width: 300px;
+      height: 520px;
 
-   .glide {
-    .glide__track {
-     .glide__slides {
-      .glide__slide {
-       img {
-        width: 100%;
-        height: 180px;
-        margin: auto;
-        max-width: 100%;
-        max-height: 180px;
-        border-radius: 5px;
-        pointer-events: none;
-       }
+      .text-product {
+        height: 250px;
+        width: 90%;
+        line-height: 12px;
+        text-align: justify;
+
+        h3 {
+          font-size: 16px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          color: $textColor;
+          text-align: justify;
+        }
+
+        p {
+          font-size: 12px;
+          color: $textColor;
+        }
       }
-     }
-    }
 
-    .glide__arrows {
-     margin-block: 25px;
+      .links-card {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
 
-     .glide__arrow {
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 8px;
-      font-size: 12px;
-     }
+        .edit-prod-button {
+          background-color: $tdColor;
+
+          width: 100px;
+        }
+
+        .delete-prod-button {
+          width: 100px;
+        }
+      }
+
+      .glide {
+        .glide__track {
+          .glide__slides {
+            .glide__slide {
+              img {
+                width: 100%;
+                height: 180px;
+                margin: auto;
+                max-width: 100%;
+                max-height: 180px;
+                border-radius: 5px;
+                pointer-events: none;
+              }
+            }
+          }
+        }
+
+        .glide__arrows {
+          margin-block: 25px;
+
+          .glide__arrow {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 12px;
+          }
+        }
+      }
     }
-   }
   }
- }
 }
 
 .light {
- @include theme(var(--gelo),
-  var(--blue-dark),
-  var(--gelo),
-  var(--blue-default));
+  @include theme(var(--gelo),
+    var(--blue-dark),
+    var(--gelo),
+    var(--blue-default));
 }
 
 .dark {
- @include theme(var(--gelo),
-  var(--blue-default),
-  var(--gelo),
-  var(--blue-dark));
+  @include theme(var(--blue-dark),
+    var(--blue-default),
+    var(--gelo),
+    var(--blue-dark));
 }
