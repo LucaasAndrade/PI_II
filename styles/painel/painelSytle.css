@@ -14,7 +14,7 @@
   width: 100%;
   height: auto;
   transition: var(--tran-05);
-  padding-top: 180px;
+  padding-top: 80px;
   padding-bottom: 50px;
 }
 .main__container #dynamic-content h1,

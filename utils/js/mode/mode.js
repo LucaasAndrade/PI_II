@@ -18,11 +18,11 @@ export function alterMode() {
   modeSwitch.addEventListener("click", () => {
     if (mainContainer.classList.contains("light")) {
       mainContainer.classList.replace("light", "dark");
-      modeText.innerHTML = "Light Mode";
+      modeText.innerHTML = "Tema claro";
       logo.src = "../images/logo2.svg"; // Altere o src para o logo do tema escuro
     } else {
       mainContainer.classList.replace("dark", "light");
-      modeText.innerHTML = "Dark Mode";
+      modeText.innerHTML = "Tema escuro";
       logo.src = "../images/logo.svg"; // Altere o src para o logo do tema claro
     }
   });

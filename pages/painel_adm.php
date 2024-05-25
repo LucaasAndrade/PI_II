@@ -31,7 +31,7 @@ if (!isset($_SESSION['admin_logado'])) {
     <header>
      <div class="logo__container">
       <img class="logo" src="../images/logo.svg" alt="logo echo">
-      <a class="text" href="painel_adm.php">Painel administrador</a>
+      <a class="text" href="painel_adm.php" title="Painel aministrador">Painel administrador</a>
      </div>
      <i class='bx bx-chevron-right toggle'></i>
     </header>
@@ -40,19 +40,19 @@ if (!isset($_SESSION['admin_logado'])) {
       <ul class="menu__links">
        <li class="nav__link">
         <a href="adm/adm.php">
-         <i class='bx bxs-user-circle'></i>
+         <i class='bx bxs-user-circle' title="Administradores"></i>
          <span class="text">Administradores</span>
         </a>
        </li>
        <li class="nav__link">
-        <a href="categorias/categorias.php">
+        <a href="categorias/categorias.php" title="Categorias">
          <i class='bx bxs-category'></i>
          <span class="text">Categorias</span>
         </a>
        </li>
 
        <li class="nav__link">
-        <a href="produtos/produtos.php">
+        <a href="produtos/produtos.php" title="Produtos">
          <i class='bx bxs-box'></i>
          <span class="text">Produtos</span>
         </a>
@@ -69,9 +69,9 @@ if (!isset($_SESSION['admin_logado'])) {
          <i class='bx bx-moon icon moon'></i>
          <i class='bx bx-sun icon sun'></i>
         </div>
-        <span class="mode__text text">Dark Mode</span>
+        <span class="mode__text text">Tema escuro</span>
         <div class="toggle-switch">
-         <span class="switch"></span>
+         <span class="switch" title="Tema"></span>
         </div>
        </li>
 
@@ -81,9 +81,9 @@ if (!isset($_SESSION['admin_logado'])) {
      <div class="logout__container">
       <ul>
        <li class="logout">
-        <a href="../utils/PHP/logoff.php">
+        <a href="../utils/PHP/logoff.php" title="Sair">
          <i class='bx bx-log-out'></i>
-         <span class="text">Logout</span>
+         <span class="text">Sair</span>
         </a>
        </li>
       </ul>
