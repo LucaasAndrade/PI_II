@@ -59,7 +59,7 @@ try {
     <?php foreach ($users as $user) : ?>
      <tr>
       <td class="searchable"><?php echo $user['ADM_NOME']; ?></td>
-      <td class="searchable"><?php echo !isset($user['ADM_EMAIL']) == 1 ? "Sem registro" :  $user['ADM_EMAIL'] ?> </td>
+      <td class="searchable"><?php echo isset($user['ADM_EMAIL']) ? $user['ADM_EMAIL'] : "Sem registro"; ?></td>
       <td class="searchable">
        <?php if ($user['ADM_ATIVO'] == '0') : ?>
         <p class="text-danger">Não ativo</p>
@@ -68,12 +68,16 @@ try {
        <?php endif; ?>
       </td>
       <td>
+       <!-- Botão de Edição -->
        <button class="btn btn-primary edit-adm-button" data-bs-target="#editAdmModal" data-id="<?php echo $user['ADM_ID']; ?>">
         <i class="fa-solid fa-pen-to-square"></i>
        </button>
-       <button class="btn btn-danger delete-adm-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo $user['ADM_ID']; ?>">
-        <i class="fa-solid fa-trash"></i>
-       </button>
+       <!-- Botão de Exclusão (apenas para usuários diferentes do usuário logado) -->
+       <?php if ($user['ADM_ID'] !==  $_SESSION['admin_id']) : ?>
+        <button class="btn btn-danger delete-adm-button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="<?php echo $user['ADM_ID']; ?>">
+         <i class="fa-solid fa-trash"></i>
+        </button>
+       <?php endif; ?>
       </td>
      </tr>
     <?php endforeach ?>
@@ -123,20 +127,18 @@ try {
   </div>
 
   <!-- Modal de confirmação -->
-  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal fade " id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
    <div class="modal-dialog">
     <div class="modal-content">
      <div class="modal-header">
-      <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar exclusão <i class="fa-solid fa-triangle-exclamation"></i></h5>
+      <h5 class="modal-title" id="confirmDeleteModalLabel">Notificação</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
      </div>
      <div class="modal-body">
-
-      Tem certeza que deseja excluir administrador?
+      Você não tem permissão para essa operação!
      </div>
      <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-      <button type="button" class="btn btn-danger" id="confirmDeleteAdm" data-bs-dismiss="modal">Confirmar</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
      </div>
     </div>
    </div>
